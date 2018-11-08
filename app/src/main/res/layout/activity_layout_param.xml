@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:background="@color/mGreenColor"
+    tools:context="com.example.yangl.androidsample.activity.LayoutParamActivity">
+
+    <TextView
+        android:id="@+id/text"
+        android:text="Hello"
+        android:textSize="50dp"
+        android:textColor="@color/mWhiteColor"
+        android:background="@color/mBlackColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/text1"
+        android:text="Hello2"
+        android:textSize="50dp"
+        android:layout_below="@+id/text"
+        android:textColor="@color/mWhiteColor"
+        android:background="@color/mBlackColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

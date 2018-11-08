@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/test"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yangl.androidsample.activity.NavigationBarActivity">
+
+    <TextView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:textSize="30dp"
+        android:text="3.2 华为建议方案
+（1）华为建议首选方案3，将应用的API级别升级到O版本（targetSdkVersion>=26），这样在不同比例屏幕下，应用都能自适应全屏显示。但此方案对界面设计的要求也比较高，需保证界面拉伸到不同比例（16:9、18:9、18.9:9、19.5:9、21:9）时，都能正常显示。同时API级别升级到O版本，应用依赖的部分API功能升级，要做兼容性处理。
+（2）如果采用方案3的代价过大，建议采用方案1，将最大支持的纵横比设为2.4。这样可以兼容超宽屏产品，一次做好适配。
+
+4. UI适配
+通过增加上面适配方案提到的配置，应用在全面屏手机上就能够默认全屏显示了，但是为了避免出现UI异常的问题，还是需要应用自己做一些额外的UI适配工作：
+（1）对于列表形式的应用，如：微信、网易新闻等，只是显示的内容变多，基本无影响；
+（2）对于整屏的应用，应用为了保证多种屏幕的适配，需遵循Google的适配建议，可以参考Google官网 https://developer.android.com/guide/practices/screens_support.html 页面中的最佳做法章节进行修改适配；
+（3）对于使用整幅图片作为背景时需注意图片的填充方式，否则可能会无法填充整个屏幕。如：使用背景是用ImageView建议将其scaleType设置为CENTER_CROP，其意义是：按比例扩大图片的size居中显示，使得图片长(宽)等于或大于View的长(宽)。"/>
+
+</ScrollView>

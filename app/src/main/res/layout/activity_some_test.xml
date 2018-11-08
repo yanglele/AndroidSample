@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yangl.androidsample.activity.SomeTestActivity">
+
+    <Button
+        android:id="@+id/config_change_test"
+        android:text="config_change_test"
+        style="@style/NormalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onConfigChangeBtnClick"/>
+
+    <Button
+        android:id="@+id/retain_fragment_test"
+        style="@style/NormalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="onRetainFragmentBtnClick"
+        android:text="retain_fragment_test"
+        app:layout_constraintTop_toBottomOf="@+id/config_change_test"
+        tools:layout_editor_absoluteX="0dp"/>
+
+    <Button
+        android:id="@+id/screen_orientation_change"
+        android:text="screen_orientation_change"
+        app:layout_constraintTop_toBottomOf="@+id/retain_fragment_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onScreenOrientationChange"/>
+
+    <Button
+        android:id="@+id/task_heap_allow_task_reparent"
+        android:text="task_heap_allow_task_reparent"
+        app:layout_constraintTop_toBottomOf="@+id/screen_orientation_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onTaskReparent"/>
+
+    <Button
+        android:id="@+id/intent_action_match"
+        android:text="intent_action_match"
+        app:layout_constraintTop_toBottomOf="@+id/task_heap_allow_task_reparent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onActionMatch"/>
+
+    <Button
+        android:id="@+id/linearlayout_layout"
+        android:text="intent_action_match"
+        app:layout_constraintTop_toBottomOf="@+id/intent_action_match"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onLinearLayout"/>
+
+    <Button
+        android:id="@+id/spannable_layout"
+        android:text="spannable_layout"
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onSpannable"/>
+
+    <Button
+        android:id="@+id/scroll_to_view"
+        android:text="scroll_to_view"
+        app:layout_constraintTop_toBottomOf="@+id/spannable_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onScrollClick"/>
+
+    <Button
+        android:id="@+id/set_layout_margin"
+        android:text="scroll_to_view"
+        app:layout_constraintTop_toBottomOf="@+id/scroll_to_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onLayoutMarginClick"/>
+
+    <Button
+        android:id="@+id/inner_class"
+        android:text="inner_class"
+        app:layout_constraintTop_toBottomOf="@+id/set_layout_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onInnerClassClick"/>
+
+    <Button
+        android:id="@+id/view_life"
+        android:text="view_life"
+        app:layout_constraintTop_toBottomOf="@+id/inner_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onViewLifeClick"/>
+
+</android.support.constraint.ConstraintLayout>

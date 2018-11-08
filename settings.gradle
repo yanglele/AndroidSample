@@ -1,0 +1,1 @@
+include ':app', ':irecyclerlib', ':eventbussource', ':processor', ':processor-lib'

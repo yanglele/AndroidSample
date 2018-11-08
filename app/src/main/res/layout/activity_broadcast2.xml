@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yangl.androidsample.broadcast.BroadcastActivity2">
+
+
+    <Button android:id="@+id/button"
+            android:text="跳转activity2"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:onClick="jumpActivity3"/>
+
+    <TextView
+        android:id="@+id/local_broadcast_show"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        android:text="Hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/broadcast_show"
+        app:layout_constraintTop_toBottomOf="@+id/local_broadcast_show"
+        android:text="我在onstart中注册,收本地广播，跳转到其他页面我收不到广播了"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</android.support.constraint.ConstraintLayout>

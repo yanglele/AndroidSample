@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yangl.androidsample.animation.propertyAnimation.ValueAnimatorActivity">
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:src="@drawable/home_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+
+    <ImageView
+        android:id="@+id/image_view1"
+        android:src="@drawable/home_img"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/tip_point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:visibility="gone"
+        android:src="@drawable/comm_hometab_bg_newmsg"/>
+
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/run_line"
+            android:text="直线"
+            style="@style/NormalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onLineRunClick"/>
+
+        <Button
+            android:id="@+id/run_line_dir"
+            android:text="斜线"
+            style="@style/NormalText"
+            android:layout_toRightOf="@+id/run_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onLineDirRunClick"/>
+        <Button
+            android:id="@+id/run_function"
+            android:text="抛物线"
+            style="@style/NormalText"
+            android:layout_toRightOf="@+id/run_line_dir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onLineFunctionRunClick"/>
+        <Button
+            android:id="@+id/run_bezier"
+            android:text="贝塞尔"
+            style="@style/NormalText"
+            android:layout_toRightOf="@+id/run_function"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onBezierClick"/>
+
+        <Button
+            android:id="@+id/run_group"
+            android:text="组合"
+            android:layout_below="@+id/run_line"
+            style="@style/NormalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onGroupClick"/>
+        <Button
+            android:id="@+id/jump"
+            android:text="jump"
+            android:layout_below="@+id/run_line"
+            style="@style/NormalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onJumpClick"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

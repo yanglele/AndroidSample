@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.yangl.androidsample.activity.ExceptionActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/on_save_instance_state"
+            style="@style/NormalText"
+            android:text="onSaveInstanceState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="addSaveInstanceFragment"/>
+
+        <FrameLayout
+            android:id="@+id/save_instance_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/jump"
+            android:text="jump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="jump"/>
+    </LinearLayout>
+
+</LinearLayout>

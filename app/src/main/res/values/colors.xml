@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="mDarkBlackColor">#000000</color>
+    <color name="mBlackColor">#333333</color>
+    <color name="mDarkGrayColor">#666666</color>
+    <color name="mMediumGrayColor">#999999</color>
+    <color name="mLightGrayColor">#cccccc</color>
+    <color name="mWhiteGrayColor">#dddddd</color>
+    <color name="mMidWhiteGreyColor">#ebebeb</color>
+    <color name="mLightWhiteGrayColor">#eeeeee</color>
+    <color name="mWhiteColor">#ffffff</color>
+    <color name="mPaleGreenColor">#EDFFE7</color>
+
+    <color name="mBrandGreenColor">#1AAD00</color>
+    <color name="mGreenColor">#3CB950</color>
+    <color name="mDarkGreenColor">#29A03C</color>
+    <color name="mTextGreenColor">#3CB950</color>
+    <color name="mTagGreenColor">#5EC86F</color>
+    <color name="mBgTagGreenColor">#EDFBEE</color>
+    <color name="mTagOrangeColor">#FFA626</color>
+    <color name="mTagBlueColor">#7BBDEB</color>
+    <color name="mBgTagOrangeColor">#FFF3E6</color>
+    <color name="mBgTagBlueColor">#ECF5FF</color>
+    <color name="mNewGreenColor">#1FC063</color>
+    <color name="mBlueColor">#8099AF</color>
+
+    <color name="mOrangeColor">#E54B00</color>
+    <color name="mDarkOrangeColor">#C34100</color>
+    <color name="mSaffronYellowColor">#FF8700</color>
+    <color name="mDarkRedColor">#9B1417</color>
+    <color name="mDarkBlueColor">#2D4496</color>
+    <!-- 背景色 -->
+    <color name="mBgPageColor">#F6F6F6</color>
+    <color name="mBgBarColor">#F6F6F6</color>
+    <color name="mBgContentColor">#FFFFFF</color>
+    <color name="mBgSelectColor">#EAEAEA</color>
+    <color name="mBgSystemInfoColor">#DBDADC</color>
+    <color name="mBgNotificationColor">#F3EBD9</color>
+    <color name="mBgInputColor">#EEEEEE</color>
+    <color name="mBgBlueColor">#FAFBFD</color>
+    <color name="mBgButtonColor">#F8F8F8</color>
+    <!-- 分割线 -->
+    <color name="mLineColor">#E6E6E6</color>
+    <color name="mLineNavColor">#CCCCCC</color>
+    <color name="mLineNotificationColor">#EADBB8</color>
+    <color name="mBtnText">#62AB00</color>
+    <color name="mTipsColor">#FFA400</color>
+
+    <!--透明度颜色,开发自定义  30%=4c ,50%=7f, 70%=b2,90%=19-->
+    <color name="m70GreenColor">#B23CB950</color>
+    <color name="mAlphaBgColor">#7c000000</color>
+    <color name="mAlphaWhiteColor">#B2FFFFFF</color>
+    <color name="m30DarkBlackColor">#4c000000</color>
+    <color name="m50DarkBlackColor">#7f000000</color>
+    <color name="mTag70OrangeColor">#19FFA626</color>
+
+    <!--未定义颜色-->
+    <color name="mBackgroundPageColor">#F6F6F6</color>
+    <color name="mLineCanClickable">#dddddd</color>
+    <color name="mLightGreenColor">#A2BF9A</color>
+    <color name="mDarkSaffronYellowColor">#D26F00</color>
+    <color name="mPageColor">#e5e5e5</color>
+    <color name="mBgTabColor">#F6F6F6</color>
+    <color name="mBgTagColor">#E7F1DB</color>
+    <color name="mHouseTypeBgColor">#F0F4F8</color>
+    <color name="mTransparency">#00000000</color>
+</resources>

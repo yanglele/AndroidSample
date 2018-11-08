@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.yangl.androidsample.activity.ShowUiSizeActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+        <Button
+            android:id="@+id/show_status_height"
+            style="@style/NormalText"
+            android:text="状态栏"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:onClick="onViewClicked"/>
+
+        <TextView
+            android:id="@+id/show_status_height_text"
+            style="@style/NormalText"
+            android:layout_marginTop="5000dp"
+            android:layout_alignParentBottom="true"
+            android:text="show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/translationY"
+        android:text="translationY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="translationYMove"/>
+
+    <Button
+        android:id="@+id/alpha"
+        android:text="alpha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="alphaChange"/>
+
+</LinearLayout>

@@ -1,0 +1,73 @@
+def supportVersion = "28.0.0"
+def retrofitVersion = "2.4.0"
+def okHttpVersion = "3.11.0"
+def stethoVersion = "1.5.0"
+def butterKnifeVersion = "9.0.0-rc1"
+def frescoVersion = "1.10.0"
+
+
+project.ext {
+
+    android = [
+            compileSdkVersion    : 28,
+            buildToolsVersion    : "28.0.2",
+            applicationId        : "com.example.yangl",
+            minSdkVersion        : 16,
+            targetSdkVersion     : 23,
+            chatCompileSdkVersion: 28,
+            chatBuildToolsVersion: "28.0.2"
+    ]
+
+    dependencies = [
+            //android-support
+            "support-v4"                   : "com.android.support:support-v4:${supportVersion}",
+            "appcompat-v7"                 : "com.android.support:appcompat-v7:${supportVersion}",
+            "design"                       : "com.android.support:design:${supportVersion}",
+            "recyclerview-v7"              : "com.android.support:recyclerview-v7:${supportVersion}",
+            "cardview-v7"                  : "com.android.support:cardview-v7:${supportVersion}",
+            "support-annotations"          : "com.android.support:support-annotations:${supportVersion}",
+            "constraint-layout"            : "com.android.support.constraint:constraint-layout:1.1.0-beta3",
+            "flexbox-layout"               : "com.google.android:flexbox:0.3.0",
+            "multidex"                     : "com.android.support:multidex:1.0.1",
+
+            //java8-support
+            "stream"                       : "com.annimon:stream:1.0.8",
+
+            //rx
+            "rxandroid"                    : "io.reactivex:rxandroid:1.2.1",
+
+            //retrofit
+            "retrofit"                     : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            "adapter-rxjava"               : "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
+
+            //butterKnife
+            "butterknife"                  : "com.jakewharton:butterknife:${butterKnifeVersion}",
+            "butterknife-compiler"         : "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+
+            //FaceBook-Stetho
+            "stetho"                       : "com.facebook.stetho:stetho:${stethoVersion}",
+            "stetho-okhttp3"               : "com.facebook.stetho:stetho-okhttp3:${stethoVersion}",
+
+            //FaceBook-Fresco
+            "fresco"                       : "com.facebook.fresco:fresco:${frescoVersion}",
+            "animated-gif"                 : "com.facebook.fresco:animated-gif:${frescoVersion}",
+            "animated-webp"                : "com.facebook.fresco:animated-webp:${frescoVersion}",
+            "webpsupport"                  : "com.facebook.fresco:webpsupport:${frescoVersion}",
+            "imagepipeline-okhttp3"        : "com.facebook.fresco:imagepipeline-okhttp3:${frescoVersion}",
+            "photodraweeview"              : "me.relex:photodraweeview:1.1.3",
+
+            //OKHttp3
+            "okhttp3"                      : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            "okhttp3-logging-interceptor"  : "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+
+            //others
+            "ormlite-android"              : "com.j256.ormlite:ormlite-android:5.0",
+            "fastjson"                     : "com.alibaba:fastjson:1.2.31",
+            "nineoldandroids"              : "com.nineoldandroids:library:2.4.0",
+            "eventbus"                     : "org.greenrobot:eventbus:3.0.0",
+            "eventbus-annotation-processor": "org.greenrobot:eventbus-annotation-processor:3.0.0",
+
+            //test
+                    "junit": "junit:junit:4.12",
+    ]
+}

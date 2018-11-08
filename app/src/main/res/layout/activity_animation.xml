@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.yangl.androidsample.activity.AnimationActivity">
+
+    <Button
+        android:id="@+id/object_animation"
+        style="@style/NormalText"
+        android:text="object_animator"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onObjectAnimationViewClicked"/>
+
+    <Button
+        android:id="@+id/value_animation"
+        style="@style/NormalText"
+        android:text="value_animator"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onValueAnimationViewClicked"/>
+    <Button
+        android:id="@+id/value_animation_listener"
+        style="@style/NormalText"
+        android:text="value_animator_listener"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onValueAnimationListenerClicked"/>
+
+    <Button
+        android:id="@+id/rotateAnimator"
+        android:text="测试动画旋转与view.gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onRotateClicked"/>
+</LinearLayout>

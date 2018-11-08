@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">EventBusSource</string>
+    <string name="title_activity_sticky">StickyActivity</string>
+</resources>

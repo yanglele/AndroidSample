@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.yangl.androidsample.activity.ShowUiSizeActivity">
+
+    <Button
+        android:id="@+id/show_zhihu_ad"
+        style="@style/NormalText"
+        android:text="知乎广告"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/recycler_view_simple"
+        style="@style/NormalText"
+        android:text="IRecycler简例"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/recycler_view_listener"
+        style="@style/NormalText"
+        android:text="IRecycler监听"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/recycler_linear_layout"
+        style="@style/NormalText"
+        android:text="recycler线性布局"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/recycler_grid_layout"
+        style="@style/NormalText"
+        android:text="recycler网格布局"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/recycler_staggered_layout"
+        style="@style/NormalText"
+        android:text="recycler瀑布流"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/recycler_random_staggered_layout"
+        style="@style/NormalText"
+        android:text="recycler随机瀑布流"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/recycler_anchor_layout"
+        style="@style/NormalText"
+        android:text="recycler锚点"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/back_padding"
+        android:text="back_padding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

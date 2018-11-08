@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ImageScaleTypeActivity">
+
+
+    <Button
+        android:id="@+id/center"
+        android:text="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="centerClick"/>
+
+    <Button
+        android:id="@+id/center_crop"
+        android:text="center_crop"
+        app:layout_constraintTop_toBottomOf="@+id/center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="centerCorpClick"/>
+
+    <Button
+        android:id="@+id/center_inside"
+        android:text="center_inside"
+        app:layout_constraintTop_toBottomOf="@+id/center_crop"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:onClick="centerInsideClick"/>
+
+
+    <Button
+        android:id="@+id/fit_center"
+        android:text="fit_center"
+        app:layout_constraintTop_toBottomOf="@+id/center_inside"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="fitCenterClick"/>
+
+    <Button
+        android:id="@+id/fit_xy"
+        android:text="fit_xy"
+        app:layout_constraintTop_toBottomOf="@+id/fit_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="fitxyClick"/>
+    <Button
+        android:id="@+id/change_fresco"
+        android:text="change_fresco"
+        app:layout_constraintTop_toBottomOf="@+id/fit_xy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="frescoClick"/>
+
+
+    <ImageView
+        android:id="@+id/image_view2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/mGreenColor"
+        android:src="@drawable/image"
+        app:layout_constraintStart_toEndOf="@+id/center_inside"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/image_view"
+        app:layout_constraintTop_toBottomOf="@+id/fit_xy"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@color/mGreenColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/home_img"/>
+
+    <TextView
+        android:id="@+id/image_text"
+        style="@style/NormalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="default,fit_center"
+        app:layout_constraintTop_toBottomOf="@id/image_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".someActivity.LayoutMarginParamActivity">
+
+    <Button
+        android:id="@+id/set_layout_param"
+        android:text="setLayoutParam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/set_margin_param"
+        android:layout_below="@+id/set_layout_param"
+        android:text="setMarginParam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onLayoutParamClick"/>
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_below="@+id/set_margin_param"
+        android:background="@color/mGreenColor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/tips"
+        android:text="我我我我我我我我"
+        style="@style/NormalText"
+        android:layout_alignBottom="@+id/text_view"
+        android:layout_marginBottom="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>
