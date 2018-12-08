@@ -1,6 +1,5 @@
 package com.example.yangl.androidsample;
 
-import android.app.AlarmManager;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -8,8 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import com.example.yangl.androidsample.R;
 
-import com.example.yangl.androidsample.uiTools.MRecyclerViewItemDecoration;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -54,13 +53,17 @@ public class MainActivity extends AppCompatActivity {
         String targetPath = this.getPackageName() + ".activity.";
 
         MainListActivityManager.getPackageActivities(this, targetPath);
+        recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         MRecyclerViewAdapter adapter = new MRecyclerViewAdapter(this, MainListActivityManager.getInstance());
 //        MRecyclerViewItemDecoration iDividerItemDecoration = new MRecyclerViewItemDecoration(this);
 //        recyclerView.addItemDecoration(iDividerItemDecoration);
         recyclerView.setAdapter(adapter);
+        recyclerView.scrollToPosition(1);
+        recyclerView.smoothScrollToPosition(0);
+        LinearLayoutManager linearLayoutManager;
+        linearLayoutManager.scrollToPositionWithOffset(0,0);
 
-        getSupportFragmentManager().beginTransaction().commit();
     }
 
     @Override

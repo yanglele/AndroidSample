@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         applicationId "com.example.yangl.androidsample"
         minSdkVersion 15
-        targetSdkVersion 28
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -30,6 +30,11 @@ dependencies {
     implementation project(path: ':irecyclerlib')
 
     implementation rootProject.ext.dependencies["butterknife"]
+    implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation rootProject.ext.dependencies["design"]
+
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+
     implementation rootProject.ext.dependencies["eventbus"]
     implementation rootProject.ext.dependencies["okhttp3"]
     implementation rootProject.ext.dependencies["okhttp3-logging-interceptor"]
@@ -42,7 +47,16 @@ dependencies {
     implementation rootProject.ext.dependencies["webpsupport"]
     implementation rootProject.ext.dependencies["imagepipeline-okhttp3"]
     implementation rootProject.ext.dependencies["photodraweeview"]
+    implementation rootProject.ext.dependencies["recyclerview-v7"]
 
     annotationProcessor rootProject.ext.dependencies["eventbus-annotation-processor"]
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
+    // Optional, if you use support library fragments:
+    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.2'
+    implementation 'com.squareup.haha:haha:2.0.4'
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 
 }

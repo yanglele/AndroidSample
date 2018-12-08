@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
 
@@ -22,19 +22,19 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile rootProject.ext.dependencies["support-v4"]
-    compile rootProject.ext.dependencies["recyclerview-v7"]
-    compile rootProject.ext.dependencies["fastjson"]
-    compile rootProject.ext.dependencies["fresco"]
-    compile rootProject.ext.dependencies["butterknife"]
-    compile rootProject.ext.dependencies["ormlite-android"]
-    compile rootProject.ext.dependencies["constraint-layout"]
-    compile rootProject.ext.dependencies["design"]
-    compile rootProject.ext.dependencies["cardview-v7"]
-    compile rootProject.ext.dependencies["appcompat-v7"]
+    implementation rootProject.ext.dependencies["support-v4"]
+    implementation rootProject.ext.dependencies["recyclerview-v7"]
+    implementation rootProject.ext.dependencies["fastjson"]
+    implementation rootProject.ext.dependencies["fresco"]
+    implementation rootProject.ext.dependencies["butterknife"]
+    implementation rootProject.ext.dependencies["ormlite-android"]
+    implementation rootProject.ext.dependencies["constraint-layout"]
+    implementation rootProject.ext.dependencies["design"]
+    implementation rootProject.ext.dependencies["cardview-v7"]
+    implementation rootProject.ext.dependencies["appcompat-v7"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
 }

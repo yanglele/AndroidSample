@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Subscribe(threadMode = ThreadMode.BACKGROUND)
+    @Subscribe(threadMode = ThreadMode.BACKGROUND ,sticky = true)
     public void setTextNameView4(Info info) throws InterruptedException {
         Thread.sleep(500);
         Log.d("444", "setTextNameView4: "+info.getInfo());

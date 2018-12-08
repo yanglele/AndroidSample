@@ -8,6 +8,7 @@ import android.os.StatFs;
 
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by baron on 15/1/9.
@@ -145,5 +146,14 @@ public class StorageUtil {
             return availableBlocks * blockSize / 1024;
         }
         return 0;
+    }
+
+    public static File createFile(String filename)
+            throws IOException {
+        File myFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), filename);
+        if (!myFile.exists()) {
+            myFile.createNewFile();
+        }
+        return myFile;
     }
 }

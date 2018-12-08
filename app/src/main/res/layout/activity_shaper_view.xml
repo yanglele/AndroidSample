@@ -8,14 +8,13 @@
     android:orientation="horizontal"
     tools:context=".activity.ShaperViewActivity">
 
-    <com.example.yangl.androidsample.imageCorp.shaper.ShaderView
-        android:layout_width="wrap_content"
-        android:layout_height="140dp"/>
+    <!--<com.example.yangl.androidsample.imageCorp.shaper.ShaderView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="140dp"/>-->
 
     <com.example.yangl.androidsample.imageCorp.shaper.ShaderView
         android:layout_width="wrap_content"
-        app:left_shape = "false"
-        android:layout_marginLeft="-27dp"
+        app:left_shape = "true"
         android:layout_height="140dp"/>
 
     <!--<ImageView-->

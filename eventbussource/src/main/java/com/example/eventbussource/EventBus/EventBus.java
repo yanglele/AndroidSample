@@ -53,10 +53,10 @@ public class EventBus {
     //key:订阅事件的class对象,value:订阅这个事件的所有订阅者集合
     private final Map<Class<?>, CopyOnWriteArrayList<Subscription>> subscriptionsByEventType;
 
-    //key:订阅者对象,value:这个订阅者订阅的事件class集合，unregister使用
+    //key:订阅者对象,value:这个订阅者订阅的事件class集合，unregister使用  subscriber, subscribedEvents
     private final Map<Object, List<Class<?>>> typesBySubscriber;
 
-    //粘性事件 key:粘性事件的class对象, value:事件对象
+    //粘性事件 key:粘性事件的class对象, value:事件对象  event.getClass(), event
     private final Map<Class<?>, Object> stickyEvents;
 
     private final ThreadLocal<PostingThreadState> currentPostingThreadState = new ThreadLocal<PostingThreadState>() {
@@ -155,6 +155,7 @@ public class EventBus {
         Class<?> eventType = subscriberMethod.eventType;
         Subscription newSubscription = new Subscription(subscriber, subscriberMethod);
         CopyOnWriteArrayList<Subscription> subscriptions = subscriptionsByEventType.get(eventType);
+        //不存在则新建
         if (subscriptions == null) {
             subscriptions = new CopyOnWriteArrayList<>();
             subscriptionsByEventType.put(eventType, subscriptions);
@@ -165,6 +166,7 @@ public class EventBus {
             }
         }
 
+        //存在则根据优先级加入
         int size = subscriptions.size();
         for (int i = 0; i <= size; i++) {
             if (i == size || subscriberMethod.priority > subscriptions.get(i).subscriberMethod.priority) {
@@ -431,7 +433,14 @@ public class EventBus {
         return false;
     }
 
+    /**
+     *
+     * @param subscription 订阅者
+     * @param event 事件
+     * @param isMainThread 是否在主线程发布
+     */
     private void postToSubscription(Subscription subscription, Object event, boolean isMainThread) {
+        //订阅消息的线程
         switch (subscription.subscriberMethod.threadMode) {
             case POSTING:
                 invokeSubscriber(subscription, event);

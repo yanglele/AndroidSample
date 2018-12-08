@@ -51,11 +51,11 @@ public class GridRecyclerViewActivity extends AppCompatActivity {
 
         gridRecyclerView.setLayoutManager(new GridLayoutManager(this,4));
 //        @Px int verticalDividerWidth = (UISizeUtils.getScreenWidth(this) - UISizeUtils.dip2px(this,60*4))/3;
-        DividerGridLayout dividerGridLayout = new DividerGridLayout(3,5,5);
-        gridRecyclerView.addItemDecoration(dividerGridLayout);
+//        DividerGridLayout dividerGridLayout = new DividerGridLayout(3,5,5);
+//        gridRecyclerView.addItemDecoration(dividerGridLayout);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this,list);
-//        GridItemDecoration gridItemDecoration = new GridItemDecoration(4,24,false);
-//        gridRecyclerView.addItemDecoration(gridItemDecoration);
+        GridItemDecoration gridItemDecoration = new GridItemDecoration(4,24,false);
+        gridRecyclerView.addItemDecoration(gridItemDecoration);
         gridRecyclerView.setAdapter(adapter);
     }
 }

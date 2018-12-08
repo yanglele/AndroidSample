@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
 
 
     defaultConfig {
         applicationId "com.example.eventbussource"
         minSdkVersion 15
-        targetSdkVersion 27
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
 
@@ -31,14 +31,21 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:27.1.1'
-    compile 'com.android.support.constraint:constraint-layout:1.1.2'
-    compile rootProject.ext.dependencies["support-v4"]
-    compile 'com.android.support:design:27.1.1'
-    testCompile 'junit:junit:4.12'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.ext.dependencies["support-v4"]
+    implementation rootProject.ext.dependencies["recyclerview-v7"]
+    implementation rootProject.ext.dependencies["fastjson"]
+    implementation rootProject.ext.dependencies["fresco"]
+    implementation rootProject.ext.dependencies["butterknife"]
+    implementation rootProject.ext.dependencies["ormlite-android"]
+    implementation rootProject.ext.dependencies["constraint-layout"]
+    implementation rootProject.ext.dependencies["design"]
+    implementation rootProject.ext.dependencies["cardview-v7"]
+    implementation rootProject.ext.dependencies["appcompat-v7"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    testImplementation 'junit:junit:4.12'
 
-    androidTestCompile('com.android.support.test.espresso:espresso-core:3.0.2', {
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.1.1'

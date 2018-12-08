@@ -105,7 +105,7 @@ public class ShaderView extends AppCompatImageView {
             path.lineTo(0, viewHeight);
             path.lineTo(0,0);
             canvas.drawPath(path,paint);
-            drawMaskLayer(canvas,path);
+//            drawMaskLayer(canvas,path);
         }else {
             path.moveTo(UISizeUtils.dip2px(getContext(),longerLineExtra),0);
             path.lineTo(viewWeight,0);

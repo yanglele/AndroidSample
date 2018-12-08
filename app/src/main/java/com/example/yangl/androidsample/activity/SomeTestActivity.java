@@ -15,7 +15,7 @@ import com.example.yangl.androidsample.someActivity.SpannableActivity;
 import com.example.yangl.androidsample.someActivity.TaskHeapAllowParentActivity1;
 import com.example.yangl.androidsample.someActivity.ViewLifeCycleActivity;
 import com.example.yangl.androidsample.testActivity.ConfigChangeActivity;
-import com.j256.ormlite.stmt.query.In;
+
 
 public class SomeTestActivity extends AppCompatActivity {
 
