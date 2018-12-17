@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.yangl.androidsample">
+    package="com.example.yangl.androidsample">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MyApplication"
@@ -17,201 +17,125 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <!-- 适配三星S8 将手机的最大纵横比扩大到2.4来适配全面屏 -->
         <meta-data
             android:name="android.max_aspect"
-            android:value="2.4"/>
+            android:value="2.4" />
 
         <service
             android:name=".service.MusicService"
-            android:label="@string/app_name"/>
-        <service android:name=".service.MyIntentService"/>
+            android:label="@string/app_name" />
+        <service android:name=".service.MyIntentService" />
 
-        <activity android:name=".activity.ShowUiSizeActivity">
-        </activity>
-        <activity android:name=".activity.ShowBottomSheetActivity">
-        </activity>
-        <activity android:name=".activity.ShowMyUIActivity">
-        </activity>
-        <activity android:name=".zhihuAd.ZhiHuAdActivity"/>
-        <activity android:name=".IRecyclerViewSample.irecyclerCoordinatory.IRecyclerViewWithListenerActivity">
-        </activity>
-        <activity android:name=".IRecyclerViewSample.irecyclerSimple.IrecyclerViewSimpleActivity">
-        </activity>
-        <activity android:name=".activity.AnimationActivity">
-        </activity>
-        <activity android:name=".animation.propertyAnimation.ObjectAnimatorActivity">
-        </activity>
-        <activity android:name=".animation.propertyAnimation.ValueAnimatorActivity">
-        </activity>
-        <activity android:name=".animation.propertyAnimation.ValueAnimListenerActivity">
-        </activity>
-        <activity android:name=".scrollView.ScrollViewNoScrollActivity">
-        </activity>
-        <activity android:name=".GestureDector.GestureDectorActivity">
-        </activity>
-        <activity android:name=".activity.GestureActivity">
-        </activity>
-        <activity android:name=".recyclerView.LinearRecyclerViewActivity">
-        </activity>
-        <activity android:name=".recyclerView.GridRecyclerViewActivity">
-        </activity>
-        <activity android:name=".recyclerView.StaggeredRecyclerViewActivity">
-        </activity>
-        <activity android:name=".recyclerView.RandomStaggeredRecyclerActivity">
-        </activity>
-        <activity android:name=".activity.ConstraintLayoutActivity">
-        </activity>
-        <activity android:name=".activity.VolumeListenerActivity">
-        </activity>
-        <activity android:name=".activity.NetStatusActivity">
-        </activity>
-        <activity android:name=".activity.Point9Activity">
-        </activity>
-        <activity android:name=".activity.ShadowActivity">
-        </activity>
-        <activity android:name=".activity.ViewStubActivity">
-        </activity>
-        <activity android:name=".recyclerView.AnchorRecyclerViewActivity">
-        </activity>
-        <activity android:name=".activity.UTF8LengthActivity">
-        </activity>
-        <activity android:name=".activity.TestDumplicationResActivity">
-        </activity>
-        <activity android:name=".activity.AlterDialogActivity">
-        </activity>
-        <activity android:name=".activity.SystemInfoActivity">
-        </activity>
-        <activity android:name=".activity.ExceptionActivity">
-        </activity>
-        <activity android:name=".activity.SomeTestActivity">
-        </activity>
-        <activity android:name=".testActivity.ConfigChangeActivity">
-        </activity>
-        <activity android:name=".animation.propertyAnimation.RotateTestActivity">
-        </activity>
-        <activity android:name=".activity.ServiceActivity">
-        </activity>
-        <activity android:name=".service.MusicServiceActivity">
-        </activity>
-        <activity android:name=".service.IntentServiceActivity">
-        </activity>
-        <activity android:name=".activity.ViewPagerActivity">
-        </activity>
-        <activity android:name=".activity.NavigationBarActivity">
-        </activity>
-        <activity android:name=".constraint.SimpleConstraintActivity">
-        </activity>
-        <activity android:name=".constraint.ConstraintLayoutGoneActivity">
-        </activity>
-        <activity android:name=".activity.RelativeLayoutTestActivity">
-        </activity>
-        <activity android:name=".constraint.SimpleConstraintActivity1">
-        </activity>
-        <activity android:name=".constraint.ChainConstraintActivity">
-        </activity>
-        <activity android:name=".activity.IncludeActivity">
-        </activity>
+        <activity android:name=".activity.ShowUiSizeActivity"></activity>
+        <activity android:name=".activity.ShowBottomSheetActivity"></activity>
+        <activity android:name=".activity.ShowMyUIActivity"></activity>
+        <activity android:name=".zhihuAd.ZhiHuAdActivity" />
+        <activity android:name=".IRecyclerViewSample.irecyclerCoordinatory.IRecyclerViewWithListenerActivity"></activity>
+        <activity android:name=".IRecyclerViewSample.irecyclerSimple.IrecyclerViewSimpleActivity"></activity>
+        <activity android:name=".activity.AnimationActivity"></activity>
+        <activity android:name=".animation.propertyAnimation.ObjectAnimatorActivity"></activity>
+        <activity android:name=".animation.propertyAnimation.ValueAnimatorActivity"></activity>
+        <activity android:name=".animation.propertyAnimation.ValueAnimListenerActivity"></activity>
+        <activity android:name=".scrollView.ScrollViewNoScrollActivity"></activity>
+        <activity android:name=".GestureDector.GestureDectorActivity"></activity>
+        <activity android:name=".activity.GestureActivity"></activity>
+        <activity android:name=".recyclerView.LinearRecyclerViewActivity"></activity>
+        <activity android:name=".recyclerView.GridRecyclerViewActivity"></activity>
+        <activity android:name=".recyclerView.StaggeredRecyclerViewActivity"></activity>
+        <activity android:name=".recyclerView.RandomStaggeredRecyclerActivity"></activity>
+        <activity android:name=".activity.ConstraintLayoutActivity"></activity>
+        <activity android:name=".activity.VolumeListenerActivity"></activity>
+        <activity android:name=".activity.NetStatusActivity"></activity>
+        <activity android:name=".activity.Point9Activity"></activity>
+        <activity android:name=".activity.ShadowActivity"></activity>
+        <activity android:name=".activity.ViewStubActivity"></activity>
+        <activity android:name=".recyclerView.AnchorRecyclerViewActivity"></activity>
+        <activity android:name=".activity.UTF8LengthActivity"></activity>
+        <activity android:name=".activity.TestDumplicationResActivity"></activity>
+        <activity android:name=".activity.AlterDialogActivity"></activity>
+        <activity android:name=".activity.SystemInfoActivity"></activity>
+        <activity android:name=".activity.ExceptionActivity"></activity>
+        <activity android:name=".activity.SomeTestActivity"></activity>
+        <activity android:name=".testActivity.ConfigChangeActivity"></activity>
+        <activity android:name=".animation.propertyAnimation.RotateTestActivity"></activity>
+        <activity android:name=".activity.ServiceActivity"></activity>
+        <activity android:name=".service.MusicServiceActivity"></activity>
+        <activity android:name=".service.IntentServiceActivity"></activity>
+        <activity android:name=".activity.ViewPagerActivity"></activity>
+        <activity android:name=".activity.NavigationBarActivity"></activity>
+        <activity android:name=".constraint.SimpleConstraintActivity"></activity>
+        <activity android:name=".constraint.ConstraintLayoutGoneActivity"></activity>
+        <activity android:name=".activity.RelativeLayoutTestActivity"></activity>
+        <activity android:name=".constraint.SimpleConstraintActivity1"></activity>
+        <activity android:name=".constraint.ChainConstraintActivity"></activity>
+        <activity android:name=".activity.IncludeActivity"></activity>
         <activity
             android:name=".activity.TestSingleTaskActivity"
-            android:taskAffinity="com.example.yangl.androidsample.lauchMode.testsingletaskaactivity">
-        </activity>
+            android:taskAffinity="com.example.yangl.androidsample.lauchMode.testsingletaskaactivity"></activity>
         <activity
             android:name=".lauchMode.SingleTaskActivity"
-            android:taskAffinity="com.example.yangl.androidsample.lauchMode.singletaskactivity">
-        </activity>
-        <activity android:name=".lauchMode.EmptyActivity">
-        </activity>
-        <activity android:name=".activity.LayoutParamActivity">
-        </activity>
+            android:taskAffinity="com.example.yangl.androidsample.lauchMode.singletaskactivity"></activity>
+        <activity android:name=".lauchMode.EmptyActivity"></activity>
+        <activity android:name=".activity.LayoutParamActivity"></activity>
         <activity
             android:name=".someActivity.ScreenOrientationTestActivity"
-            android:configChanges="orientation|screenSize">
-        </activity>
+            android:configChanges="orientation|screenSize"></activity>
         <activity
             android:name=".someActivity.TaskHeapAllowParentActivity1"
-            android:taskAffinity="com.yl.allow.parent.task1">
-        </activity>
+            android:taskAffinity="com.yl.allow.parent.task1"></activity>
         <activity
             android:name=".someActivity.TaskHeapAllowParentActivity2"
             android:launchMode="singleInstance"
-            android:taskAffinity="com.yl.allow.parent.task2">
-        </activity>
+            android:taskAffinity="com.yl.allow.parent.task2"></activity>
         <activity android:name=".someActivity.ActionMatchActivity">
             <intent-filter>
-                <action android:name="com.yl.actionmatch.action1"/>
+                <action android:name="com.yl.actionmatch.action1" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".broadcast.BroadcastActivity1">
-        </activity>
-        <activity android:name=".broadcast.BroadcastActivity2">
-        </activity>
-        <activity android:name=".broadcast.BroadcastActivity3">
-        </activity>
-        <activity android:name=".activity.BroadcastActivity">
-        </activity>
-        <activity android:name=".someActivity.SpannableActivity">
-        </activity>
-        <activity android:name=".someActivity.ScrollToActivity">
-        </activity>
-        <activity android:name=".activity.ViewPager2">
-        </activity>
-        <activity android:name=".activity.ClickEventActivity">
-        </activity>
-        <activity android:name=".someActivity.ClickEventTestActivity">
-        </activity>
-        <activity android:name=".activity.ImageScaleTypeActivity">
-        </activity>
-        <activity android:name=".activity.HandlerActivity">
-        </activity>
+        <activity android:name=".broadcast.BroadcastActivity1"></activity>
+        <activity android:name=".broadcast.BroadcastActivity2"></activity>
+        <activity android:name=".broadcast.BroadcastActivity3"></activity>
+        <activity android:name=".activity.BroadcastActivity"></activity>
+        <activity android:name=".someActivity.SpannableActivity"></activity>
+        <activity android:name=".someActivity.ScrollToActivity"></activity>
+        <activity android:name=".activity.ViewPager2"></activity>
+        <activity android:name=".activity.ClickEventActivity"></activity>
+        <activity android:name=".someActivity.ClickEventTestActivity"></activity>
+        <activity android:name=".activity.ImageScaleTypeActivity"></activity>
+        <activity android:name=".activity.HandlerActivity"></activity>
         <activity
             android:name=".activity.OnConfigChangeActivity"
-            android:configChanges="orientation|screenSize">
-        </activity>
-        <activity android:name=".someActivity.LayoutMarginParamActivity">
-        </activity>
-        <activity android:name=".activity.FragmentLiftActivity">
-        </activity>
-        <activity android:name=".activity.EventBusTestActivity">
-        </activity>
-        <activity android:name=".someActivity.TestEventBusActivity">
-        </activity>
-        <activity android:name=".activity.FrescoTestActivity">
-        </activity>
-        <activity android:name=".someActivity.BackGroundActivity">
-        </activity>
-        <activity android:name=".activity.RXJavaActivity">
-        </activity>
-        <activity android:name=".someActivity.InnerClassActivity">
-        </activity>
-        <activity android:name=".activity.HandlerTestActivity">
-        </activity>
+            android:configChanges="orientation|screenSize"></activity>
+        <activity android:name=".someActivity.LayoutMarginParamActivity"></activity>
+        <activity android:name=".activity.FragmentLiftActivity"></activity>
+        <activity android:name=".activity.EventBusTestActivity"></activity>
+        <activity android:name=".someActivity.TestEventBusActivity"></activity>
+        <activity android:name=".activity.FrescoTestActivity"></activity>
+        <activity android:name=".someActivity.BackGroundActivity"></activity>
+        <activity android:name=".activity.RXJavaActivity"></activity>
+        <activity android:name=".someActivity.InnerClassActivity"></activity>
+        <activity android:name=".activity.HandlerTestActivity"></activity>
         <activity
             android:name=".someActivity.ViewLifeCycleActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="sensor">
-        </activity>
-        <activity android:name=".someActivity.FrescoImageTypeActivity">
-        </activity>
-        <activity android:name=".activity.ImageCorpActivity">
-        </activity>
-        <activity android:name=".imageCorp.imagefactory.ImageFactoryActivity"/>
-        <activity android:name=".activity.ShaperViewActivity">
-        </activity>
-        <activity android:name=".someActivity.EventBusSubActivity">
-        </activity>
-        <activity android:name=".activity.HahaTestActivity">
-        </activity>
-        <activity android:name=".testActivity.ObjectLeakActivity">
-        </activity>
+            android:screenOrientation="sensor"></activity>
+        <activity android:name=".someActivity.FrescoImageTypeActivity"></activity>
+        <activity android:name=".activity.ImageCorpActivity"></activity>
+        <activity android:name=".imageCorp.imagefactory.ImageFactoryActivity" />
+        <activity android:name=".activity.ShaperViewActivity"></activity>
+        <activity android:name=".someActivity.EventBusSubActivity"></activity>
+        <activity android:name=".activity.HahaTestActivity"></activity>
+        <activity android:name=".testActivity.ObjectLeakActivity"></activity>
+        <activity android:name=".activity.TouchEventActivity"></activity>
     </application>
 
 </manifest>
