@@ -61,8 +61,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.scrollToPosition(1);
         recyclerView.smoothScrollToPosition(0);
-        LinearLayoutManager linearLayoutManager;
-        linearLayoutManager.scrollToPositionWithOffset(0,0);
 
     }
 

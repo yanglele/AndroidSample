@@ -18,5 +18,6 @@ public class ObjectLeakActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_object_leak);
         list.add(this);
+
     }
 }
