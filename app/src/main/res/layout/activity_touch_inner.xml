@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.yangl.androidsample.view.innerIntercept.InterceptViewGroup
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/inner_layout"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.innerIntercept.TouchInnerActivity">
+
+    <com.example.yangl.androidsample.view.innerIntercept.InterceptView
+        android:id="@+id/inner_view"
+        android:text="inner"
+        style="@style/NormalText"
+        android:background="@color/mGreenColor"
+        android:padding="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</com.example.yangl.androidsample.view.innerIntercept.InterceptViewGroup>

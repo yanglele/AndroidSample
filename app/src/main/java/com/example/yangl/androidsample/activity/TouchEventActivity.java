@@ -1,67 +1,47 @@
 package com.example.yangl.androidsample.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.example.yangl.androidsample.R;
-import com.example.yangl.androidsample.view.outsideIntercect.InterceptViewGroup;
+import com.example.yangl.androidsample.view.innerIntercept.TouchInnerActivity;
+import com.example.yangl.androidsample.view.outsideIntercect.TouchOutActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class TouchEventActivity extends AppCompatActivity {
 
-    @BindView(R.id.view)
-    TextView view;
+
+    @BindView(R.id.touch_outside)
+    Button touchOutside;
+    @BindView(R.id.touch_innerside)
+    Button touchInnerside;
     @BindView(R.id.view_group)
-    InterceptViewGroup viewGroup;
+    LinearLayout viewGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_touch_event);
         ButterKnife.bind(this);
-        viewGroupGet();
 
     }
 
-    private void viewGroupGet(){
-        view.getParent().requestDisallowInterceptTouchEvent(true);
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(TouchEventActivity.this,"view  get touch!",Toast.LENGTH_SHORT).show();
-            }
-        });
-        viewGroup.setCanIntercept(true);
-        viewGroup.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                Toast.makeText(TouchEventActivity.this,"viewGroup  get touch!",Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
-    }
-
-    private void touchSource() {
-        view.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                return false;
-            }
-        });
-
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        view.getParent().requestDisallowInterceptTouchEvent(true);
+    @OnClick({R.id.touch_outside, R.id.touch_innerside})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.touch_outside:
+                startActivity(new Intent(TouchEventActivity.this, TouchOutActivity.class));
+                break;
+            case R.id.touch_innerside:
+                startActivity(new Intent(TouchEventActivity.this, TouchInnerActivity.class));
+                break;
+        }
     }
 }

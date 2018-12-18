@@ -1,10 +1,9 @@
-package com.example.yangl.androidsample.view.outsideIntercect;
+package com.example.yangl.androidsample.view.innerIntercept;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 /**
@@ -33,19 +32,10 @@ public class InterceptViewGroup extends LinearLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        switch (ev.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                return false;
-            case MotionEvent.ACTION_MOVE:
-                if (canIntercept) {
-                    return true;
-                } else {
-                    return false;
-                }
-            case MotionEvent.ACTION_UP:
-                return false;
-            default:
-                return false;
+        if(ev.getAction() == MotionEvent.ACTION_DOWN){
+            return false;
+        }else {
+            return super.onInterceptTouchEvent(ev);
         }
     }
 
@@ -59,7 +49,4 @@ public class InterceptViewGroup extends LinearLayout {
         return super.dispatchTouchEvent(ev);
     }
 
-    public void setCanIntercept(boolean canIntercept) {
-        this.canIntercept = canIntercept;
-    }
 }
