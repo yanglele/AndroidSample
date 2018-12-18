@@ -29,18 +29,25 @@ public class TouchOutActivity extends AppCompatActivity {
     }
 
     private void viewGroupGet() {
-        view.setOnClickListener(new View.OnClickListener() {
+//        view.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(TouchOutActivity.this, "view  get touch!", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        viewGroup.setCanIntercept(true);
+//        viewGroup.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                Toast.makeText(TouchOutActivity.this, "viewGroup  get touch!", Toast.LENGTH_SHORT).show();
+//                return true;
+//            }
+//        });
+        viewGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(TouchOutActivity.this, "view  get touch!", Toast.LENGTH_SHORT).show();
-            }
-        });
-        viewGroup.setCanIntercept(true);
-        viewGroup.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                Toast.makeText(TouchOutActivity.this, "viewGroup  get touch!", Toast.LENGTH_SHORT).show();
-                return true;
+               Toast.makeText(TouchOutActivity.this, "viewGroup  get click!", Toast.LENGTH_SHORT).show();
+
             }
         });
     }

@@ -24,9 +24,9 @@ android {
         }
     }
 
-    buildTypes{
-        debug{}
-        release{}
+    buildTypes {
+        debug {}
+        release {}
     }
 }
 
