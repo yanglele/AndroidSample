@@ -114,6 +114,11 @@ public class ViewPagerActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
     protected void onDestroy() {
         unbinder.unbind();
         super.onDestroy();
