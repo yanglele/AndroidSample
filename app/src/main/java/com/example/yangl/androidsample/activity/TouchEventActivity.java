@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.example.yangl.androidsample.R;
+import com.example.yangl.androidsample.view.simple.SimpleTouchActivity;
 import com.example.yangl.androidsample.view.innerIntercept.TouchInnerActivity;
 import com.example.yangl.androidsample.view.outsideIntercect.TouchOutActivity;
 
@@ -24,6 +25,8 @@ public class TouchEventActivity extends AppCompatActivity {
     Button touchInnerside;
     @BindView(R.id.view_group)
     LinearLayout viewGroup;
+    @BindView(R.id.simple)
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +36,7 @@ public class TouchEventActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.touch_outside, R.id.touch_innerside})
+    @OnClick({R.id.touch_outside, R.id.touch_innerside,R.id.simple})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.touch_outside:
@@ -42,6 +45,8 @@ public class TouchEventActivity extends AppCompatActivity {
             case R.id.touch_innerside:
                 startActivity(new Intent(TouchEventActivity.this, TouchInnerActivity.class));
                 break;
+            case R.id.simple:
+                startActivity(new Intent(TouchEventActivity.this,SimpleTouchActivity.class));
         }
     }
 }

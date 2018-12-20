@@ -137,7 +137,8 @@
         <activity android:name=".testActivity.ObjectLeakActivity" />
         <activity android:name=".activity.TouchEventActivity" />
         <activity android:name=".view.outsideIntercect.TouchOutActivity" />
-        <activity android:name=".view.innerIntercept.TouchInnerActivity"></activity>
+        <activity android:name=".view.innerIntercept.TouchInnerActivity" />
+        <activity android:name=".view.simple.SimpleTouchActivity"></activity>
     </application>
 
 </manifest>
