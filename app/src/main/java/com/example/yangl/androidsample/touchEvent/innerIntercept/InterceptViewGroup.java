@@ -1,8 +1,9 @@
-package com.example.yangl.androidsample.view.innerIntercept;
+package com.example.yangl.androidsample.touchEvent.innerIntercept;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
@@ -15,7 +16,7 @@ import android.widget.LinearLayout;
  * update:
  */
 public class InterceptViewGroup extends LinearLayout {
-
+    private final String TAG = "InterceptViewGroup";
     private boolean canIntercept;
 
     public InterceptViewGroup(Context context) {
@@ -35,17 +36,43 @@ public class InterceptViewGroup extends LinearLayout {
         if(ev.getAction() == MotionEvent.ACTION_DOWN){
             return false;
         }else {
-            return super.onInterceptTouchEvent(ev);
+            return true;
         }
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                Log.d(TAG, "onTouchEvent: down");
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d(TAG, "onTouchEvent: move");
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.d(TAG, "onTouchEvent: up  ");
+                break;
+            default:
+                break;
+        }
         return super.onTouchEvent(event);
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                Log.d(TAG, "onTouchEvent: down");
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d(TAG, "onTouchEvent: move");
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.d(TAG, "onTouchEvent: up  ");
+                break;
+            default:
+                break;
+        }
         return super.dispatchTouchEvent(ev);
     }
 

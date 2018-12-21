@@ -1,10 +1,9 @@
-package com.example.yangl.androidsample.view.simple;
+package com.example.yangl.androidsample.touchEvent.simple;
 
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +17,7 @@ public class SimpleTouchActivity extends AppCompatActivity {
     @BindView(R.id.text_view)
     TextView textView;
     @BindView(R.id.layout)
-    ConstraintLayout layout;
+    ScrollView layout;
     @BindView(R.id.simple_test)
     SimpleTextView simpleTest;
 
@@ -35,13 +34,13 @@ public class SimpleTouchActivity extends AppCompatActivity {
 //            }
 //        });
 
-        layout.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                Toast.makeText(SimpleTouchActivity.this, "viewGroup get touch!", Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
+//        layout.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                Toast.makeText(SimpleTouchActivity.this, "viewGroup get touch!", Toast.LENGTH_SHORT).show();
+//                return true;
+//            }
+//        });
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,8 +50,7 @@ public class SimpleTouchActivity extends AppCompatActivity {
             }
         });
 
-
-
+        simpleTest.setClickable(true);
 
     }
 }

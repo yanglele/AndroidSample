@@ -136,9 +136,10 @@
         <activity android:name=".activity.HahaTestActivity" />
         <activity android:name=".testActivity.ObjectLeakActivity" />
         <activity android:name=".activity.TouchEventActivity" />
-        <activity android:name=".view.outsideIntercect.TouchOutActivity" />
-        <activity android:name=".view.innerIntercept.TouchInnerActivity" />
-        <activity android:name=".view.simple.SimpleTouchActivity"></activity>
+        <activity android:name=".touchEvent.outsideIntercect.TouchOutActivity" />
+        <activity android:name=".touchEvent.innerIntercept.TouchInnerActivity" />
+        <activity android:name=".touchEvent.simple.SimpleTouchActivity" />
+        <activity android:name=".touchEvent.OuterDemoActivity_1" />
     </application>
 
 </manifest>

@@ -1,7 +1,8 @@
-package com.example.yangl.androidsample.view.innerIntercept;
+package com.example.yangl.androidsample.touchEvent.innerIntercept;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 
 /**
@@ -13,7 +14,7 @@ import android.view.MotionEvent;
  * update:
  */
 public class InterceptView extends android.support.v7.widget.AppCompatTextView {
-
+    private final String TAG = "InterceptView";
     private boolean needEvent;
 
     public InterceptView(Context context) {
@@ -45,6 +46,10 @@ public class InterceptView extends android.support.v7.widget.AppCompatTextView {
                 }
                 break;
             case MotionEvent.ACTION_UP:
+                if (needEvent) {
+                    getParent().requestDisallowInterceptTouchEvent(false);
+                }
+                Log.d(TAG, "dispatchTouchEvent: up");
                 break;
             default:
                 break;

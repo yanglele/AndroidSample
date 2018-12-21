@@ -1,10 +1,10 @@
-package com.example.yangl.androidsample.view.outsideIntercect;
+package com.example.yangl.androidsample.touchEvent.outsideIntercect;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 /**
@@ -16,6 +16,8 @@ import android.widget.LinearLayout;
  * update:
  */
 public class InterceptViewGroup extends LinearLayout {
+
+    private String TAG = "InterceptViewGroup";
 
     private boolean canIntercept;
 
@@ -35,14 +37,17 @@ public class InterceptViewGroup extends LinearLayout {
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                Log.d(TAG, "onInterceptTouchEvent: down");
                 return false;
             case MotionEvent.ACTION_MOVE:
+                Log.d(TAG, "onInterceptTouchEvent: move");
                 if (canIntercept) {
                     return true;
                 } else {
                     return false;
                 }
             case MotionEvent.ACTION_UP:
+                Log.d(TAG, "onInterceptTouchEvent: up");
                 return false;
             default:
                 return false;
@@ -51,11 +56,29 @@ public class InterceptViewGroup extends LinearLayout {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        switch(event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                Log.d(TAG, "onTouchEvent: down");break;
+            case MotionEvent.ACTION_UP:
+                Log.d(TAG, "onTouchEvent: up");break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d(TAG, "onTouchEvent: move");break;
+                default:break;
+        }
         return super.onTouchEvent(event);
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
+        switch(ev.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                Log.d(TAG, "dispatchTouchEvent: down");break;
+            case MotionEvent.ACTION_UP:
+                Log.d(TAG, "dispatchTouchEvent: up");break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d(TAG, "dispatchTouchEvent: move");break;
+            default:break;
+        }
         return super.dispatchTouchEvent(ev);
     }
 

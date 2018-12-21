@@ -8,9 +8,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.example.yangl.androidsample.R;
-import com.example.yangl.androidsample.view.simple.SimpleTouchActivity;
-import com.example.yangl.androidsample.view.innerIntercept.TouchInnerActivity;
-import com.example.yangl.androidsample.view.outsideIntercect.TouchOutActivity;
+import com.example.yangl.androidsample.touchEvent.OuterDemoActivity_1;
+import com.example.yangl.androidsample.touchEvent.innerIntercept.TouchInnerActivity;
+import com.example.yangl.androidsample.touchEvent.outsideIntercect.TouchOutActivity;
+import com.example.yangl.androidsample.touchEvent.simple.SimpleTouchActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,6 +28,8 @@ public class TouchEventActivity extends AppCompatActivity {
     LinearLayout viewGroup;
     @BindView(R.id.simple)
     Button button;
+    @BindView(R.id.simple_out_eg)
+    Button simpleOutEg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,7 @@ public class TouchEventActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.touch_outside, R.id.touch_innerside,R.id.simple})
+    @OnClick({R.id.touch_outside, R.id.touch_innerside, R.id.simple,R.id.simple_out_eg})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.touch_outside:
@@ -46,7 +49,10 @@ public class TouchEventActivity extends AppCompatActivity {
                 startActivity(new Intent(TouchEventActivity.this, TouchInnerActivity.class));
                 break;
             case R.id.simple:
-                startActivity(new Intent(TouchEventActivity.this,SimpleTouchActivity.class));
+                startActivity(new Intent(TouchEventActivity.this, SimpleTouchActivity.class));
+                break;
+            case R.id.simple_out_eg:
+                startActivity(new Intent(TouchEventActivity.this,OuterDemoActivity_1.class));break;
         }
     }
 }

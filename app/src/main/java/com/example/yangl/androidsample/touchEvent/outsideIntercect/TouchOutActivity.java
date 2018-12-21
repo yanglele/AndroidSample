@@ -1,4 +1,4 @@
-package com.example.yangl.androidsample.view.outsideIntercect;
+package com.example.yangl.androidsample.touchEvent.outsideIntercect;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,21 +35,28 @@ public class TouchOutActivity extends AppCompatActivity {
 //                Toast.makeText(TouchOutActivity.this, "view  get touch!", Toast.LENGTH_SHORT).show();
 //            }
 //        });
-//        viewGroup.setCanIntercept(true);
-//        viewGroup.setOnTouchListener(new View.OnTouchListener() {
+        viewGroup.setCanIntercept(true);
+        viewGroup.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                Toast.makeText(TouchOutActivity.this, "viewGroup  get touch!", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
+//        view.setOnTouchListener(new View.OnTouchListener() {
 //            @Override
 //            public boolean onTouch(View v, MotionEvent event) {
-//                Toast.makeText(TouchOutActivity.this, "viewGroup  get touch!", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(TouchOutActivity.this, "view  get touch!", Toast.LENGTH_SHORT).show();
 //                return true;
 //            }
 //        });
-        viewGroup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               Toast.makeText(TouchOutActivity.this, "viewGroup  get click!", Toast.LENGTH_SHORT).show();
-
-            }
-        });
+//        viewGroup.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//               Toast.makeText(TouchOutActivity.this, "viewGroup  get click!", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
     }
 
     @Override
