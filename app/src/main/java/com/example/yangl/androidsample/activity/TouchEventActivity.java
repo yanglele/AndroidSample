@@ -12,6 +12,7 @@ import com.example.yangl.androidsample.touchEvent.InnerDemoActivity;
 import com.example.yangl.androidsample.touchEvent.OuterDemoActivity;
 import com.example.yangl.androidsample.touchEvent.ViewPagerRecyclerViewActivity;
 import com.example.yangl.androidsample.touchEvent.innerIntercept.TouchInnerActivity;
+import com.example.yangl.androidsample.touchEvent.myCoordinatorLayout.MyCoordinatorActivity;
 import com.example.yangl.androidsample.touchEvent.outsideIntercect.TouchOutActivity;
 import com.example.yangl.androidsample.touchEvent.simple.SimpleTouchActivity;
 
@@ -42,7 +43,8 @@ public class TouchEventActivity extends AppCompatActivity {
     }
 
     @OnClick({R.id.touch_outside, R.id.touch_innerside, R.id.simple,
-            R.id.simple_out_eg,R.id.simple_inner_eg,R.id.simple_viewpager_rclerview_eg})
+            R.id.simple_out_eg,R.id.simple_inner_eg,R.id.simple_viewpager_rclerview_eg,
+    R.id.my_coordinator_eg})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.touch_outside:
@@ -60,6 +62,8 @@ public class TouchEventActivity extends AppCompatActivity {
                 startActivity(new Intent(TouchEventActivity.this, InnerDemoActivity.class));break;
             case R.id.simple_viewpager_rclerview_eg:
                 startActivity(new Intent(TouchEventActivity.this,ViewPagerRecyclerViewActivity.class));break;
+            case R.id.my_coordinator_eg:
+                startActivity(new Intent(TouchEventActivity.this,MyCoordinatorActivity.class));
                 default:break;
         }
     }

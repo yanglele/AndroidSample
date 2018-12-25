@@ -141,7 +141,8 @@
         <activity android:name=".touchEvent.simple.SimpleTouchActivity" />
         <activity android:name=".touchEvent.OuterDemoActivity" />
         <activity android:name=".touchEvent.InnerDemoActivity" />
-        <activity android:name=".touchEvent.ViewPagerRecyclerViewActivity"></activity>
+        <activity android:name=".touchEvent.ViewPagerRecyclerViewActivity" />
+        <activity android:name=".touchEvent.myCoordinatorLayout.MyCoordinatorActivity"/>
     </application>
 
 </manifest>
