@@ -16,6 +16,7 @@ public class MyCoordinatorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_coordinator);
         mListView = (NestedListView) findViewById(R.id.list_view);
         String[] arr = new String[100];
+        
         for (int i = 0; i < arr.length; i++) {
             arr[i] = i + "";
         }
