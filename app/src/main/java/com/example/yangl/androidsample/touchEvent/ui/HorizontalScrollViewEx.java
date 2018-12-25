@@ -48,6 +48,25 @@ public class HorizontalScrollViewEx extends ViewGroup {
     }
 
     @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        switch(ev.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                Log.d(TAG, "dispatchTouchEvent: down");
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d(TAG, "dispatchTouchEvent: move");
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.d(TAG, "dispatchTouchEvent: up");
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                Log.d(TAG, "dispatchTouchEvent: cancel");
+                default:break;
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
         boolean intercepted = false;
         int x = (int) event.getX();
@@ -60,6 +79,7 @@ public class HorizontalScrollViewEx extends ViewGroup {
                 mScroller.abortAnimation();
                 intercepted = true;
             }
+            Log.d(TAG, "onInterceptTouchEvent: down");
             break;
         }
         case MotionEvent.ACTION_MOVE: {
@@ -70,12 +90,16 @@ public class HorizontalScrollViewEx extends ViewGroup {
             } else {
                 intercepted = false;
             }
+            Log.d(TAG, "onInterceptTouchEvent: move");
             break;
         }
         case MotionEvent.ACTION_UP: {
             intercepted = false;
+            Log.d(TAG, "onInterceptTouchEvent: up");
             break;
         }
+            case MotionEvent.ACTION_CANCEL:
+                Log.d(TAG, "onInterceptTouchEvent: cancel");
         default:
             break;
         }
@@ -99,12 +123,14 @@ public class HorizontalScrollViewEx extends ViewGroup {
             if (!mScroller.isFinished()) {
                 mScroller.abortAnimation();
             }
+            Log.d(TAG, "onTouchEvent: down");
             break;
         }
         case MotionEvent.ACTION_MOVE: {
             int deltaX = x - mLastX;
             int deltaY = y - mLastY;
             scrollBy(-deltaX, 0);
+            Log.d(TAG, "onTouchEvent: move");
             break;
         }
         case MotionEvent.ACTION_UP: {
@@ -121,8 +147,11 @@ public class HorizontalScrollViewEx extends ViewGroup {
             int dx = mChildIndex * mChildWidth - scrollX;
             smoothScrollBy(dx, 0);
             mVelocityTracker.clear();
+            Log.d(TAG, "onTouchEvent: up");
             break;
         }
+            case MotionEvent.ACTION_CANCEL:
+                Log.d(TAG, "onTouchEvent: cancel");
         default:
             break;
         }

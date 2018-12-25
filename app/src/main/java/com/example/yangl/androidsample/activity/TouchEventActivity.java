@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.example.yangl.androidsample.R;
-import com.example.yangl.androidsample.touchEvent.OuterDemoActivity_1;
+import com.example.yangl.androidsample.touchEvent.InnerDemoActivity;
+import com.example.yangl.androidsample.touchEvent.OuterDemoActivity;
+import com.example.yangl.androidsample.touchEvent.ViewPagerRecyclerViewActivity;
 import com.example.yangl.androidsample.touchEvent.innerIntercept.TouchInnerActivity;
 import com.example.yangl.androidsample.touchEvent.outsideIntercect.TouchOutActivity;
 import com.example.yangl.androidsample.touchEvent.simple.SimpleTouchActivity;
@@ -39,7 +41,8 @@ public class TouchEventActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.touch_outside, R.id.touch_innerside, R.id.simple,R.id.simple_out_eg})
+    @OnClick({R.id.touch_outside, R.id.touch_innerside, R.id.simple,
+            R.id.simple_out_eg,R.id.simple_inner_eg,R.id.simple_viewpager_rclerview_eg})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.touch_outside:
@@ -52,7 +55,12 @@ public class TouchEventActivity extends AppCompatActivity {
                 startActivity(new Intent(TouchEventActivity.this, SimpleTouchActivity.class));
                 break;
             case R.id.simple_out_eg:
-                startActivity(new Intent(TouchEventActivity.this,OuterDemoActivity_1.class));break;
+                startActivity(new Intent(TouchEventActivity.this,OuterDemoActivity.class));break;
+            case R.id.simple_inner_eg:
+                startActivity(new Intent(TouchEventActivity.this, InnerDemoActivity.class));break;
+            case R.id.simple_viewpager_rclerview_eg:
+                startActivity(new Intent(TouchEventActivity.this,ViewPagerRecyclerViewActivity.class));break;
+                default:break;
         }
     }
 }

@@ -139,7 +139,9 @@
         <activity android:name=".touchEvent.outsideIntercect.TouchOutActivity" />
         <activity android:name=".touchEvent.innerIntercept.TouchInnerActivity" />
         <activity android:name=".touchEvent.simple.SimpleTouchActivity" />
-        <activity android:name=".touchEvent.OuterDemoActivity_1" />
+        <activity android:name=".touchEvent.OuterDemoActivity" />
+        <activity android:name=".touchEvent.InnerDemoActivity" />
+        <activity android:name=".touchEvent.ViewPagerRecyclerViewActivity"></activity>
     </application>
 
 </manifest>

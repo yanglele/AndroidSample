@@ -25,11 +25,11 @@ public class ItemTextViewHolder extends RecyclerView.ViewHolder {
 
     public ItemTextViewHolder(View itemView) {
         super(itemView);
-//        textView = (TextView) itemView.findViewById(R.id.text);
+        textView = (TextView) itemView.findViewById(R.id.text);
     }
 
     public void bindView(String string){
-//        textView.setText(string);
+        textView.setText(string);
 //        count++;
 //        ViewGroup.LayoutParams params = textView.getLayoutParams();
 //        Random random = new Random();
