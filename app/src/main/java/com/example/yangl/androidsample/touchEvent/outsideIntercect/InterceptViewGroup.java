@@ -49,6 +49,8 @@ public class InterceptViewGroup extends LinearLayout {
             case MotionEvent.ACTION_UP:
                 Log.d(TAG, "onInterceptTouchEvent: up");
                 return false;
+            case MotionEvent.ACTION_CANCEL:
+                Log.d(TAG, "onInterceptTouchEvent: cancel");
             default:
                 return false;
         }
@@ -63,9 +65,11 @@ public class InterceptViewGroup extends LinearLayout {
                 Log.d(TAG, "onTouchEvent: up");break;
             case MotionEvent.ACTION_MOVE:
                 Log.d(TAG, "onTouchEvent: move");break;
+            case MotionEvent.ACTION_CANCEL:
+                Log.d(TAG, "onTouchEvent: cancel");break;
                 default:break;
         }
-        return super.onTouchEvent(event);
+        return true;
     }
 
     @Override
@@ -77,6 +81,8 @@ public class InterceptViewGroup extends LinearLayout {
                 Log.d(TAG, "dispatchTouchEvent: up");break;
             case MotionEvent.ACTION_MOVE:
                 Log.d(TAG, "dispatchTouchEvent: move");break;
+            case MotionEvent.ACTION_CANCEL:
+                Log.d(TAG, "dispatchTouchEvent: cancel");break;
             default:break;
         }
         return super.dispatchTouchEvent(ev);

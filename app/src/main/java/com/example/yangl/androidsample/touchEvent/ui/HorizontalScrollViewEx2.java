@@ -1,6 +1,7 @@
 package com.example.yangl.androidsample.touchEvent.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -45,6 +46,22 @@ public class HorizontalScrollViewEx2 extends ViewGroup {
     private void init() {
         mScroller = new Scroller(getContext());
         mVelocityTracker = VelocityTracker.obtain();
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        switch(ev.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                Log.d(TAG, "dispatchTouchEvent: down");break;
+            case MotionEvent.ACTION_UP:
+                Log.d(TAG, "dispatchTouchEvent: up");break;
+            case MotionEvent.ACTION_CANCEL:
+                Log.d(TAG, "dispatchTouchEvent: cancel");break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d(TAG, "dispatchTouchEvent: move");break;
+                default:break;
+        }
+        return super.dispatchTouchEvent(ev);
     }
 
     @Override

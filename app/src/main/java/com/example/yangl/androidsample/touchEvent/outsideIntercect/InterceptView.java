@@ -37,9 +37,11 @@ public class InterceptView extends android.support.v7.widget.AppCompatTextView {
                 Log.d(TAG, "onTouchEvent: up");break;
             case MotionEvent.ACTION_MOVE:
                 Log.d(TAG, "onTouchEvent: move");break;
+            case MotionEvent.ACTION_CANCEL:
+                Log.d(TAG, "onTouchEvent: cancel");break;
             default:break;
         }
-        return super.onTouchEvent(event);
+        return true;
     }
 
     @Override
@@ -51,6 +53,8 @@ public class InterceptView extends android.support.v7.widget.AppCompatTextView {
                 Log.d(TAG, "dispatchTouchEvent: up");break;
             case MotionEvent.ACTION_MOVE:
                 Log.d(TAG, "dispatchTouchEvent: move");break;
+            case MotionEvent.ACTION_CANCEL:
+                Log.d(TAG, "dispatchTouchEvent: cancel");break;
             default:break;
         }
         return super.dispatchTouchEvent(event);
