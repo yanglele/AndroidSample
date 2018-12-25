@@ -39,6 +39,9 @@ public class InterceptViewGroup extends LinearLayout {
             case MotionEvent.ACTION_DOWN:
                 Log.d(TAG, "onInterceptTouchEvent: down");
                 return false;
+            case MotionEvent.ACTION_UP:
+                Log.d(TAG, "onInterceptTouchEvent: up");
+                return false;
             case MotionEvent.ACTION_MOVE:
                 Log.d(TAG, "onInterceptTouchEvent: move");
                 if (canIntercept) {
@@ -46,9 +49,7 @@ public class InterceptViewGroup extends LinearLayout {
                 } else {
                     return false;
                 }
-            case MotionEvent.ACTION_UP:
-                Log.d(TAG, "onInterceptTouchEvent: up");
-                return false;
+//                return false;
             default:
                 return false;
         }
@@ -56,28 +57,35 @@ public class InterceptViewGroup extends LinearLayout {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        switch(event.getAction()){
+        switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 Log.d(TAG, "onTouchEvent: down");break;
             case MotionEvent.ACTION_UP:
                 Log.d(TAG, "onTouchEvent: up");break;
             case MotionEvent.ACTION_MOVE:
                 Log.d(TAG, "onTouchEvent: move");break;
-                default:break;
+            default:
+                break;
         }
-        return super.onTouchEvent(event);
+        return true;
+//        return true;
+//        return super.onTouchEvent(event);
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        switch(ev.getAction()){
+        switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                Log.d(TAG, "dispatchTouchEvent: down");break;
+                Log.d(TAG, "dispatchTouchEvent: down");
+                break;
             case MotionEvent.ACTION_UP:
-                Log.d(TAG, "dispatchTouchEvent: up");break;
+                Log.d(TAG, "dispatchTouchEvent: up");
+                break;
             case MotionEvent.ACTION_MOVE:
-                Log.d(TAG, "dispatchTouchEvent: move");break;
-            default:break;
+                Log.d(TAG, "dispatchTouchEvent: move");
+                break;
+            default:
+                break;
         }
         return super.dispatchTouchEvent(ev);
     }

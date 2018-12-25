@@ -2,6 +2,7 @@ package com.example.yangl.androidsample.touchEvent.outsideIntercect;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -13,6 +14,8 @@ import butterknife.ButterKnife;
 
 public class TouchOutActivity extends AppCompatActivity {
 
+
+    private String TAG = "TouchOutActivity";
 
     @BindView(R.id.view)
     InterceptView view;
@@ -36,13 +39,13 @@ public class TouchOutActivity extends AppCompatActivity {
 //            }
 //        });
         viewGroup.setCanIntercept(true);
-        viewGroup.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                Toast.makeText(TouchOutActivity.this, "viewGroup  get touch!", Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
+//        viewGroup.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                Toast.makeText(TouchOutActivity.this, "viewGroup  get touch!", Toast.LENGTH_SHORT).show();
+//                return true;
+//            }
+//        });
 //        view.setOnTouchListener(new View.OnTouchListener() {
 //            @Override
 //            public boolean onTouch(View v, MotionEvent event) {
@@ -60,7 +63,30 @@ public class TouchOutActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch(event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                Log.d(TAG, "onTouchEvent: down");break;
+            case MotionEvent.ACTION_UP:
+                Log.d(TAG, "onTouchEvent: up");break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d(TAG, "onTouchEvent: move");break;
+            default:break;
+        }
+        return super.onTouchEvent(event);
+    }
+
+    @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
+        switch(ev.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                Log.d(TAG, "dispatchTouchEvent: down");break;
+            case MotionEvent.ACTION_UP:
+                Log.d(TAG, "dispatchTouchEvent: up");break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d(TAG, "dispatchTouchEvent: move");break;
+            default:break;
+        }
         return super.dispatchTouchEvent(ev);
     }
 
