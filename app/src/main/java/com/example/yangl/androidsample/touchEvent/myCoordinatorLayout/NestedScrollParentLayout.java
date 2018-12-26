@@ -4,12 +4,14 @@ import android.content.Context;
 import android.support.v4.view.NestedScrollingParent;
 import android.support.v4.view.NestedScrollingParentHelper;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.example.yangl.androidsample.R;
 
 public class NestedScrollParentLayout extends RelativeLayout implements NestedScrollingParent {
+    private final String TAG = "NestedScrollParent";
     private NestedScrollingParentHelper mParentHelper;
     private int mTitleHeight;
     private View mTitleTabView;
@@ -31,6 +33,7 @@ public class NestedScrollParentLayout extends RelativeLayout implements NestedSc
     //获取子view
     @Override
     protected void onFinishInflate() {
+        super.onFinishInflate();
         mTitleTabView = this.findViewById(R.id.title_container);
     }
 
@@ -46,6 +49,7 @@ public class NestedScrollParentLayout extends RelativeLayout implements NestedSc
     //在此可以判断参数target是哪一个子view以及滚动的方向，然后决定是否要配合其进行嵌套滚动
     @Override
     public boolean onStartNestedScroll(View child, View target, int nestedScrollAxes) {
+        Log.d(TAG, "onStartNestedScroll: ");
         if (target instanceof NestedListView) {
             return true;
         }
@@ -55,11 +59,13 @@ public class NestedScrollParentLayout extends RelativeLayout implements NestedSc
 
     @Override
     public void onNestedScrollAccepted(View child, View target, int nestedScrollAxes) {
+        Log.d(TAG, "onNestedScrollAccepted: ");
         mParentHelper.onNestedScrollAccepted(child, target, nestedScrollAxes);
     }
 
     @Override
     public void onStopNestedScroll(View target) {
+        Log.d(TAG, "onStopNestedScroll: ");
         mParentHelper.onStopNestedScroll(target);
     }
 
@@ -67,6 +73,7 @@ public class NestedScrollParentLayout extends RelativeLayout implements NestedSc
     //前3个为输入参数，最后一个是输出参数
     @Override
     public void onNestedPreScroll(View target, int dx, int dy, int[] consumed) {
+        Log.d(TAG, "onNestedPreScroll: ");
         if (dy > 0) {//手势向上滑动
             if (getScrollY() < mTitleHeight) {
                 scrollBy(0, dy);//滚动
@@ -83,12 +90,13 @@ public class NestedScrollParentLayout extends RelativeLayout implements NestedSc
     //后于child滚动
     @Override
     public void onNestedScroll(View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed) {
-
+        Log.d(TAG, "onNestedScroll: ");
     }
 
     //返回值：是否消费了fling
     @Override
     public boolean onNestedPreFling(View target, float velocityX, float velocityY) {
+        Log.d(TAG, "onNestedPreFling: ");
         return false;
     }
 
@@ -98,11 +106,13 @@ public class NestedScrollParentLayout extends RelativeLayout implements NestedSc
 //        if (!consumed) {
 //            return true;
 //        }
+        Log.d(TAG, "onNestedFling: ");
         return false;
     }
 
     @Override
     public int getNestedScrollAxes() {
+        Log.d(TAG, "getNestedScrollAxes: ");
         return mParentHelper.getNestedScrollAxes();
     }
 

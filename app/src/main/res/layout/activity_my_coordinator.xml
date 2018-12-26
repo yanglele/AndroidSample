@@ -20,7 +20,7 @@
 
         <com.example.yangl.androidsample.touchEvent.myCoordinatorLayout.NestedListView
             android:id="@+id/list_view"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/title_container"/>
     </com.example.yangl.androidsample.touchEvent.myCoordinatorLayout.NestedScrollParentLayout>

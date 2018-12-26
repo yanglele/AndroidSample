@@ -58,6 +58,7 @@ public class NestedListView extends ListView implements NestedScrollingChild {
 
     @Override
     public boolean onTouchEvent(MotionEvent e) {
+        Log.d(TAG, "onTouchEvent: "+e.getAction());
         //下述代码主要复制于RecyclerView
         final MotionEvent vtev = MotionEvent.obtain(e);
         final int action = MotionEventCompat.getActionMasked(e);
@@ -93,14 +94,14 @@ public class NestedListView extends ListView implements NestedScrollingChild {
                 int dx = mLastTouchX - x;
                 int dy = mLastTouchY - y;
                 if (isFirst) {//暂时解决第次dy与后序符号相反导致的闪动问题
-                    Log.i("pyt", "FIRST");
+                    Log.i(TAG+" move pyt", "FIRST");
                     isFirst = false;
                     resetScroll(e);
                     return true;
                 }
                 if (!isSignOpposite(lastDy, dy)) {//解决手机触摸在屏幕上不松开一直抖动的问题
                     lastDy = dy;
-                    Log.i("pyt", "move lastY" + mLastTouchY + ",y=" + y + ",dy=" + dy);
+                    Log.i(TAG+" move pyt", "move lastY" + mLastTouchY + ",y=" + y + ",dy=" + dy);
                     if (dispatchNestedPreScroll(dx, dy, mScrollConsumed, mScrollOffset)) {
                         vtev.offsetLocation(mScrollOffset[0], mScrollOffset[1]);
                         // Updated the nested offsets
@@ -157,46 +158,55 @@ public class NestedListView extends ListView implements NestedScrollingChild {
 
     @Override
     public void setNestedScrollingEnabled(boolean enabled) {
+        Log.d(TAG, "setNestedScrollingEnabled: ");
         mChildHelper.setNestedScrollingEnabled(enabled);
     }
 
     @Override
     public boolean isNestedScrollingEnabled() {
+        Log.d(TAG, "isNestedScrollingEnabled: ");
         return mChildHelper.isNestedScrollingEnabled();
     }
 
     @Override
     public boolean startNestedScroll(int axes) {
+        Log.d(TAG, "startNestedScroll: ");
         return mChildHelper.startNestedScroll(axes);
     }
 
     @Override
     public void stopNestedScroll() {
+        Log.d(TAG, "stopNestedScroll: ");
         mChildHelper.stopNestedScroll();
     }
 
     @Override
     public boolean hasNestedScrollingParent() {
+        Log.d(TAG, "hasNestedScrollingParent: ");
         return mChildHelper.hasNestedScrollingParent();
     }
 
     @Override
     public boolean dispatchNestedScroll(int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed, int[] offsetInWindow) {
+        Log.d(TAG, "dispatchNestedScroll: ");
         return mChildHelper.dispatchNestedScroll(dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, offsetInWindow);
     }
 
     @Override
     public boolean dispatchNestedPreScroll(int dx, int dy, int[] consumed, int[] offsetInWindow) {
+        Log.d(TAG, "dispatchNestedPreScroll: ");
         return mChildHelper.dispatchNestedPreScroll(dx, dy, consumed, offsetInWindow);
     }
 
     @Override
     public boolean dispatchNestedFling(float velocityX, float velocityY, boolean consumed) {
+        Log.d(TAG, "dispatchNestedFling: ");
         return mChildHelper.dispatchNestedFling(velocityX, velocityY, consumed);
     }
 
     @Override
     public boolean dispatchNestedPreFling(float velocityX, float velocityY) {
+        Log.d(TAG, "dispatchNestedPreFling: ");
         return mChildHelper.dispatchNestedPreFling(velocityX, velocityY);
     }
 }

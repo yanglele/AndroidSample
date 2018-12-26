@@ -143,6 +143,7 @@
         <activity android:name=".touchEvent.InnerDemoActivity" />
         <activity android:name=".touchEvent.ViewPagerRecyclerViewActivity" />
         <activity android:name=".touchEvent.myCoordinatorLayout.MyCoordinatorActivity"/>
+        <activity android:name=".touchEvent.myStickNavLayout.StickyNavActivity"/>
     </application>
 
 </manifest>
