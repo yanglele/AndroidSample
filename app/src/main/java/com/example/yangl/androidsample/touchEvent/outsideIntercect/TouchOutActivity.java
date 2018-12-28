@@ -90,6 +90,8 @@ public class TouchOutActivity extends AppCompatActivity {
         return super.dispatchTouchEvent(ev);
     }
 
+
+
     private void touchSource() {
         view.setOnTouchListener(new View.OnTouchListener() {
             @Override

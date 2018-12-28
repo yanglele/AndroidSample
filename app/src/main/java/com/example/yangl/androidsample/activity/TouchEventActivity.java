@@ -15,6 +15,8 @@ import com.example.yangl.androidsample.touchEvent.innerIntercept.TouchInnerActiv
 import com.example.yangl.androidsample.touchEvent.myCoordinatorLayout.MyCoordinatorActivity;
 import com.example.yangl.androidsample.touchEvent.myStickNavLayout.StickyNavActivity;
 import com.example.yangl.androidsample.touchEvent.outsideIntercect.TouchOutActivity;
+import com.example.yangl.androidsample.touchEvent.scrollParent.MyNestedScrollActivity;
+import com.example.yangl.androidsample.touchEvent.scrollParent.OtherNestedActivity;
 import com.example.yangl.androidsample.touchEvent.simple.SimpleTouchActivity;
 
 import butterknife.BindView;
@@ -45,7 +47,7 @@ public class TouchEventActivity extends AppCompatActivity {
 
     @OnClick({R.id.touch_outside, R.id.touch_innerside, R.id.simple,
             R.id.simple_out_eg,R.id.simple_inner_eg,R.id.simple_viewpager_rclerview_eg,
-            R.id.my_coordinator_eg,R.id.my_sticky_eg})
+            R.id.my_coordinator_eg,R.id.my_sticky_eg,R.id.my_scroll_nest_view,R.id.other_scroll_nest_view})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.touch_outside:
@@ -67,6 +69,10 @@ public class TouchEventActivity extends AppCompatActivity {
                 startActivity(new Intent(TouchEventActivity.this,MyCoordinatorActivity.class));break;
             case R.id.my_sticky_eg:
                 startActivity(new Intent(TouchEventActivity.this, StickyNavActivity.class));break;
+            case R.id.my_scroll_nest_view:
+                startActivity(new Intent(TouchEventActivity.this, MyNestedScrollActivity.class));break;
+            case R.id.other_scroll_nest_view:
+                startActivity(new Intent(TouchEventActivity.this, OtherNestedActivity.class));break;
                 default:break;
         }
     }

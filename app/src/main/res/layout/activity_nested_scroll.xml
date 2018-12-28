@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".touchEvent.scrollParent.MyNestedScrollActivity">
+
+    <com.example.yangl.androidsample.touchEvent.scrollParent.MyNestedParentView
+        android:layout_width="match_parent"
+        android:background="@color/mGreenColor"
+        android:layout_marginTop="100dp"
+        android:layout_height="600dp" >
+
+        <com.example.yangl.androidsample.touchEvent.scrollParent.MyNestedChildView
+            android:layout_width="300dp"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/mOrangeColor"
+            android:layout_height="300dp" />
+
+    </com.example.yangl.androidsample.touchEvent.scrollParent.MyNestedParentView>
+
+</LinearLayout>

@@ -55,4 +55,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+
+    <Button
+        android:id="@+id/other_scroll_nest_view"
+        android:text="other_scroll_nest_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/my_scroll_nest_view"
+        android:text="my_scroll_nest_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
 </LinearLayout>

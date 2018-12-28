@@ -142,8 +142,10 @@
         <activity android:name=".touchEvent.OuterDemoActivity" />
         <activity android:name=".touchEvent.InnerDemoActivity" />
         <activity android:name=".touchEvent.ViewPagerRecyclerViewActivity" />
-        <activity android:name=".touchEvent.myCoordinatorLayout.MyCoordinatorActivity"/>
-        <activity android:name=".touchEvent.myStickNavLayout.StickyNavActivity"/>
+        <activity android:name=".touchEvent.myCoordinatorLayout.MyCoordinatorActivity" />
+        <activity android:name=".touchEvent.myStickNavLayout.StickyNavActivity" />
+        <activity android:name=".touchEvent.scrollParent.MyNestedScrollActivity" />
+        <activity android:name=".touchEvent.scrollParent.OtherNestedActivity"></activity>
     </application>
 
 </manifest>

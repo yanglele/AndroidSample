@@ -10,7 +10,9 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import com.example.yangl.androidsample.R;
 import com.example.yangl.androidsample.touchEvent.myStickNavLayout.view.SimpleViewPagerIndicator;
 
-
+/**
+ * https://github.com/hongyangAndroid/Android-StickyNavLayout
+ */
 public class StickyNavActivity extends FragmentActivity
 {
 	private String[] mTitles = new String[] { "简介", "评价", "相关" };
