@@ -14,13 +14,13 @@ import java.util.List;
 
 public class MyCoordinatorActivity extends AppCompatActivity {
 
-    private NestedListView mListView;
+    private NestRecyclerView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_coordinator);
-        mListView = (NestedListView) findViewById(R.id.list_view);
+        mListView = (NestRecyclerView) findViewById(R.id.list_view);
         String[] arr = new String[100];
 
         List<String> list = new ArrayList<>();
@@ -29,8 +29,8 @@ public class MyCoordinatorActivity extends AppCompatActivity {
             list.add(i+"");
         }
 
-//        mListView.setLayoutManager(new LinearLayoutManager(this));
-//        mListView.setAdapter(new SimpleRecyclerViewAdapter(this,list));
-        mListView.setAdapter(new ArrayAdapter(this, R.layout.list_item_layout, R.id.text_name, arr));
+        mListView.setLayoutManager(new LinearLayoutManager(this));
+        mListView.setAdapter(new SimpleRecyclerViewAdapter(this,list));
+//        mListView.setAdapter(new ArrayAdapter(this, R.layout.list_item_layout, R.id.text_name, arr));
     }
 }

@@ -18,7 +18,7 @@
             android:orientation="horizontal">
         </LinearLayout>
 
-        <com.example.yangl.androidsample.touchEvent.myCoordinatorLayout.NestedListView
+        <com.example.yangl.androidsample.touchEvent.myCoordinatorLayout.NestRecyclerView
             android:id="@+id/list_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

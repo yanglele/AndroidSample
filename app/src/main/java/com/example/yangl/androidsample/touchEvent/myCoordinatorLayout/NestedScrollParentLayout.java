@@ -50,10 +50,11 @@ public class NestedScrollParentLayout extends RelativeLayout implements NestedSc
     @Override
     public boolean onStartNestedScroll(View child, View target, int nestedScrollAxes) {
         Log.d(TAG, "onStartNestedScroll: ");
-        if (target instanceof NestedListView) {
-            return true;
-        }
-        return false;
+//        if (target instanceof NestedListView) {
+//            return true;
+//        }
+//        return false;
+        return true;
     }
 
 

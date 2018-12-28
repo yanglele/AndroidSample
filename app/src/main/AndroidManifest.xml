@@ -145,7 +145,9 @@
         <activity android:name=".touchEvent.myCoordinatorLayout.MyCoordinatorActivity" />
         <activity android:name=".touchEvent.myStickNavLayout.StickyNavActivity" />
         <activity android:name=".touchEvent.scrollParent.MyNestedScrollActivity" />
-        <activity android:name=".touchEvent.scrollParent.OtherNestedActivity"></activity>
+        <activity android:name=".touchEvent.scrollParent.OtherNestedActivity" />
+        <activity android:name=".touchEvent.myBehavor.FollowBehaviorActivity" />
+        <activity android:name=".touchEvent.myBehavor.RecyclerViewBehaviorActivity"></activity>
     </application>
 
 </manifest>

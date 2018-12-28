@@ -7,11 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.example.yangl.androidsample.IRecyclerViewSample.irecyclerCoordinatory.IRecyclerViewWithListenerActivity;
 import com.example.yangl.androidsample.R;
 import com.example.yangl.androidsample.touchEvent.InnerDemoActivity;
 import com.example.yangl.androidsample.touchEvent.OuterDemoActivity;
 import com.example.yangl.androidsample.touchEvent.ViewPagerRecyclerViewActivity;
 import com.example.yangl.androidsample.touchEvent.innerIntercept.TouchInnerActivity;
+import com.example.yangl.androidsample.touchEvent.myBehavor.FollowBehaviorActivity;
+import com.example.yangl.androidsample.touchEvent.myBehavor.RecyclerViewBehaviorActivity;
 import com.example.yangl.androidsample.touchEvent.myCoordinatorLayout.MyCoordinatorActivity;
 import com.example.yangl.androidsample.touchEvent.myStickNavLayout.StickyNavActivity;
 import com.example.yangl.androidsample.touchEvent.outsideIntercect.TouchOutActivity;
@@ -47,7 +50,8 @@ public class TouchEventActivity extends AppCompatActivity {
 
     @OnClick({R.id.touch_outside, R.id.touch_innerside, R.id.simple,
             R.id.simple_out_eg,R.id.simple_inner_eg,R.id.simple_viewpager_rclerview_eg,
-            R.id.my_coordinator_eg,R.id.my_sticky_eg,R.id.my_scroll_nest_view,R.id.other_scroll_nest_view})
+            R.id.my_coordinator_eg,R.id.my_sticky_eg,R.id.my_scroll_nest_view,R.id.other_scroll_nest_view,
+    R.id.follow_behavior_view,R.id.recyclerView_behavior_view,R.id.nest_behavior_view})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.touch_outside:
@@ -73,6 +77,12 @@ public class TouchEventActivity extends AppCompatActivity {
                 startActivity(new Intent(TouchEventActivity.this, MyNestedScrollActivity.class));break;
             case R.id.other_scroll_nest_view:
                 startActivity(new Intent(TouchEventActivity.this, OtherNestedActivity.class));break;
+            case R.id.follow_behavior_view:
+                startActivity(new Intent(TouchEventActivity.this, FollowBehaviorActivity.class));break;
+            case R.id.recyclerView_behavior_view:
+                startActivity(new Intent(TouchEventActivity.this ,IRecyclerViewWithListenerActivity.class));break;
+            case R.id.nest_behavior_view:
+                startActivity(new Intent(TouchEventActivity.this, RecyclerViewBehaviorActivity.class));break;
                 default:break;
         }
     }

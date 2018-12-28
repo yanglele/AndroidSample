@@ -32,7 +32,7 @@ public class IRecyclerViewWithListenerActivity extends AppCompatActivity impleme
         setContentView(R.layout.activity_irecycler_view_with_listener);
         ButterKnife.bind(this);
 
-        for(int i=0 ;i <10 ;i++){
+        for(int i=0 ;i <50 ;i++){
             list.add(i+"");
         }
 
@@ -51,6 +51,7 @@ public class IRecyclerViewWithListenerActivity extends AppCompatActivity impleme
             list.add(i+"");
         }
         adapter.notifyDataSetChanged();
+        loadMoreFooterView.setStatus(LoadMoreFooterView.Status.GONE);
     }
 
     @Override
