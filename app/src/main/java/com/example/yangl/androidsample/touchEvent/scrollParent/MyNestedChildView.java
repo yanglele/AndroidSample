@@ -51,13 +51,14 @@ public class MyNestedChildView extends View implements NestedScrollingChild {
     public boolean onTouchEvent(MotionEvent event) {
         final int actionMasked = MotionEventCompat.getActionMasked(event);
 
+         int pointerId = 0;
         // 取第一个接触屏幕的手指Id
-        final int pointerId = MotionEventCompat.getPointerId(event, 0);
         switch (actionMasked) {
             case MotionEvent.ACTION_DOWN:
 
+                pointerId = event.getPointerId(0);
                 // 取得当前的Y，并赋值给lastY变量
-                downY = getPointerY(event, pointerId);
+                downY = event.getY();
                 // 找不到手指，放弃掉这个触摸事件流
                 if (downY == -1) {
                     return false;
@@ -65,23 +66,24 @@ public class MyNestedChildView extends View implements NestedScrollingChild {
 
                 // 通知父View，开始滑动
                 startNestedScroll(ViewCompat.SCROLL_AXIS_VERTICAL);
+                Log.d(TAG, "onTouchEvent: action down downY = "+downY);
                 break;
             case MotionEvent.ACTION_MOVE:
 
+                int index = event.findPointerIndex(pointerId);
+
                 // 获得当前手指的Y
-                final float pointerY = getPointerY(event, pointerId);
+                final float pointerY = event.getY(index);
 
                 // 找不到手指，放弃掉这个触摸事件流
                 if (pointerY == -1) {
                     return false;
                 }
 
-                // 计算出滑动的偏移量
+                // 计算出滑动的偏移量,每次计算的都是本次滑动的偏移量
                 float deltaY = pointerY - downY;
 
-                Log.d(TAG, String.format("downY = %f", deltaY));
-
-                Log.d(TAG, String.format("before dispatchNestedPreScroll, deltaY = %f", deltaY));
+                Log.d(TAG, "111 down Y = "+downY + "; pointY = "+pointerY +"; del = "+deltaY);
 
                 // 通知父View, 子View想滑动 deltaY 个偏移量，父View要不要先滑一下，然后把父View滑了多少，告诉子View一下
                 // 下面这个方法的前两个参数为在x，y方向上想要滑动的偏移量

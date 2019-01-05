@@ -33,8 +33,6 @@ public class TouchEventActivity extends AppCompatActivity {
     Button touchOutside;
     @BindView(R.id.touch_innerside)
     Button touchInnerside;
-    @BindView(R.id.view_group)
-    LinearLayout viewGroup;
     @BindView(R.id.simple)
     Button button;
     @BindView(R.id.simple_out_eg)
