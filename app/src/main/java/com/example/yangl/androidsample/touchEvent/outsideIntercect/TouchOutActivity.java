@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 public class TouchOutActivity extends AppCompatActivity {
 
 
-    private String TAG = "TouchOutActivity";
+    private String TAG = "InterceptActivity";
 
     @BindView(R.id.view)
     InterceptView view;
@@ -89,6 +89,8 @@ public class TouchOutActivity extends AppCompatActivity {
         }
         return super.dispatchTouchEvent(ev);
     }
+
+
 
 
 
