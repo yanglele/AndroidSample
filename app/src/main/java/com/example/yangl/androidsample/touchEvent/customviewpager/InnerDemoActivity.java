@@ -1,4 +1,4 @@
-package com.example.yangl.androidsample.touchEvent;
+package com.example.yangl.androidsample.touchEvent.customviewpager;
 
 import java.util.ArrayList;
 
@@ -17,8 +17,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.yangl.androidsample.R;
-import com.example.yangl.androidsample.touchEvent.ui.HorizontalScrollViewEx2;
-import com.example.yangl.androidsample.touchEvent.ui.ListViewEx;
 import com.example.yangl.androidsample.touchEvent.utils.MyUtils;
 
 public class InnerDemoActivity extends Activity {

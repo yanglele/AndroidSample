@@ -33,6 +33,22 @@ public class InterceptViewGroup extends LinearLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                Log.d(TAG, "onInterceptTouchEvent: down");
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d(TAG, "onInterceptTouchEvent: move");
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.d(TAG, "onInterceptTouchEvent: up  ");
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                Log.d(TAG, "onInterceptTouchEvent: cancel");
+                break;
+            default:
+                break;
+        }
         if(ev.getAction() == MotionEvent.ACTION_DOWN){
             return false;
         }else {
@@ -52,6 +68,9 @@ public class InterceptViewGroup extends LinearLayout {
             case MotionEvent.ACTION_UP:
                 Log.d(TAG, "onTouchEvent: up  ");
                 break;
+            case MotionEvent.ACTION_CANCEL:
+                Log.d(TAG, "onTouchEvent: cancel");
+                break;
             default:
                 break;
         }
@@ -62,13 +81,16 @@ public class InterceptViewGroup extends LinearLayout {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                Log.d(TAG, "onTouchEvent: down");
+                Log.d(TAG, "dispatchTouchEvent: down");
                 break;
             case MotionEvent.ACTION_MOVE:
-                Log.d(TAG, "onTouchEvent: move");
+                Log.d(TAG, "dispatchTouchEvent: move");
                 break;
             case MotionEvent.ACTION_UP:
-                Log.d(TAG, "onTouchEvent: up  ");
+                Log.d(TAG, "dispatchTouchEvent: up  ");
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                Log.d(TAG, "dispatchTouchEvent: cancel");
                 break;
             default:
                 break;

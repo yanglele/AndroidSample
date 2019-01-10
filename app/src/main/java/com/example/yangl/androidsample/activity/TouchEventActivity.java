@@ -5,12 +5,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
 import com.example.yangl.androidsample.IRecyclerViewSample.irecyclerCoordinatory.IRecyclerViewWithListenerActivity;
 import com.example.yangl.androidsample.R;
-import com.example.yangl.androidsample.touchEvent.InnerDemoActivity;
-import com.example.yangl.androidsample.touchEvent.OuterDemoActivity;
+import com.example.yangl.androidsample.touchEvent.customviewpager.InnerDemoActivity;
+import com.example.yangl.androidsample.touchEvent.customviewpager.OuterDemoActivity;
 import com.example.yangl.androidsample.touchEvent.ViewPagerRecyclerViewActivity;
 import com.example.yangl.androidsample.touchEvent.innerIntercept.TouchInnerActivity;
 import com.example.yangl.androidsample.touchEvent.myBehavor.FollowBehaviorActivity;
@@ -18,6 +17,9 @@ import com.example.yangl.androidsample.touchEvent.myBehavor.RecyclerViewBehavior
 import com.example.yangl.androidsample.touchEvent.myCoordinatorLayout.MyCoordinatorActivity;
 import com.example.yangl.androidsample.touchEvent.myStickNavLayout.StickyNavActivity;
 import com.example.yangl.androidsample.touchEvent.outsideIntercect.TouchOutActivity;
+import com.example.yangl.androidsample.touchEvent.outsideIntercept2.TouchOutActivity2;
+import com.example.yangl.androidsample.touchEvent.outsideIntercept3.TouchOutActivity3;
+import com.example.yangl.androidsample.touchEvent.outsideIntercept4.TouchOutActivity4;
 import com.example.yangl.androidsample.touchEvent.scrollParent.MyNestedScrollActivity;
 import com.example.yangl.androidsample.touchEvent.scrollParent.OtherNestedActivity;
 import com.example.yangl.androidsample.touchEvent.simple.SimpleTouchActivity;
@@ -46,7 +48,8 @@ public class TouchEventActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.touch_outside, R.id.touch_innerside, R.id.simple,
+    @OnClick({R.id.touch_outside, R.id.touch_outside_2,R.id.touch_outside_3,R.id.touch_outside_4,
+            R.id.touch_innerside, R.id.simple,
             R.id.simple_out_eg,R.id.simple_inner_eg,R.id.simple_viewpager_rclerview_eg,
             R.id.my_coordinator_eg,R.id.my_sticky_eg,R.id.my_scroll_nest_view,R.id.other_scroll_nest_view,
     R.id.follow_behavior_view,R.id.recyclerView_behavior_view,R.id.nest_behavior_view})
@@ -54,6 +57,15 @@ public class TouchEventActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.touch_outside:
                 startActivity(new Intent(TouchEventActivity.this, TouchOutActivity.class));
+                break;
+            case R.id.touch_outside_2:
+                startActivity(new Intent(TouchEventActivity.this, TouchOutActivity2.class));
+                break;
+            case R.id.touch_outside_3:
+                startActivity(new Intent(TouchEventActivity.this, TouchOutActivity3.class));
+                break;
+            case R.id.touch_outside_4:
+                startActivity(new Intent(TouchEventActivity.this, TouchOutActivity4.class));
                 break;
             case R.id.touch_innerside:
                 startActivity(new Intent(TouchEventActivity.this, TouchInnerActivity.class));

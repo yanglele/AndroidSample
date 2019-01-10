@@ -1,10 +1,11 @@
-package com.example.yangl.androidsample.touchEvent.outsideIntercect;
+package com.example.yangl.androidsample.touchEvent.outsideIntercept4;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 /**
@@ -15,21 +16,21 @@ import android.widget.LinearLayout;
  * version:
  * update:
  */
-public class InterceptViewGroup extends LinearLayout {
+public class InterceptViewGroup1 extends FrameLayout {
 
-    private String TAG = "InterceptViewGroup";
+    private String TAG = "outsideIntercept4.InterceptViewGroup1";
 
     private boolean canIntercept;
 
-    public InterceptViewGroup(Context context) {
+    public InterceptViewGroup1(Context context) {
         super(context);
     }
 
-    public InterceptViewGroup(Context context, @Nullable AttributeSet attrs) {
+    public InterceptViewGroup1(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public InterceptViewGroup(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public InterceptViewGroup1(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -41,11 +42,7 @@ public class InterceptViewGroup extends LinearLayout {
                 return false;
             case MotionEvent.ACTION_MOVE:
                 Log.d(TAG, "onInterceptTouchEvent: move");
-                if (canIntercept) {
-                    return true;
-                } else {
-                    return false;
-                }
+                return false;
             case MotionEvent.ACTION_UP:
                 Log.d(TAG, "onInterceptTouchEvent: up");
                 return false;
@@ -69,7 +66,7 @@ public class InterceptViewGroup extends LinearLayout {
                 Log.d(TAG, "onTouchEvent: cancel");break;
                 default:break;
         }
-        return true;
+        return false;
     }
 
 //    public boolean diapatchTpuchEvent(MotionEvent ev){

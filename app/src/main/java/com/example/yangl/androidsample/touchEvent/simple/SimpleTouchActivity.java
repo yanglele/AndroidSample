@@ -2,6 +2,7 @@ package com.example.yangl.androidsample.touchEvent.simple;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -27,20 +28,20 @@ public class SimpleTouchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_simple_touch);
         ButterKnife.bind(this);
 
-//        layout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(SimpleTouchActivity.this,"viewGroup get click!",Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(SimpleTouchActivity.this,"viewGroup get click!",Toast.LENGTH_SHORT).show();
+            }
+        });
 
-//        layout.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                Toast.makeText(SimpleTouchActivity.this, "viewGroup get touch!", Toast.LENGTH_SHORT).show();
-//                return true;
-//            }
-//        });
+        layout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                Toast.makeText(SimpleTouchActivity.this, "viewGroup get touch!", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override

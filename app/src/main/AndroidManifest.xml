@@ -137,10 +137,13 @@
         <activity android:name=".testActivity.ObjectLeakActivity" />
         <activity android:name=".activity.TouchEventActivity" />
         <activity android:name=".touchEvent.outsideIntercect.TouchOutActivity" />
+        <activity android:name=".touchEvent.outsideIntercept2.TouchOutActivity2" />
+        <activity android:name=".touchEvent.outsideIntercept3.TouchOutActivity3" />
+        <activity android:name=".touchEvent.outsideIntercept4.TouchOutActivity4" />
         <activity android:name=".touchEvent.innerIntercept.TouchInnerActivity" />
         <activity android:name=".touchEvent.simple.SimpleTouchActivity" />
-        <activity android:name=".touchEvent.OuterDemoActivity" />
-        <activity android:name=".touchEvent.InnerDemoActivity" />
+        <activity android:name=".touchEvent.customviewpager.OuterDemoActivity" />
+        <activity android:name=".touchEvent.customviewpager.InnerDemoActivity" />
         <activity android:name=".touchEvent.ViewPagerRecyclerViewActivity" />
         <activity android:name=".touchEvent.myCoordinatorLayout.MyCoordinatorActivity" />
         <activity android:name=".touchEvent.myStickNavLayout.StickyNavActivity" />

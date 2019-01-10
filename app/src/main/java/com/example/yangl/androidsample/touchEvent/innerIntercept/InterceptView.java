@@ -31,11 +31,43 @@ public class InterceptView extends android.support.v7.widget.AppCompatTextView {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        return super.onTouchEvent(event);
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                Log.d(TAG, "onTouchEvent: down");
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d(TAG, "onTouchEvent: move");
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.d(TAG, "onTouchEvent: up  ");
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                Log.d(TAG, "onTouchEvent: cancel");
+                break;
+            default:
+                break;
+        }
+        return true;
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                Log.d(TAG, "dispatchTouchEvent: down");
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.d(TAG, "dispatchTouchEvent: move");
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.d(TAG, "dispatchTouchEvent: up  ");
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                Log.d(TAG, "dispatchTouchEvent: cancel");
+                break;
+            default:
+                break;
+        }
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 getParent().requestDisallowInterceptTouchEvent(true);
@@ -49,7 +81,6 @@ public class InterceptView extends android.support.v7.widget.AppCompatTextView {
                 if (needEvent) {
                     getParent().requestDisallowInterceptTouchEvent(false);
                 }
-                Log.d(TAG, "dispatchTouchEvent: up");
                 break;
             default:
                 break;

@@ -1,4 +1,4 @@
-package com.example.yangl.androidsample.touchEvent.outsideIntercect;
+package com.example.yangl.androidsample.touchEvent.outsideIntercept3;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -15,21 +15,21 @@ import android.widget.LinearLayout;
  * version:
  * update:
  */
-public class InterceptViewGroup extends LinearLayout {
+public class InterceptViewGroup1 extends LinearLayout {
 
-    private String TAG = "InterceptViewGroup";
+    private String TAG = "outsideIntercept3.InterceptViewGroup1";
 
     private boolean canIntercept;
 
-    public InterceptViewGroup(Context context) {
+    public InterceptViewGroup1(Context context) {
         super(context);
     }
 
-    public InterceptViewGroup(Context context, @Nullable AttributeSet attrs) {
+    public InterceptViewGroup1(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public InterceptViewGroup(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public InterceptViewGroup1(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -41,11 +41,7 @@ public class InterceptViewGroup extends LinearLayout {
                 return false;
             case MotionEvent.ACTION_MOVE:
                 Log.d(TAG, "onInterceptTouchEvent: move");
-                if (canIntercept) {
-                    return true;
-                } else {
-                    return false;
-                }
+                return true;
             case MotionEvent.ACTION_UP:
                 Log.d(TAG, "onInterceptTouchEvent: up");
                 return false;
@@ -64,7 +60,7 @@ public class InterceptViewGroup extends LinearLayout {
             case MotionEvent.ACTION_UP:
                 Log.d(TAG, "onTouchEvent: up");break;
             case MotionEvent.ACTION_MOVE:
-                Log.d(TAG, "onTouchEvent: move");break;
+                Log.d(TAG, "onTouchEvent: move");return true;
             case MotionEvent.ACTION_CANCEL:
                 Log.d(TAG, "onTouchEvent: cancel");break;
                 default:break;

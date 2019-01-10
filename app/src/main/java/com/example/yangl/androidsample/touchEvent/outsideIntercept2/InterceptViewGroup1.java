@@ -1,4 +1,4 @@
-package com.example.yangl.androidsample.touchEvent.outsideIntercect;
+package com.example.yangl.androidsample.touchEvent.outsideIntercept2;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -15,21 +15,21 @@ import android.widget.LinearLayout;
  * version:
  * update:
  */
-public class InterceptViewGroup2 extends LinearLayout {
+public class InterceptViewGroup1 extends LinearLayout {
 
-    private String TAG = "InterceptViewGroup2";
+    private String TAG = "outsideIntercept2.InterceptViewGroup1";
 
     private boolean canIntercept;
 
-    public InterceptViewGroup2(Context context) {
+    public InterceptViewGroup1(Context context) {
         super(context);
     }
 
-    public InterceptViewGroup2(Context context, @Nullable AttributeSet attrs) {
+    public InterceptViewGroup1(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public InterceptViewGroup2(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public InterceptViewGroup1(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -41,11 +41,7 @@ public class InterceptViewGroup2 extends LinearLayout {
                 return false;
             case MotionEvent.ACTION_MOVE:
                 Log.d(TAG, "onInterceptTouchEvent: move");
-                if (canIntercept) {
-                    return true;
-                } else {
-                    return false;
-                }
+                return false;
             case MotionEvent.ACTION_UP:
                 Log.d(TAG, "onInterceptTouchEvent: up");
                 return false;
@@ -60,7 +56,7 @@ public class InterceptViewGroup2 extends LinearLayout {
     public boolean onTouchEvent(MotionEvent event) {
         switch(event.getAction()){
             case MotionEvent.ACTION_DOWN:
-                Log.d(TAG, "onTouchEvent: down");break;
+                Log.d(TAG, "onTouchEvent: down");return true;
             case MotionEvent.ACTION_UP:
                 Log.d(TAG, "onTouchEvent: up");break;
             case MotionEvent.ACTION_MOVE:
@@ -69,7 +65,7 @@ public class InterceptViewGroup2 extends LinearLayout {
                 Log.d(TAG, "onTouchEvent: cancel");break;
                 default:break;
         }
-        return true;
+        return false;
     }
 
 //    public boolean diapatchTpuchEvent(MotionEvent ev){
@@ -95,7 +91,7 @@ public class InterceptViewGroup2 extends LinearLayout {
                 Log.d(TAG, "dispatchTouchEvent: cancel");break;
             default:break;
         }
-        return true;
+        return super.dispatchTouchEvent(ev);
     }
 
     public void setCanIntercept(boolean canIntercept) {

@@ -1,4 +1,4 @@
-package com.example.yangl.androidsample.touchEvent.ui;
+package com.example.yangl.androidsample.touchEvent.customviewpager;
 
 import android.content.Context;
 import android.util.AttributeSet;
