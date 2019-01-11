@@ -140,6 +140,7 @@
         <activity android:name=".touchEvent.outsideIntercept2.TouchOutActivity2" />
         <activity android:name=".touchEvent.outsideIntercept3.TouchOutActivity3" />
         <activity android:name=".touchEvent.outsideIntercept4.TouchOutActivity4" />
+        <activity android:name=".touchEvent.outsideInterceptMove.TouchOutMoveActivity" />
         <activity android:name=".touchEvent.innerIntercept.TouchInnerActivity" />
         <activity android:name=".touchEvent.simple.SimpleTouchActivity" />
         <activity android:name=".touchEvent.customviewpager.OuterDemoActivity" />

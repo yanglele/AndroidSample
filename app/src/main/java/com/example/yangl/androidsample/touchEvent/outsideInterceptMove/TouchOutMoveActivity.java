@@ -1,19 +1,18 @@
-package com.example.yangl.androidsample.touchEvent.outsideIntercect;
+package com.example.yangl.androidsample.touchEvent.outsideInterceptMove;
 
+import android.os.Bundle;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.yangl.androidsample.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class TouchOutActivity extends AppCompatActivity {
+public class TouchOutMoveActivity extends AppCompatActivity {
 
 
     private String TAG = "InterceptActivity";
@@ -26,7 +25,7 @@ public class TouchOutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_touch_out);
+        setContentView(R.layout.activity_touch_out_move);
         ButterKnife.bind(this);
         viewGroupGet();
 
@@ -97,11 +96,12 @@ public class TouchOutActivity extends AppCompatActivity {
                 // 计算出滑动的偏移量
                 float deltaY = pointerY - downY;
                 Log.d(TAG, "dispatchTouchEvent: move ,dy = "+deltaY);
-                if(Math.abs(deltaY) > 10 && Math.abs(deltaY) < 30){
+                if(Math.abs(deltaY) > 30 && Math.abs(deltaY) < 60){
                     viewGroup.setCanIntercept(true);
-                }else if(Math.abs(deltaY) > 30){
+                }else if(Math.abs(deltaY) > 60){
                     viewGroup.setCanIntercept(false);
                 }
+//                viewGroup.setCanIntercept(true);
                 break;
             default:break;
         }

@@ -22,9 +22,9 @@ import java.util.Arrays;
  */
 public class MyNestedChildView extends View implements NestedScrollingChild {
 
-    public static final String TAG = "NestedChildView";
+    public static final String TAG = "MyNestedChildView";
 
-    private final NestedScrollingChildHelper childHelper = new NestedScrollingChildHelper(this);
+    private final NestedScrollingChildHelper nestedScrollingChildHelper = new NestedScrollingChildHelper(this);
     private float downY;
 
     private int[] consumed = new int[2];
@@ -148,43 +148,43 @@ public class MyNestedChildView extends View implements NestedScrollingChild {
     @Override
     public void setNestedScrollingEnabled(boolean enabled) {
         Log.d(TAG, String.format("setNestedScrollingEnabled , enabled = %b", enabled));
-        childHelper.setNestedScrollingEnabled(enabled);
+        nestedScrollingChildHelper.setNestedScrollingEnabled(enabled);
     }
 
     @Override
     public boolean isNestedScrollingEnabled() {
         Log.d(TAG, "isNestedScrollingEnabled");
-        return childHelper.isNestedScrollingEnabled();
+        return nestedScrollingChildHelper.isNestedScrollingEnabled();
     }
 
     @Override
     public boolean startNestedScroll(int axes) {
         Log.d(TAG, String.format("startNestedScroll , axes = %d", axes));
-        return childHelper.startNestedScroll(axes);
+        return nestedScrollingChildHelper.startNestedScroll(axes);
     }
 
     @Override
     public void stopNestedScroll() {
         Log.d(TAG, "stopNestedScroll");
-        childHelper.stopNestedScroll();
+        nestedScrollingChildHelper.stopNestedScroll();
     }
 
     @Override
     public boolean hasNestedScrollingParent() {
         Log.d(TAG, "hasNestedScrollingParent");
-        return childHelper.hasNestedScrollingParent();
+        return nestedScrollingChildHelper.hasNestedScrollingParent();
     }
 
     @Override
     public boolean dispatchNestedScroll(int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed, int[] offsetInWindow) {
-        final boolean b = childHelper.dispatchNestedScroll(dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, offsetInWindow);
+        final boolean b = nestedScrollingChildHelper.dispatchNestedScroll(dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, offsetInWindow);
         Log.d(TAG, String.format("dispatchNestedScroll , dxConsumed = %d, dyConsumed = %d, dxUnconsumed = %d, dyUnconsumed = %d, offsetInWindow = %s", dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, Arrays.toString(offsetInWindow)));
         return b;
     }
 
     @Override
     public boolean dispatchNestedPreScroll(int dx, int dy, int[] consumed, int[] offsetInWindow) {
-        final boolean b = childHelper.dispatchNestedPreScroll(dx, dy, consumed, offsetInWindow);
+        final boolean b = nestedScrollingChildHelper.dispatchNestedPreScroll(dx, dy, consumed, offsetInWindow);
         Log.d(TAG, String.format("dispatchNestedPreScroll , dx = %d, dy = %d, consumed = %s, offsetInWindow = %s", dx, dy, Arrays.toString(consumed), Arrays.toString(offsetInWindow)));
         return b;
     }
@@ -192,12 +192,12 @@ public class MyNestedChildView extends View implements NestedScrollingChild {
     @Override
     public boolean dispatchNestedFling(float velocityX, float velocityY, boolean consumed) {
         Log.d(TAG, String.format("dispatchNestedFling , velocityX = %f, velocityY = %f, consumed = %b", velocityX, velocityY, consumed));
-        return childHelper.dispatchNestedFling(velocityX, velocityY, consumed);
+        return nestedScrollingChildHelper.dispatchNestedFling(velocityX, velocityY, consumed);
     }
 
     @Override
     public boolean dispatchNestedPreFling(float velocityX, float velocityY) {
         Log.d(TAG, String.format("dispatchNestedPreFling , velocityX = %f, velocityY = %f", velocityX, velocityY));
-        return childHelper.dispatchNestedPreFling(velocityX, velocityY);
+        return nestedScrollingChildHelper.dispatchNestedPreFling(velocityX, velocityY);
     }
 }
