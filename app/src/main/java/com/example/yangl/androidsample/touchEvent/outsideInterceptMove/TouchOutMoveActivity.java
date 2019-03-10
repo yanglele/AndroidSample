@@ -96,12 +96,12 @@ public class TouchOutMoveActivity extends AppCompatActivity {
                 // 计算出滑动的偏移量
                 float deltaY = pointerY - downY;
                 Log.d(TAG, "dispatchTouchEvent: move ,dy = "+deltaY);
-                if(Math.abs(deltaY) > 30 && Math.abs(deltaY) < 60){
+                if(Math.abs(deltaY) > 100 && Math.abs(deltaY) < 300){
                     viewGroup.setCanIntercept(true);
-                }else if(Math.abs(deltaY) > 60){
-                    viewGroup.setCanIntercept(false);
                 }
-//                viewGroup.setCanIntercept(true);
+//                else if(Math.abs(deltaY) > 300){
+//                    viewGroup.setCanIntercept(false);
+//                }
                 break;
             default:break;
         }

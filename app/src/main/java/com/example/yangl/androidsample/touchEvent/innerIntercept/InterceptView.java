@@ -47,7 +47,8 @@ public class InterceptView extends android.support.v7.widget.AppCompatTextView {
             default:
                 break;
         }
-        return true;
+        return super.onTouchEvent(event);
+//        return true;
     }
 
     @Override

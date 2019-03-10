@@ -56,7 +56,7 @@ public class InterceptViewGroup1 extends LinearLayout {
     public boolean onTouchEvent(MotionEvent event) {
         switch(event.getAction()){
             case MotionEvent.ACTION_DOWN:
-                Log.d(TAG, "onTouchEvent: down");return true;
+                Log.d(TAG, "onTouchEvent: down");break;
             case MotionEvent.ACTION_UP:
                 Log.d(TAG, "onTouchEvent: up");break;
             case MotionEvent.ACTION_MOVE:

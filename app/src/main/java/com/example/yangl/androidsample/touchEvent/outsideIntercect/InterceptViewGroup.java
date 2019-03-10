@@ -84,6 +84,8 @@ public class InterceptViewGroup extends LinearLayout {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
+        Log.d(TAG, "dispatchTouchEvent: false");
+//        return true;
         switch(ev.getAction()){
             case MotionEvent.ACTION_DOWN:
                 Log.d(TAG, "dispatchTouchEvent: down");break;

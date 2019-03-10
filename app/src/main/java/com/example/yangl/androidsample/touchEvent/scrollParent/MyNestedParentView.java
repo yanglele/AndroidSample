@@ -68,14 +68,6 @@ public class MyNestedParentView extends FrameLayout implements NestedScrollingPa
         if(scrollY >=0 && scrollY <= ((View)getParent()).getHeight() - getHeight()){
             setY(scrollY);
         }
-//        if(scrollY <= MARGIN_TOP){
-//        }else if(scrollY+getHeight() <  UISizeUtils.getScreenHeight((Activity) getContext())){
-//
-//         }
-//        //下滑
-//        if(scrollY < 0 && scrollY+getHeight() <  UISizeUtils.getScreenHeight((Activity) getContext())){
-//            setY(scrollY);
-//        }
         Log.d(TAG, String.format("onNestedScroll, dxConsumed = %d, dyConsumed = %d, dxUnconsumed = %d, dyUnconsumed = %d", dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed));
     }
 

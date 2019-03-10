@@ -49,11 +49,12 @@ public class InterceptViewGroup extends LinearLayout {
             default:
                 break;
         }
-        if(ev.getAction() == MotionEvent.ACTION_DOWN){
-            return false;
-        }else {
-            return true;
-        }
+//        if(ev.getAction() == MotionEvent.ACTION_DOWN){
+//            return false;
+//        }else {
+//            return true;
+//        }
+        return super.onInterceptTouchEvent(ev);
     }
 
     @Override

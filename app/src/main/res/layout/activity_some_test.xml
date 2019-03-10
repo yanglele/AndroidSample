@@ -98,4 +98,12 @@
         android:layout_height="wrap_content"
         android:onClick="onViewLifeClick"/>
 
+    <Button
+        android:id="@+id/scroll_to"
+        android:text="view_life"
+        app:layout_constraintTop_toBottomOf="@+id/view_life"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onScrollToClick"/>
+
 </android.support.constraint.ConstraintLayout>

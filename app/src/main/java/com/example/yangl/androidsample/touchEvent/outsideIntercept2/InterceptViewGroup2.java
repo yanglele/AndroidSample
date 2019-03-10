@@ -41,7 +41,7 @@ public class InterceptViewGroup2 extends LinearLayout {
                 return false;
             case MotionEvent.ACTION_MOVE:
                 Log.d(TAG, "onInterceptTouchEvent: move");
-                return true;
+                return false;
             case MotionEvent.ACTION_UP:
                 Log.d(TAG, "onInterceptTouchEvent: up");
                 return false;
@@ -60,7 +60,7 @@ public class InterceptViewGroup2 extends LinearLayout {
             case MotionEvent.ACTION_UP:
                 Log.d(TAG, "onTouchEvent: up");break;
             case MotionEvent.ACTION_MOVE:
-                Log.d(TAG, "onTouchEvent: move");return true;
+                Log.d(TAG, "onTouchEvent: move");break;
             case MotionEvent.ACTION_CANCEL:
                 Log.d(TAG, "onTouchEvent: cancel");break;
                 default:break;
@@ -80,6 +80,8 @@ public class InterceptViewGroup2 extends LinearLayout {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
+//        Log.d(TAG, "dispatchTouchEvent: return false");
+//        return false;
         switch(ev.getAction()){
             case MotionEvent.ACTION_DOWN:
                 Log.d(TAG, "dispatchTouchEvent: down");break;

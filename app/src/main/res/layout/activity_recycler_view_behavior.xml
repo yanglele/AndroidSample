@@ -21,5 +21,4 @@
         app:layout_behavior="com.example.yangl.androidsample.touchEvent.myBehavor.RecyclerViewBehavior"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
 </android.support.design.widget.CoordinatorLayout>

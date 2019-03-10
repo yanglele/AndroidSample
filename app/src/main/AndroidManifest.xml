@@ -151,7 +151,10 @@
         <activity android:name=".touchEvent.scrollParent.MyNestedScrollActivity" />
         <activity android:name=".touchEvent.scrollParent.OtherNestedActivity" />
         <activity android:name=".touchEvent.myBehavor.FollowBehaviorActivity" />
-        <activity android:name=".touchEvent.myBehavor.RecyclerViewBehaviorActivity"></activity>
+        <activity android:name=".touchEvent.myBehavor.RecyclerViewBehaviorActivity" />
+        <activity android:name=".activity.StartActivityForResultActivity" />
+        <activity android:name=".someActivity.StartActivityForResultTestActivity" />
+        <activity android:name=".someActivity.TextViewScrollToActivity"></activity>
     </application>
 
 </manifest>

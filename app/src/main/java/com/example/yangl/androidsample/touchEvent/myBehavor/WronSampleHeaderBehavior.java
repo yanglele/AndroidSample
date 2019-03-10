@@ -12,6 +12,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
+import static android.content.ContentValues.TAG;
+
 /**
  * Desc:滑动recyclerView，textView需要消耗滑动从而移动,recyclerview不移动
  * Author:yl
@@ -20,7 +22,7 @@ import android.widget.TextView;
  * version:
  * update:
  */
-public class SampleHeaderBehavior extends CoordinatorLayout.Behavior<TextView> {
+public class WronSampleHeaderBehavior extends CoordinatorLayout.Behavior<TextView> {
 
     private final String TAG = "SampleHeaderBehavior";
 
@@ -33,10 +35,10 @@ public class SampleHeaderBehavior extends CoordinatorLayout.Behavior<TextView> {
 
     private int lastDy = 0;
 
-    public SampleHeaderBehavior() {
+    public WronSampleHeaderBehavior() {
     }
 
-    public SampleHeaderBehavior(Context context, AttributeSet attrs) {
+    public WronSampleHeaderBehavior(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -60,43 +62,42 @@ public class SampleHeaderBehavior extends CoordinatorLayout.Behavior<TextView> {
 
     @Override
     public void onNestedPreScroll(@NonNull CoordinatorLayout coordinatorLayout,
-                                  @NonNull TextView textView, @NonNull View recyclerView, int dx, int dy,
+                                  @NonNull TextView child, @NonNull View target, int dx, int dy,
                                   @NonNull int[] consumed, int type) {
-        super.onNestedPreScroll(coordinatorLayout, textView, recyclerView, dx, dy, consumed, type);
-        if (recyclerView instanceof RecyclerView) {
-            //recyclerView是否可以滑动
-            if(canScroll(textView,dy,recyclerView)){
-                float finalY = textView.getTranslationY() - dy;//dy为移动分量
-                Log.d(TAG, "onNestedPreScroll: can finalY = "+finalY);
-                if (dy < -textView.getHeight()) {
-                    dy = -textView.getHeight();
-                } else if (dy > textView.getHeight()) {
-                    dy = textView.getHeight();
+        super.onNestedPreScroll(coordinatorLayout, child, target, dx, dy, consumed, type);
+        if (target instanceof RecyclerView) {
+
+            if (canScroll(child, dy, target)) {
+                float finalY = child.getTranslationY() - dy;
+                if (finalY < -child.getHeight()) {
+                    finalY = -child.getHeight();
+                } else if (finalY > 0) {
+                    finalY = 0;
                 }
-                textView.setTranslationY(finalY);
+                child.setTranslationY(finalY);
                 consumed[1] = dy;
+                Log.d(TAG, "consumed: " + consumed[1]);
             }
         }
     }
 
-    private boolean canScroll(View child ,int dy,View recyclerView){
-        if(dy > 0){
-            //上滑
-            Log.d(TAG, "canScroll->up:dy = "+dy+"  getY = "+recyclerView.getY());
-            if(recyclerView.getY() > 0){
-                return true;
-            }else {
+    private boolean canScroll(View child, float dy, View target) {
+        if (dy > 0) {
+            Log.d(TAG, "canScroll->up:dy = "+dy+"  getY = "+target.getY());
+            if (child.getTranslationY() == -child.getHeight()) {
                 return false;
-            }
-        }else {
-            //下滑
-            Log.d(TAG, "canScroll->down:dy = "+dy+"  getY = "+recyclerView.getY());
-            if(recyclerView.getY() < child.getHeight()){
+            } else {
                 return true;
-            }else {
+            }
+        } else {
+            Log.d(TAG, "canScroll->down:dy = "+dy+"  getY = "+target.getY());
+            RecyclerView list = (RecyclerView) target;
+            int pos = ((LinearLayoutManager) list.getLayoutManager()).findFirstCompletelyVisibleItemPosition();
+            if (pos == 0) {
+                return true;
+            } else {
                 return false;
             }
         }
-    }
-
+}
 }
