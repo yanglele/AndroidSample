@@ -65,7 +65,7 @@ public class InterceptViewGroup2 extends LinearLayout {
                 Log.d(TAG, "onTouchEvent: cancel");break;
                 default:break;
         }
-        return true;
+        return false;
     }
 
 //    public boolean diapatchTpuchEvent(MotionEvent ev){
@@ -80,18 +80,19 @@ public class InterceptViewGroup2 extends LinearLayout {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        switch(ev.getAction()){
-            case MotionEvent.ACTION_DOWN:
-                Log.d(TAG, "dispatchTouchEvent: down");break;
-            case MotionEvent.ACTION_UP:
-                Log.d(TAG, "dispatchTouchEvent: up");break;
-            case MotionEvent.ACTION_MOVE:
-                Log.d(TAG, "dispatchTouchEvent: move");break;
-            case MotionEvent.ACTION_CANCEL:
-                Log.d(TAG, "dispatchTouchEvent: cancel");break;
-            default:break;
-        }
-        return super.dispatchTouchEvent(ev);
+//        switch(ev.getAction()){
+//            case MotionEvent.ACTION_DOWN:
+//                Log.d(TAG, "dispatchTouchEvent: down");break;
+//            case MotionEvent.ACTION_UP:
+//                Log.d(TAG, "dispatchTouchEvent: up");break;
+//            case MotionEvent.ACTION_MOVE:
+//                Log.d(TAG, "dispatchTouchEvent: move");break;
+//            case MotionEvent.ACTION_CANCEL:
+//                Log.d(TAG, "dispatchTouchEvent: cancel");break;
+//            default:break;
+//        }
+//        return super.dispatchTouchEvent(ev);
+        return true;
     }
 
     public void setCanIntercept(boolean canIntercept) {

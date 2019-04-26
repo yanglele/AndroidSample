@@ -7,9 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".activity.TouchEventActivity">
 
+
+
     <com.example.yangl.androidsample.touchEvent.outsideIntercept4.InterceptViewGroup2
         android:id="@+id/view_group_2"
-        android:layout_width="400dp"
+        android:layout_width="300dp"
         android:layout_height="400dp"
         android:background="@color/mDarkBlackColor">
 
@@ -23,5 +25,6 @@
             android:padding="20dp" />
 
     </com.example.yangl.androidsample.touchEvent.outsideIntercept4.InterceptViewGroup2>
+
 
 </com.example.yangl.androidsample.touchEvent.outsideIntercept4.InterceptViewGroup1>

@@ -33,20 +33,19 @@ public class InterceptView extends View {
     public boolean onTouchEvent(MotionEvent event) {
         switch(event.getAction()){
             case MotionEvent.ACTION_DOWN:
-                Log.d(TAG, "onTouchEvent: down");break;
+                Log.d(TAG, "onTouchEvent: down");return true;
             case MotionEvent.ACTION_UP:
-                Log.d(TAG, "onTouchEvent: up");break;
+                break;
             case MotionEvent.ACTION_MOVE:
                 Log.d(TAG, "onTouchEvent: move");break;
             case MotionEvent.ACTION_CANCEL:
                 Log.d(TAG, "onTouchEvent: cancel");break;
             default:break;
         }
-        return true;
+        return false;
     }
 
-
-
+    float pos1;
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {

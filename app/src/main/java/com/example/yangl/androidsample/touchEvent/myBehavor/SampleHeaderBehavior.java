@@ -24,15 +24,6 @@ public class SampleHeaderBehavior extends CoordinatorLayout.Behavior<TextView> {
 
     private final String TAG = "SampleHeaderBehavior";
 
-    // 界面整体向上滑动，达到列表可滑动的临界点
-    private boolean upReach;
-    // 列表向上滑动后，再向下滑动，达到界面整体可滑动的临界点
-    private boolean downReach;
-    // 列表上一个全部可见的item位置
-    private int lastPosition = -1;
-
-    private int lastDy = 0;
-
     public SampleHeaderBehavior() {
     }
 
@@ -44,8 +35,6 @@ public class SampleHeaderBehavior extends CoordinatorLayout.Behavior<TextView> {
     public boolean onInterceptTouchEvent(CoordinatorLayout parent, TextView child, MotionEvent ev) {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                downReach = false;
-                upReach = false;
                 break;
         }
         return super.onInterceptTouchEvent(parent, child, ev);

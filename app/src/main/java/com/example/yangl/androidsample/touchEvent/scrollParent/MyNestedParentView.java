@@ -21,7 +21,7 @@ import java.util.Arrays;
  * version:
  * update:
  */
-public class MyNestedParentView extends FrameLayout implements NestedScrollingParent {
+public class MyNestedParentView extends FrameLayout{
 
 
     public static final int MARGIN_TOP = 100;
@@ -52,13 +52,15 @@ public class MyNestedParentView extends FrameLayout implements NestedScrollingPa
     @Override
     public void onNestedScrollAccepted(View child, View target, int nestedScrollAxes) {
         Log.d(TAG, String.format("onNestedScrollAccepted, child = %s, target = %s, nestedScrollAxes = %d", child, target, nestedScrollAxes));
-        parentHelper.onNestedScrollAccepted(child, target, nestedScrollAxes);
+//        parentHelper.onNestedScrollAccepted(child, target, nestedScrollAxes);
+        super.onNestedScrollAccepted(child, target, nestedScrollAxes);
     }
 
     @Override
     public void onStopNestedScroll(View target) {
         Log.d(TAG, "onStopNestedScroll");
-        parentHelper.onStopNestedScroll(target);
+//        parentHelper.onStopNestedScroll(target);
+        super.onStopNestedScroll(target);
     }
 
     @Override
@@ -111,7 +113,8 @@ public class MyNestedParentView extends FrameLayout implements NestedScrollingPa
     @Override
     public int getNestedScrollAxes() {
         Log.d(TAG, "getNestedScrollAxes");
-        return parentHelper.getNestedScrollAxes();
+        return super.getNestedScrollAxes();
+//        return parentHelper.getNestedScrollAxes();
     }
 
 }

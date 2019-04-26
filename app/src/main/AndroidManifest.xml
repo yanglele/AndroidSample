@@ -15,15 +15,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.RxJavaTestActivity"></activity>
+        <activity android:name=".touchEvent.scrollconflict.ScrollRecyclerActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- 适配三星S8 将手机的最大纵横比扩大到2.4来适配全面屏 -->
+        </activity> <!-- 适配三星S8 将手机的最大纵横比扩大到2.4来适配全面屏 -->
         <meta-data
             android:name="android.max_aspect"
             android:value="2.4" />
@@ -154,7 +154,7 @@
         <activity android:name=".touchEvent.myBehavor.RecyclerViewBehaviorActivity" />
         <activity android:name=".activity.StartActivityForResultActivity" />
         <activity android:name=".someActivity.StartActivityForResultTestActivity" />
-        <activity android:name=".someActivity.TextViewScrollToActivity"></activity>
+        <activity android:name=".someActivity.TextViewScrollToActivity" />
     </application>
 
 </manifest>

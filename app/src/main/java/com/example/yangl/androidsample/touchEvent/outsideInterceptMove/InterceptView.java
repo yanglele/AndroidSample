@@ -37,6 +37,7 @@ public class InterceptView extends View {
         switch(event.getAction()){
             case MotionEvent.ACTION_DOWN:
                 Log.d(TAG, "onTouchEvent: down "+downY);
+                lastY = event.getRawY();
                 break;
             case MotionEvent.ACTION_UP:
                 Log.d(TAG, "onTouchEvent: up");break;

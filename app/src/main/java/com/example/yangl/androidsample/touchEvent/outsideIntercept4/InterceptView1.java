@@ -42,7 +42,7 @@ public class InterceptView1 extends View {
                 Log.d(TAG, "onTouchEvent: cancel");break;
             default:break;
         }
-        return false;
+        return true;
     }
 
 

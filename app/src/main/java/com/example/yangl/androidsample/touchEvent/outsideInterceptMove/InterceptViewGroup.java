@@ -61,6 +61,8 @@ public class InterceptViewGroup extends LinearLayout {
 
     float lastY = 0;
 
+    boolean firstCome = true;
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch(event.getAction()){
@@ -70,11 +72,18 @@ public class InterceptViewGroup extends LinearLayout {
             case MotionEvent.ACTION_UP:
                 Log.d(TAG, "onTouchEvent: up");break;
             case MotionEvent.ACTION_MOVE:
-                int dy = (int)( event.getRawY() - lastY );
+                int dy = 0;
+                if(firstCome){
+                    firstCome = !firstCome;
+                    dy = 0;
+                }else {
+                    dy = (int)( event.getRawY() - lastY );
+                }
                 ((ViewGroup)(getParent())).scrollBy(0,-dy);
                 lastY = event.getRawY();
                 Log.d("viewGroup move", "onTouchEvent: move Y = "+event.getRawY()+" dy = "+dy);break;
             case MotionEvent.ACTION_CANCEL:
+                firstCome = true;
                 Log.d(TAG, "onTouchEvent: cancel");break;
                 default:break;
         }
@@ -109,7 +118,7 @@ public class InterceptViewGroup extends LinearLayout {
         return super.dispatchTouchEvent(ev);
     }
 
-    public void setCanIntercept(boolean canIntercept) {
+    public void setCanIntercept(boolean canIntercept,int viewY) {
         this.canIntercept = canIntercept;
     }
 }

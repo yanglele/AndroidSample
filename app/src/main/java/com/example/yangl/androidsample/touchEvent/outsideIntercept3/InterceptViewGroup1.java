@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 /**
@@ -15,7 +16,7 @@ import android.widget.LinearLayout;
  * version:
  * update:
  */
-public class InterceptViewGroup1 extends LinearLayout {
+public class InterceptViewGroup1 extends FrameLayout {
 
     private String TAG = "outsideIntercept3.InterceptViewGroup1";
 

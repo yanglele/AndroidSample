@@ -62,6 +62,12 @@
             android:text="simple_out_eg" />
 
         <Button
+            android:id="@+id/scroll_recycler_rg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scroll_recycler_rg" />
+
+        <Button
             android:id="@+id/simple_inner_eg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
