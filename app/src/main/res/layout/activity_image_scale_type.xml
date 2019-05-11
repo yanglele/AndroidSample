@@ -55,6 +55,15 @@
         android:layout_height="wrap_content"
         android:onClick="frescoClick"/>
 
+    <Button
+        android:id="@+id/fit_left_top"
+        android:text="fit_left_top"
+        app:layout_constraintTop_toBottomOf="@+id/change_fresco"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="fitLeftTopClick"/>
+
 
     <ImageView
         android:id="@+id/image_view2"

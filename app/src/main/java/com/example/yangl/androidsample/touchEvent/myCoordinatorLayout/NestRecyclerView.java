@@ -7,6 +7,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 
+import com.example.irecyclerlib.IRecyclerView;
+
 /**
  * Desc:
  * Author:yl
@@ -15,7 +17,7 @@ import android.view.MotionEvent;
  * version:
  * update:
  */
-public class NestRecyclerView extends RecyclerView {
+public class NestRecyclerView extends IRecyclerView {
 
     private String TAG = "NestRecyclerView";
 

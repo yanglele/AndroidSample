@@ -1,4 +1,4 @@
-def supportVersion = "27.0.3"
+def supportVersion = "27.0.2"
 def retrofitVersion = "2.4.0"
 def okHttpVersion = "3.11.0"
 def stethoVersion = "1.5.0"

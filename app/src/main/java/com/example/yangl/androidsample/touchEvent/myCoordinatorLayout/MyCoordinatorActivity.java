@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import com.example.yangl.androidsample.IRecyclerViewSample.irecyclerSimple.SimpleRecyclerViewAdapter;
 import com.example.yangl.androidsample.R;
@@ -31,6 +34,8 @@ public class MyCoordinatorActivity extends AppCompatActivity {
 
         mListView.setLayoutManager(new LinearLayoutManager(this));
         mListView.setAdapter(new SimpleRecyclerViewAdapter(this,list));
+        mListView.addHeaderView(LayoutInflater.from(this).inflate(R.layout.recycler_header,mListView,false));
+
 //        mListView.setAdapter(new ArrayAdapter(this, R.layout.list_item_layout, R.id.text_name, arr));
     }
 }

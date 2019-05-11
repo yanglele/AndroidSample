@@ -43,14 +43,14 @@
 
     </android.support.design.widget.AppBarLayout>
 
+
     <com.example.irecyclerlib.IRecyclerView
         android:id="@+id/recycler_view"
-        android:layout_marginTop="-40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:loadMoreEnabled="true"
         app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer"
-        app:layout_behavior="com.example.yangl.androidsample.touchEvent.MyScrollingViewBehavior">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
     </com.example.irecyclerlib.IRecyclerView>
 
 </android.support.design.widget.CoordinatorLayout>
