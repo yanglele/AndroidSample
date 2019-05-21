@@ -28,10 +28,10 @@ public class MyClass {
 //        simpleOnSubscribe();
 //        simpleFrom();
 //        simpleOnSubscribe1();
-//        simpleMap();
+        simpleMap();
 //        simpleFlatMap();
 //        simpleLift();
-        simpleFilter();
+//        simpleFilter();
 //        simpleSubscribeNext();
     }
 
@@ -294,7 +294,8 @@ public class MyClass {
     //map将String类型转换为Integer,map 一对一转换
     private static void simpleMap() {
         String[] names = {"11", "22", "33"};
-        Observable.from(names).map(new Func1<String, Integer>() {
+        Observable.from(names)
+                .map(new Func1<String, Integer>() {
             @Override
             public Integer call(String s) {
                 if (Integer.valueOf(s) > 0) {
@@ -302,7 +303,15 @@ public class MyClass {
                 }
                 return 0;
             }
-        }).subscribe(new Action1<Integer>() {
+        }).filter(new Func1<Integer, Boolean>() {
+            @Override
+            public Boolean call(Integer integer) {
+                return integer > 1;
+            }
+        })
+                .subscribeOn(Schedulers.immediate())
+                .observeOn(Schedulers.immediate())
+                .subscribe(new Action1<Integer>() {
             @Override
             public void call(Integer integer) {
                 System.out.println(integer);

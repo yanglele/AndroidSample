@@ -1,1 +1,1 @@
-include ':app', ':irecyclerlib', ':eventbussource', ':processor', ':processor-lib', ':rxjava'
+include ':app', ':irecyclerlib',  ':processor', ':processor-lib', ':rxjava'

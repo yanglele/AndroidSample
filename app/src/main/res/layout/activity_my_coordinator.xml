@@ -12,7 +12,7 @@
         <LinearLayout
             android:id="@+id/title_container"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="200dp"
             android:background="@color/colorAccent"
             android:gravity="center_vertical"
             android:orientation="horizontal">
@@ -21,8 +21,7 @@
         <com.example.yangl.androidsample.touchEvent.myCoordinatorLayout.NestRecyclerView
             android:id="@+id/list_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/title_container"/>
+            android:layout_height="match_parent"/>
     </com.example.yangl.androidsample.touchEvent.myCoordinatorLayout.NestedScrollParentLayout>
 
 </RelativeLayout>
