@@ -21,7 +21,7 @@ import java.util.Arrays;
  * version:
  * update:
  */
-public class MyNestedParentView extends FrameLayout implements NestedScrollingParent {
+public class MyNestedParentView extends FrameLayout{
 
 
     public static final int MARGIN_TOP = 100;
@@ -52,13 +52,15 @@ public class MyNestedParentView extends FrameLayout implements NestedScrollingPa
     @Override
     public void onNestedScrollAccepted(View child, View target, int nestedScrollAxes) {
         Log.d(TAG, String.format("onNestedScrollAccepted, child = %s, target = %s, nestedScrollAxes = %d", child, target, nestedScrollAxes));
-        parentHelper.onNestedScrollAccepted(child, target, nestedScrollAxes);
+//        parentHelper.onNestedScrollAccepted(child, target, nestedScrollAxes);
+        super.onNestedScrollAccepted(child, target, nestedScrollAxes);
     }
 
     @Override
     public void onStopNestedScroll(View target) {
         Log.d(TAG, "onStopNestedScroll");
-        parentHelper.onStopNestedScroll(target);
+//        parentHelper.onStopNestedScroll(target);
+        super.onStopNestedScroll(target);
     }
 
     @Override
@@ -68,37 +70,22 @@ public class MyNestedParentView extends FrameLayout implements NestedScrollingPa
         if(scrollY >=0 && scrollY <= ((View)getParent()).getHeight() - getHeight()){
             setY(scrollY);
         }
-//        if(scrollY <= MARGIN_TOP){
-//        }else if(scrollY+getHeight() <  UISizeUtils.getScreenHeight((Activity) getContext())){
-//
-//         }
-//        //下滑
-//        if(scrollY < 0 && scrollY+getHeight() <  UISizeUtils.getScreenHeight((Activity) getContext())){
-//            setY(scrollY);
-//        }
         Log.d(TAG, String.format("onNestedScroll, dxConsumed = %d, dyConsumed = %d, dxUnconsumed = %d, dyUnconsumed = %d", dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed));
     }
 
     @Override
     public void onNestedPreScroll(View target, int dx, int dy, int[] consumed) {
         // 应该移动的Y距离
-        final float shouldMoveY = getY() + dy;
-
-        // 获取到父View的容器的引用，这里假定父View容器是View
-        final View parent = (View) getParent();
+        final float afterMarginTop = getY() + dy;
 
         int consumedY;
         // 如果超过了父View的上边界，只消费子View到父View上边的距离
         //向上滑<=100 不消耗，或者向下滑>100不消耗
-        if ((shouldMoveY <= MARGIN_TOP && dy < 0) || (dy > 0  && shouldMoveY >= MARGIN_TOP)) {
-            //0
+        if ((afterMarginTop <= MARGIN_TOP && dy < 0) || (dy > 0  && afterMarginTop >= MARGIN_TOP)) {
+            //父布局不消耗事件
             consumedY = 0;
-        } else if (shouldMoveY >= parent.getHeight() - getHeight()) {
-            // 如果超过了父View的下边界，只消费子View到父View
-            //0
-            consumedY = (int) (parent.getHeight() - getHeight() - getY());
         } else {
-            // 其他情况下全部消费
+            // 其他情况下父布局全部消费
             consumedY = dy;
         }
 
@@ -108,7 +95,7 @@ public class MyNestedParentView extends FrameLayout implements NestedScrollingPa
         // 将父View消费掉的放入consumed数组中
         consumed[1] = consumedY;
 
-        Log.d(TAG, String.format("onNestedPreScroll, dx = %d, dy = %d, consumed = %s", dx, dy, Arrays.toString(consumed)));
+        Log.d(TAG, "onNestedPreScroll: ");
     }
 
     @Override
@@ -126,7 +113,8 @@ public class MyNestedParentView extends FrameLayout implements NestedScrollingPa
     @Override
     public int getNestedScrollAxes() {
         Log.d(TAG, "getNestedScrollAxes");
-        return parentHelper.getNestedScrollAxes();
+        return super.getNestedScrollAxes();
+//        return parentHelper.getNestedScrollAxes();
     }
 
 }

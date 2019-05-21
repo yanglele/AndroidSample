@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/view_group"
@@ -8,83 +8,120 @@
     android:orientation="vertical"
     tools:context=".activity.TouchEventActivity">
 
-    <Button
-        android:id="@+id/touch_outside"
-        android:text="outSide_intercept"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/touch_innerside"
-        android:text="innerSide_intercept"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/touch_outside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="outSide_intercept" />
 
-    <Button
-        android:id="@+id/simple"
-        android:text="simple"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/touch_outside_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="touch_outside_2" />
 
-    <Button
-        android:id="@+id/simple_out_eg"
-        android:text="simple_out_eg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/simple_inner_eg"
-        android:text="simple_inner_eg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/touch_outside_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="touch_outside_3" />
 
-    <Button
-        android:id="@+id/simple_viewpager_rclerview_eg"
-        android:text="simple_viewpager_rclerview_eg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/touch_outside_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="touch_outside_4" />
 
-    <Button
-        android:id="@+id/my_coordinator_eg"
-        android:text="my_coordinator_eg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/touch_outside_move"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="touch_outside_move" />
 
-    <Button
-        android:id="@+id/my_sticky_eg"
-        android:text="my_sticky_eg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/touch_innerside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="innerSide_intercept" />
+
+        <Button
+            android:id="@+id/simple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="simple" />
+
+        <Button
+            android:id="@+id/simple_out_eg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="simple_out_eg" />
+
+        <Button
+            android:id="@+id/scroll_recycler_rg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scroll_recycler_rg" />
+
+        <Button
+            android:id="@+id/simple_inner_eg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="simple_inner_eg" />
+
+        <Button
+            android:id="@+id/simple_viewpager_rclerview_eg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="simple_viewpager_rclerview_eg" />
+
+        <Button
+            android:id="@+id/my_coordinator_eg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="my_coordinator_eg" />
+
+        <Button
+            android:id="@+id/my_sticky_eg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="my_sticky_eg" />
 
 
-    <Button
-        android:id="@+id/other_scroll_nest_view"
-        android:text="other_scroll_nest_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/other_scroll_nest_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="other_scroll_nest_view" />
 
 
-    <Button
-        android:id="@+id/my_scroll_nest_view"
-        android:text="my_scroll_nest_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/my_scroll_nest_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="my_scroll_nest_view" />
 
-    <Button
-        android:id="@+id/follow_behavior_view"
-        android:text="follow_behavior_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/follow_behavior_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="follow_behavior_view" />
 
-    <Button
-        android:id="@+id/recyclerView_behavior_view"
-        android:text="recyclerView_behavior_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/nest_behavior_view"
-        android:text="nest_behavior_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/recyclerView_behavior_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="recyclerView_behavior_view" />
 
+        <Button
+            android:id="@+id/nest_behavior_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nest_behavior_view" />
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

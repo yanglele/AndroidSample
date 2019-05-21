@@ -20,11 +20,11 @@ import java.util.Arrays;
  * version:
  * update:
  */
-public class MyNestedChildView extends View implements NestedScrollingChild {
+public class MyNestedChildView extends View{
 
-    public static final String TAG = "NestedChildView";
+    public static final String TAG = "MyNestedChildView";
 
-    private final NestedScrollingChildHelper childHelper = new NestedScrollingChildHelper(this);
+    private final NestedScrollingChildHelper nestedScrollingChildHelper = new NestedScrollingChildHelper(this);
     private float downY;
 
     private int[] consumed = new int[2];
@@ -51,13 +51,14 @@ public class MyNestedChildView extends View implements NestedScrollingChild {
     public boolean onTouchEvent(MotionEvent event) {
         final int actionMasked = MotionEventCompat.getActionMasked(event);
 
+         int pointerId = 0;
         // 取第一个接触屏幕的手指Id
-        final int pointerId = MotionEventCompat.getPointerId(event, 0);
         switch (actionMasked) {
             case MotionEvent.ACTION_DOWN:
 
+                pointerId = event.getPointerId(0);
                 // 取得当前的Y，并赋值给lastY变量
-                downY = getPointerY(event, pointerId);
+                downY = event.getY();
                 // 找不到手指，放弃掉这个触摸事件流
                 if (downY == -1) {
                     return false;
@@ -65,23 +66,24 @@ public class MyNestedChildView extends View implements NestedScrollingChild {
 
                 // 通知父View，开始滑动
                 startNestedScroll(ViewCompat.SCROLL_AXIS_VERTICAL);
+                Log.d(TAG, "onTouchEvent: action down downY = "+downY);
                 break;
             case MotionEvent.ACTION_MOVE:
 
+                int index = event.findPointerIndex(pointerId);
+
                 // 获得当前手指的Y
-                final float pointerY = getPointerY(event, pointerId);
+                final float pointerY = event.getY(index);
 
                 // 找不到手指，放弃掉这个触摸事件流
                 if (pointerY == -1) {
                     return false;
                 }
 
-                // 计算出滑动的偏移量
+                // 计算出滑动的偏移量,每次计算的都是本次滑动的偏移量
                 float deltaY = pointerY - downY;
 
-                Log.d(TAG, String.format("downY = %f", deltaY));
-
-                Log.d(TAG, String.format("before dispatchNestedPreScroll, deltaY = %f", deltaY));
+                Log.d(TAG, "111 down Y = "+downY + "; pointY = "+pointerY +"; del = "+deltaY);
 
                 // 通知父View, 子View想滑动 deltaY 个偏移量，父View要不要先滑一下，然后把父View滑了多少，告诉子View一下
                 // 下面这个方法的前两个参数为在x，y方向上想要滑动的偏移量
@@ -146,56 +148,63 @@ public class MyNestedChildView extends View implements NestedScrollingChild {
     @Override
     public void setNestedScrollingEnabled(boolean enabled) {
         Log.d(TAG, String.format("setNestedScrollingEnabled , enabled = %b", enabled));
-        childHelper.setNestedScrollingEnabled(enabled);
+//        nestedScrollingChildHelper.setNestedScrollingEnabled(enabled);
+        super.setNestedScrollingEnabled(enabled);
     }
 
     @Override
     public boolean isNestedScrollingEnabled() {
         Log.d(TAG, "isNestedScrollingEnabled");
-        return childHelper.isNestedScrollingEnabled();
+        return super.isNestedScrollingEnabled();
+//        return nestedScrollingChildHelper.isNestedScrollingEnabled();
     }
 
     @Override
     public boolean startNestedScroll(int axes) {
         Log.d(TAG, String.format("startNestedScroll , axes = %d", axes));
-        return childHelper.startNestedScroll(axes);
+        return super.startNestedScroll(axes);
+//        return nestedScrollingChildHelper.startNestedScroll(axes);
     }
 
     @Override
     public void stopNestedScroll() {
         Log.d(TAG, "stopNestedScroll");
-        childHelper.stopNestedScroll();
+//        nestedScrollingChildHelper.stopNestedScroll();
+        super.stopNestedScroll();
     }
 
     @Override
     public boolean hasNestedScrollingParent() {
         Log.d(TAG, "hasNestedScrollingParent");
-        return childHelper.hasNestedScrollingParent();
+        return super.hasNestedScrollingParent();
+//        return nestedScrollingChildHelper.hasNestedScrollingParent();
     }
 
     @Override
     public boolean dispatchNestedScroll(int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed, int[] offsetInWindow) {
-        final boolean b = childHelper.dispatchNestedScroll(dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, offsetInWindow);
-        Log.d(TAG, String.format("dispatchNestedScroll , dxConsumed = %d, dyConsumed = %d, dxUnconsumed = %d, dyUnconsumed = %d, offsetInWindow = %s", dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, Arrays.toString(offsetInWindow)));
-        return b;
+        return super.dispatchNestedScroll(dxConsumed,dyConsumed,dxUnconsumed,dyUnconsumed,offsetInWindow);
+//        final boolean b = nestedScrollingChildHelper.dispatchNestedScroll(dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, offsetInWindow);
+//        Log.d(TAG, String.format("dispatchNestedScroll , dxConsumed = %d, dyConsumed = %d, dxUnconsumed = %d, dyUnconsumed = %d, offsetInWindow = %s", dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, Arrays.toString(offsetInWindow)));
+//        return b;
     }
 
     @Override
     public boolean dispatchNestedPreScroll(int dx, int dy, int[] consumed, int[] offsetInWindow) {
-        final boolean b = childHelper.dispatchNestedPreScroll(dx, dy, consumed, offsetInWindow);
-        Log.d(TAG, String.format("dispatchNestedPreScroll , dx = %d, dy = %d, consumed = %s, offsetInWindow = %s", dx, dy, Arrays.toString(consumed), Arrays.toString(offsetInWindow)));
-        return b;
+//        final boolean b = nestedScrollingChildHelper.dispatchNestedPreScroll(dx, dy, consumed, offsetInWindow);
+//        Log.d(TAG, String.format("dispatchNestedPreScroll , dx = %d, dy = %d, consumed = %s, offsetInWindow = %s", dx, dy, Arrays.toString(consumed), Arrays.toString(offsetInWindow)));
+//        return b;
+        return super.dispatchNestedPreScroll(dx, dy, consumed, offsetInWindow);
     }
 
     @Override
     public boolean dispatchNestedFling(float velocityX, float velocityY, boolean consumed) {
         Log.d(TAG, String.format("dispatchNestedFling , velocityX = %f, velocityY = %f, consumed = %b", velocityX, velocityY, consumed));
-        return childHelper.dispatchNestedFling(velocityX, velocityY, consumed);
+        return nestedScrollingChildHelper.dispatchNestedFling(velocityX, velocityY, consumed);
     }
 
     @Override
     public boolean dispatchNestedPreFling(float velocityX, float velocityY) {
         Log.d(TAG, String.format("dispatchNestedPreFling , velocityX = %f, velocityY = %f", velocityX, velocityY));
-        return childHelper.dispatchNestedPreFling(velocityX, velocityY);
+        return nestedScrollingChildHelper.dispatchNestedPreFling(velocityX, velocityY);
     }
 }

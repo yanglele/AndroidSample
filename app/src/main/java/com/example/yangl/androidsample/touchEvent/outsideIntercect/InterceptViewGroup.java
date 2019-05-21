@@ -1,11 +1,12 @@
 package com.example.yangl.androidsample.touchEvent.outsideIntercect;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
+
+import javax.annotation.Nullable;
 
 /**
  * Desc:
@@ -35,25 +36,27 @@ public class InterceptViewGroup extends LinearLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        switch (ev.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                Log.d(TAG, "onInterceptTouchEvent: down");
-                return false;
-            case MotionEvent.ACTION_MOVE:
-                Log.d(TAG, "onInterceptTouchEvent: move");
-                if (canIntercept) {
-                    return true;
-                } else {
-                    return false;
-                }
-            case MotionEvent.ACTION_UP:
-                Log.d(TAG, "onInterceptTouchEvent: up");
-                return false;
-            case MotionEvent.ACTION_CANCEL:
-                Log.d(TAG, "onInterceptTouchEvent: cancel");
-            default:
-                return false;
-        }
+        return false;
+//        switch (ev.getAction()) {
+//            case MotionEvent.ACTION_DOWN:
+//                Log.d(TAG, "onInterceptTouchEvent: down");
+//                return false;
+//            case MotionEvent.ACTION_MOVE:
+//                Log.d(TAG, "onInterceptTouchEvent: move");
+////                if (canIntercept) {
+////                    return true;
+////                } else {
+////                    return false;
+////                }
+//                return false;
+//            case MotionEvent.ACTION_UP:
+//                Log.d(TAG, "onInterceptTouchEvent: up");
+//                return false;
+//            case MotionEvent.ACTION_CANCEL:
+//                Log.d(TAG, "onInterceptTouchEvent: cancel");
+//            default:
+//                return false;
+//        }
     }
 
     @Override
@@ -72,8 +75,20 @@ public class InterceptViewGroup extends LinearLayout {
         return true;
     }
 
+//    public boolean diapatchTpuchEvent(MotionEvent ev){
+//        boolean consume = false;
+//        if(onInterceptTouchEvent(ev)){
+//            consume = onTouchEvent(ev);
+//        }else {
+//            consume = child.diapatchTouchEvent(ev);
+//        }
+//        return consume;
+//    }
+
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
+        Log.d(TAG, "dispatchTouchEvent: false");
+//        return true;
         switch(ev.getAction()){
             case MotionEvent.ACTION_DOWN:
                 Log.d(TAG, "dispatchTouchEvent: down");break;

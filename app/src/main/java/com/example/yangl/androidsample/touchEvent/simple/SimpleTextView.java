@@ -33,14 +33,19 @@ public class SimpleTextView extends android.support.v7.widget.AppCompatTextView 
         return super.dispatchTouchEvent(event);
     }
 
+    float downY;
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         super.onTouchEvent(event);
         switch(event.getAction()){
             case MotionEvent.ACTION_DOWN :
+                downY = event.getY();
                 Log.d(TAG, "onTouchEvent: action down");
                 break;
             case MotionEvent.ACTION_MOVE:
+                float moveY = event.getY();
+                int dy = (int)(moveY - downY);
+                scrollTo(0,-dy);
                 Log.d(TAG, "onTouchEvent: action move");
                 break;
             case MotionEvent.ACTION_UP:

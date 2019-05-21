@@ -1,5 +1,6 @@
 package com.example.yangl.androidsample.touchEvent.outsideIntercect;
 
+import android.support.v4.view.MotionEventCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +16,7 @@ import butterknife.ButterKnife;
 public class TouchOutActivity extends AppCompatActivity {
 
 
-    private String TAG = "TouchOutActivity";
+    private String TAG = "InterceptActivity";
 
     @BindView(R.id.view)
     InterceptView view;
@@ -31,6 +32,8 @@ public class TouchOutActivity extends AppCompatActivity {
 
     }
 
+
+
     private void viewGroupGet() {
 //        view.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -38,7 +41,7 @@ public class TouchOutActivity extends AppCompatActivity {
 //                Toast.makeText(TouchOutActivity.this, "view  get touch!", Toast.LENGTH_SHORT).show();
 //            }
 //        });
-        viewGroup.setCanIntercept(true);
+
 //        viewGroup.setOnTouchListener(new View.OnTouchListener() {
 //            @Override
 //            public boolean onTouch(View v, MotionEvent event) {
@@ -76,18 +79,45 @@ public class TouchOutActivity extends AppCompatActivity {
         return super.onTouchEvent(event);
     }
 
+    private float downY;
+
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
+        final int pointerId = MotionEventCompat.getPointerId(ev,0);
         switch(ev.getAction()){
             case MotionEvent.ACTION_DOWN:
-                Log.d(TAG, "dispatchTouchEvent: down");break;
+                Log.d(TAG, "dispatchTouchEvent: down");
+                downY = getPointerY(ev,pointerId);
+                break;
             case MotionEvent.ACTION_UP:
                 Log.d(TAG, "dispatchTouchEvent: up");break;
             case MotionEvent.ACTION_MOVE:
-                Log.d(TAG, "dispatchTouchEvent: move");break;
+                // 获得当前手指的Y
+                final float pointerY = getPointerY(ev, pointerId);
+                // 计算出滑动的偏移量
+                float deltaY = pointerY - downY;
+                Log.d(TAG, "dispatchTouchEvent: move ,dy = "+deltaY);
+                if(Math.abs(deltaY) > 10 && Math.abs(deltaY) < 30){
+                    viewGroup.setCanIntercept(true);
+                }else if(Math.abs(deltaY) > 30){
+                    viewGroup.setCanIntercept(false);
+                }
+                break;
             default:break;
         }
         return super.dispatchTouchEvent(ev);
+    }
+
+
+    /**
+     * 这个方法通过pointerId获取pointerIndex,然后获取Y
+     */
+    private float getPointerY(MotionEvent event, int pointerId) {
+        final int pointerIndex = MotionEventCompat.findPointerIndex(event, pointerId);
+        if (pointerIndex < 0) {
+            return -1;
+        }
+        return MotionEventCompat.getY(event, pointerIndex);
     }
 
 

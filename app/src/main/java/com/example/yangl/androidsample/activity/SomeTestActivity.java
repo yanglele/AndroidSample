@@ -13,6 +13,7 @@ import com.example.yangl.androidsample.someActivity.ScreenOrientationTestActivit
 import com.example.yangl.androidsample.someActivity.ScrollToActivity;
 import com.example.yangl.androidsample.someActivity.SpannableActivity;
 import com.example.yangl.androidsample.someActivity.TaskHeapAllowParentActivity1;
+import com.example.yangl.androidsample.someActivity.TextViewScrollToActivity;
 import com.example.yangl.androidsample.someActivity.ViewLifeCycleActivity;
 import com.example.yangl.androidsample.testActivity.ConfigChangeActivity;
 
@@ -75,5 +76,9 @@ public class SomeTestActivity extends AppCompatActivity {
 
     public void onViewLifeClick(View view){
         startActivity(new Intent(SomeTestActivity.this, ViewLifeCycleActivity.class));
+    }
+
+    public void onScrollToClick(View view){
+        startActivity(new Intent(SomeTestActivity.this, TextViewScrollToActivity.class));
     }
 }

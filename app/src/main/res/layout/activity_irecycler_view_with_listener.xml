@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         app:loadMoreEnabled="true"
         app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        app:layout_behavior="com.example.yangl.androidsample.touchEvent.MyScrollingViewBehavior">
     </com.example.irecyclerlib.IRecyclerView>
 
 </android.support.design.widget.CoordinatorLayout>

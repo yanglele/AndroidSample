@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.TextView;
 
 import com.example.yangl.androidsample.IRecyclerViewSample.irecyclerSimple.SimpleRecyclerViewAdapter;
@@ -17,12 +15,16 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * https://www.jianshu.com/p/b987fad8fcb4
+ */
 public class RecyclerViewBehaviorActivity extends AppCompatActivity {
 
-    @BindView(R.id.recycler_view)
-    RecyclerView recyclerView;
-    @BindView(R.id.text_view)
-    TextView textView;
+
+    @BindView(R.id.header)
+    TextView header;
+    @BindView(R.id.my_list)
+    RecyclerView myList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,23 +33,12 @@ public class RecyclerViewBehaviorActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         List<String> list = new ArrayList<>();
-        for(int i=0;i<50;i++){
-            list.add(i+"");
+        for (int i = 0; i < 50; i++) {
+            list.add(i + "");
         }
 
-        SimpleRecyclerViewAdapter adapter = new SimpleRecyclerViewAdapter(this,list);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-//        textView.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                switch(event.getAction()){
-//                    case MotionEvent.ACTION_MOVE:
-//                        v.setY(event.getRawY());
-//                }
-//                return true;
-//            }
-//        });
+        SimpleRecyclerViewAdapter adapter = new SimpleRecyclerViewAdapter(this, list);
+        myList.setAdapter(adapter);
+        myList.setLayoutManager(new LinearLayoutManager(this));
     }
 }

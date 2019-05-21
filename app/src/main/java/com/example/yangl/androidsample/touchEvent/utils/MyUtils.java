@@ -7,7 +7,9 @@ import java.util.List;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
 import android.content.Context;
+import android.support.v4.view.MotionEventCompat;
 import android.util.DisplayMetrics;
+import android.view.MotionEvent;
 import android.view.WindowManager;
 
 public class MyUtils {
@@ -42,6 +44,17 @@ public class MyUtils {
         DisplayMetrics dm = new DisplayMetrics();
         wm.getDefaultDisplay().getMetrics(dm);
         return dm;
+    }
+
+    /**
+     * 这个方法通过pointerId获取pointerIndex,然后获取Y
+     */
+    public static float getPointerY(MotionEvent event, int pointerId) {
+        final int pointerIndex = MotionEventCompat.findPointerIndex(event, pointerId);
+        if (pointerIndex < 0) {
+            return -1;
+        }
+        return MotionEventCompat.getY(event, pointerIndex);
     }
 
     public static void executeInThread(Runnable runnable) {

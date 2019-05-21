@@ -3,21 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".touchEvent.myBehavor.RecyclerViewBehaviorActivity">
-
-    <com.example.yangl.androidsample.touchEvent.myCoordinatorLayout.NestRecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="200dp"
-        android:layout_height="match_parent"
-        />
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/text_view"
-        app:layout_behavior="com.example.yangl.androidsample.touchEvent.myBehavor.ListBehavior"
-        android:background="@color/mOrangeColor"
-        android:layout_marginLeft="200dp"
-        android:layout_width="20dp"
-        android:layout_height="50dp" />
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#ff0000"
+        android:gravity="center"
+        android:text="Hello World"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_behavior="com.example.yangl.androidsample.touchEvent.myBehavor.SampleHeaderBehavior" />
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_list"
+        app:layout_behavior="com.example.yangl.androidsample.touchEvent.myBehavor.RecyclerViewBehavior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </android.support.design.widget.CoordinatorLayout>
