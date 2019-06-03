@@ -59,6 +59,12 @@ public class ZhiHuAdActivity extends AppCompatActivity {
                 }
             }
         });
+        scrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+
+            }
+        });
     }
 
 
