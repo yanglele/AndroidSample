@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
+import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView.OnItemClickListener;
@@ -23,6 +24,7 @@ public class InnerDemoActivity extends Activity {
     private static final String TAG = "DemoActivity_2";
 
     private HorizontalScrollViewEx2 mListContainer;
+    private VelocityTracker velocityTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class InnerDemoActivity extends Activity {
     }
 
     private void initView() {
+        velocityTracker = VelocityTracker.obtain();
         LayoutInflater inflater = getLayoutInflater();
         mListContainer = (HorizontalScrollViewEx2) findViewById(R.id.container);
         final int screenWidth = MyUtils.getScreenMetrics(this).widthPixels;
@@ -48,6 +51,21 @@ public class InnerDemoActivity extends Activity {
             createList(layout);
             mListContainer.addView(layout);
         }
+        mListContainer.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                velocityTracker.addMovement(event);
+                 switch(event.getAction()){
+                     case MotionEvent.ACTION_UP:
+                         velocityTracker.computeCurrentVelocity(1000);
+                         float xVelocity = velocityTracker.getXVelocity();
+                         Log.d(TAG, "onTouch: "+xVelocity);
+                         break;
+                         default:break;
+                 }
+                return false;
+            }
+        });
     }
 
     private void createList(ViewGroup layout) {
