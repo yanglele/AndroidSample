@@ -24,7 +24,16 @@
         <attr name="currentAngle" format="integer" />
     </declare-styleable>
 
-    <declare-styleable name="TShapeView" >
+    <declare-styleable name="TShapeView">
         <attr name="left_shape" format="boolean" />
     </declare-styleable>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

@@ -14,8 +14,6 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/eventbussource" />
             <option value="$PROJECT_DIR$/irecyclerlib" />
-            <option value="$PROJECT_DIR$/processor" />
-            <option value="$PROJECT_DIR$/processor-lib" />
             <option value="$PROJECT_DIR$/rxjava" />
           </set>
         </option>
