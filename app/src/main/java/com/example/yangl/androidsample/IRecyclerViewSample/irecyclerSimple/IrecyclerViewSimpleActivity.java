@@ -31,6 +31,8 @@ import butterknife.ButterKnife;
 
 public class IrecyclerViewSimpleActivity extends AppCompatActivity implements OnRefreshListener, OnLoadMoreListener {
 
+    private String TAG = IrecyclerViewSimpleActivity.class.getSimpleName();
+
     @BindView(R.id.recycler_view)
     IRecyclerView iRecyclerView;
     @BindView(R.id.setFreshHeadHeight)
@@ -91,8 +93,13 @@ public class IrecyclerViewSimpleActivity extends AppCompatActivity implements On
                 if (linearLayoutManager != null) {
                     int firstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
                     int lastVisibleItemPosition = linearLayoutManager.findLastVisibleItemPosition();
-                    Log.d("111", "onScrolled: firstVisibleItemPosition = " + firstVisibleItemPosition);
-                    Log.d("111", "onScrolled: lastVisibleItemPosition = " + lastVisibleItemPosition);
+                    int firstCompletelyVisibleItemPosition = linearLayoutManager.findFirstCompletelyVisibleItemPosition();
+                    Log.d(TAG, "onScrolled: firstVisibleItemPosition = " + firstVisibleItemPosition);
+                    Log.d(TAG, "onScrolled: lastVisibleItemPosition = " + lastVisibleItemPosition);
+                    Log.d(TAG, "onScrolled: firstCompletelyVisibleItemPosition = " + firstCompletelyVisibleItemPosition);
+
+                    Log.d(TAG, "onScrolled: recyclerView.getChildAt = " + recyclerView.getChildAt(1));
+                    Log.d(TAG, "onScrolled: linearLayoutManager.getChildAt = " + linearLayoutManager.getChildAt(1));
                 }
             }
         });
