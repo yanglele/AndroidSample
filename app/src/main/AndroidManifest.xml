@@ -16,6 +16,12 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".someActivity.NativeJavaMemoryActivity"></activity>
+        <activity android:name=".activity.FileOperateActivity" />
+        <activity android:name=".someActivity.GlideDemoActivity" />
+        <activity android:name=".someActivity.MySimpleImageLoadActivity" />
+        <activity android:name=".customimageload.CustomImageLoadActivity" />
+        <activity android:name=".activity.HahaActivity" />
         <activity android:name=".activity.RxJavaTestActivity" />
         <activity android:name=".touchEvent.scrollconflict.ScrollRecyclerActivity" />
         <activity android:name=".MainActivity">
@@ -34,7 +40,7 @@
             android:label="@string/app_name" />
         <service android:name=".service.MyIntentService" />
 
-        <activity android:name=".activity.ShowUiSizeActivity" />
+        <activity android:name=".activity.ShowSystemInfoActivity" />
         <activity android:name=".activity.ShowBottomSheetActivity" />
         <activity android:name=".activity.ShowMyUIActivity" />
         <activity android:name=".zhihuAd.ZhiHuAdActivity" />
@@ -156,10 +162,7 @@
         <activity android:name=".activity.StartActivityForResultActivity" />
         <activity android:name=".someActivity.StartActivityForResultTestActivity" />
         <activity android:name=".someActivity.TextViewScrollToActivity" />
-        <activity
-            android:name=".activity.GlideDemoActivity"
-            android:label="@string/title_activity_glide_demo"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".activity.ImageLoadActivity" />
     </application>
 
 </manifest>

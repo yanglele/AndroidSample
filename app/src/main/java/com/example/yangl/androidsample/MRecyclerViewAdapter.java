@@ -6,12 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
 
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Desc:
@@ -50,7 +47,7 @@ public class MRecyclerViewAdapter extends RecyclerView.Adapter<MRecyclerViewAdap
             }
         }
         final String className = classPath.substring(endPoint+1,classPath.length());
-        holder.textView.setText(className);
+        holder.button.setText(className);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,11 +69,11 @@ public class MRecyclerViewAdapter extends RecyclerView.Adapter<MRecyclerViewAdap
 
     class MViewHolder extends RecyclerView.ViewHolder{
 
-        TextView textView;
+        Button button;
 
         public MViewHolder(View itemView) {
             super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.main_item_text);
+            button = (Button) itemView.findViewById(R.id.main_item_text);
         }
     }
 }

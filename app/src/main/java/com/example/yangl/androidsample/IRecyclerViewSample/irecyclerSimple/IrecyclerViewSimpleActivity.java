@@ -23,6 +23,7 @@ import com.example.yangl.androidsample.R;
 import com.example.yangl.androidsample.recyclerView.DisableLinearLayoutManager;
 import com.example.yangl.androidsample.uiTools.UISizeUtils;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.yangl.androidsample;
+package com.example;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
@@ -16,6 +16,23 @@ public class ExampleUnitTest {
     private static int _1M = 1024*1024;
 
     public static void main(String[] args) {
+        test();
+    }
+
+    private static void test(){
+        String s = new String("111");
+        ReferenceQueue<String> referenceQueue = new ReferenceQueue<>();
+        WeakReference<String> weakReference = new WeakReference<>(s,referenceQueue);
+        System.out.println("before gc :"+weakReference.toString());
+        s=null;
+        System.gc();
+        System.out.println("after gc weakReference = :"+weakReference.toString());
+        System.out.println("after gc weakReference target = :"+weakReference.get());
+        System.out.println("queue = "+referenceQueue.poll().toString());
+
+    }
+
+    private static void test1(){
         Object value = new Object();
         Map<Object, Object> map = new HashMap<>();
         Thread thread = new Thread(() -> {

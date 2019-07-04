@@ -8,6 +8,6 @@ dependencies {
     implementation rootProject.ext.dependencies["retrofit"]
     implementation rootProject.ext.dependencies["adapter-rxjava"]
     implementation rootProject.ext.dependencies["okhttp3"]
-
+    implementation rootProject.ext.dependencies["retrofit-gson"]
 }
 

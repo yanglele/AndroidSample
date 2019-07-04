@@ -38,6 +38,7 @@ project.ext {
 
             //retrofit
             "retrofit"                     : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            "retrofit-gson"                : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
             "adapter-rxjava"               : "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
 
             //butterKnife

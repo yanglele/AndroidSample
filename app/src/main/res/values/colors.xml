@@ -67,4 +67,6 @@
     <color name="mBgTagColor">#E7F1DB</color>
     <color name="mHouseTypeBgColor">#F0F4F8</color>
     <color name="mTransparency">#00000000</color>
+
+    <color name="reveal_color">#1b000000</color>
 </resources>
