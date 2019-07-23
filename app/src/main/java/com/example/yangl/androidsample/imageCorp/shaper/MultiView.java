@@ -155,6 +155,9 @@ public class MultiView extends ImageView {
         TypedArray typedArray = context.obtainStyledAttributes(attrs,
                 R.styleable.RoundImageView);
 
+        TypedArray typedArray2 = context.obtainStyledAttributes(attrs,
+                R.styleable.RoundImageViewTwo);
+
         mBorderRadius = typedArray.getDimensionPixelSize(
                 R.styleable.RoundImageView_borderRadius, (int) TypedValue
                         .applyDimension(TypedValue.COMPLEX_UNIT_DIP,

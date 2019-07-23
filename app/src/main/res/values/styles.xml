@@ -24,6 +24,7 @@
         <attr name="currentAngle" format="integer" />
     </declare-styleable>
 
+
     <declare-styleable name="TShapeView">
         <attr name="left_shape" format="boolean" />
     </declare-styleable>

@@ -27,6 +27,5 @@ public class BroadcastActivity extends AppCompatActivity {
         List<String> stringList = new ArrayList<>();
         List<Object> objectList = new ArrayList<>();
         AnimationDrawable drawable = new AnimationDrawable();
-        drawable.addFrame();
     }
 }

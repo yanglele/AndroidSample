@@ -16,7 +16,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".someActivity.NativeJavaMemoryActivity"></activity>
+        <activity
+            android:name=".someActivity.ToastDestoryActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".someActivity.RelativeMarginLayoutActivity" />
+        <activity android:name=".someActivity.NativeJavaMemoryActivity" />
         <activity android:name=".activity.FileOperateActivity" />
         <activity android:name=".someActivity.GlideDemoActivity" />
         <activity android:name=".someActivity.MySimpleImageLoadActivity" />

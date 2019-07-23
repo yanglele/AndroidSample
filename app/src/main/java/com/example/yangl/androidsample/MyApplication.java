@@ -7,7 +7,6 @@ import android.util.Log;
 
 import com.example.yangl.androidsample.tools.AjkImageLoaderUtil;
 import com.example.yangl.androidsample.tools.DebugUtil;
-import com.example.yangl.androidsample.MyEventBusIndex;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 

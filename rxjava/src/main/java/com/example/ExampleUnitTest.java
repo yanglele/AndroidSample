@@ -1,9 +1,16 @@
 package com.example;
 
+import com.example.model.Course;
+import com.example.model.Student;
+
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -16,10 +23,53 @@ public class ExampleUnitTest {
     private static int _1M = 1024*1024;
 
     public static void main(String[] args) {
-        test();
+        linkedHashMapTest();
+
     }
 
-    private static void test(){
+    public static void testBuilder(){
+        Student student = new ExampleUnitTest.Builder("yl")
+                .setCourse(new Course("11"))
+                .getInstance();
+    }
+
+    static class Builder{
+        private String name;
+        private List<Course> courseList;//课程
+
+        public Builder(String name){
+            this.name = name;
+        }
+
+        public Builder setCourse(Course course){
+            if(courseList == null){
+                courseList = new ArrayList<>();
+            }
+            courseList.add(course);
+            return this;
+        }
+
+        public Student getInstance(){
+            return new Student(name,courseList);
+        }
+    }
+
+
+    private static void linkedHashMapTest(){
+        LinkedHashMap<Integer,Integer> map = new LinkedHashMap<>(0,0.75f,true);
+
+        map.put(1,1);
+        map.put(2,2);
+        map.put(3,3);
+
+        map.get(2);
+
+        for(Map.Entry entry : map.entrySet()){
+            System.out.println(entry.getKey());
+        }
+    }
+
+    private static void weakReferenceTest(){
         String s = new String("111");
         ReferenceQueue<String> referenceQueue = new ReferenceQueue<>();
         WeakReference<String> weakReference = new WeakReference<>(s,referenceQueue);
@@ -29,10 +79,9 @@ public class ExampleUnitTest {
         System.out.println("after gc weakReference = :"+weakReference.toString());
         System.out.println("after gc weakReference target = :"+weakReference.get());
         System.out.println("queue = "+referenceQueue.poll().toString());
-
     }
 
-    private static void test1(){
+    private static void weakReferenceQueueTest(){
         Object value = new Object();
         Map<Object, Object> map = new HashMap<>();
         Thread thread = new Thread(() -> {

@@ -2,6 +2,8 @@ package com.example.yangl.androidsample.activity;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -27,6 +29,7 @@ import com.example.yangl.androidsample.someActivity.ScrollToActivity;
 import com.example.yangl.androidsample.someActivity.SpannableActivity;
 import com.example.yangl.androidsample.someActivity.TaskHeapAllowParentActivity1;
 import com.example.yangl.androidsample.someActivity.TextViewScrollToActivity;
+import com.example.yangl.androidsample.someActivity.ToastDestoryActivity;
 import com.example.yangl.androidsample.someActivity.ViewLifeCycleActivity;
 import com.example.yangl.androidsample.testActivity.ConfigChangeActivity;
 import com.example.yangl.androidsample.tools.DebugUtil;
@@ -141,4 +144,10 @@ public class SomeTestActivity extends AppCompatActivity {
 
     }
 
+    public void onToastCLick(View view){
+        Context context;
+        AlertDialog alertDialog = new AlertDialog.Builder(SomeTestActivity.this).create();
+        alertDialog.show();
+        startActivity(new Intent(SomeTestActivity.this, ToastDestoryActivity.class));
+    }
 }
