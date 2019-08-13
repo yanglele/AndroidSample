@@ -2,8 +2,12 @@ package com.example.yangl.androidsample.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.ContactsContract;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.IdRes;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -11,12 +15,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.example.yangl.androidsample.MyApplication;
 import com.example.yangl.androidsample.R;
+import com.squareup.leakcanary.RefWatcher;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+
+import static com.example.yangl.androidsample.MyApplication.refWatcher;
 
 /**
  * Desc:
@@ -33,14 +42,26 @@ public class PhotoFragment extends Fragment {
     ImageView imageView;
     Unbinder unbinder;
     private int imageId;
-    private Context context;
+    private static Context context;
+
 
     public PhotoFragment() {
     }
 
-    public PhotoFragment(@IdRes int imageId, Context context) {
-        this.imageId = imageId;
-        this.context = context;
+
+
+
+    public static PhotoFragment getInstance(@DrawableRes int imageId){
+        PhotoFragment fragment = new PhotoFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt("image",imageId);
+        fragment.setArguments(bundle);
+        return fragment;
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
     }
 
     @Nullable
@@ -49,8 +70,21 @@ public class PhotoFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_photo, container, false);
         unbinder = ButterKnife.bind(this, view);
         initFragment();
+        context = getContext();
         Log.d("PhotoFragment", "onCreateView: "+imageId);
         return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        if(getArguments() != null){
+            imageId = getArguments().getInt("image");
+        }
+    }
+
+    public void setLeak(){
+        context  = getContext();
     }
 
     @Override
@@ -80,5 +114,8 @@ public class PhotoFragment extends Fragment {
         Log.d("PhotoFragment", "onDestroyView: "+imageId);
         super.onDestroyView();
         unbinder.unbind();
+//        if(refWatcher != null){
+//            refWatcher.watch(this);
+//        }
     }
 }

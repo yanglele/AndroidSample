@@ -33,7 +33,7 @@ public class MyViewPagerFragmentAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         Log.d("aaaaa", "getItem: "+position);
-        return new PhotoFragment(lists.get(position),context);
+        return PhotoFragment.getInstance(lists.get(position));
     }
 
     @Override

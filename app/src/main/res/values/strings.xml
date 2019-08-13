@@ -4,4 +4,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_glide_demo">GlideDemoActivity</string>
+    <string name="title_activity_toast_destory">ToastDestoryActivity</string>
 </resources>

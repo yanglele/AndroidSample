@@ -15,6 +15,7 @@ import com.example.yangl.androidsample.recyclerView.LinearRecyclerViewActivity;
 import com.example.yangl.androidsample.recyclerView.RandomStaggeredRecyclerActivity;
 import com.example.yangl.androidsample.recyclerView.StaggeredRecyclerViewActivity;
 import com.example.yangl.androidsample.someActivity.BackGroundActivity;
+import com.example.yangl.androidsample.someActivity.RelativeMarginLayoutActivity;
 import com.example.yangl.androidsample.zhihuAd.ZhiHuAdActivity;
 
 import butterknife.BindView;
@@ -40,7 +41,7 @@ public class ShowMyUIActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    @OnClick({R.id.show_zhihu_ad, R.id.recycler_view_simple, R.id.recycler_view_listener,R.id.back_padding, R.id.recycler_linear_layout, R.id.recycler_grid_layout, R.id.recycler_staggered_layout, R.id.recycler_random_staggered_layout ,R.id.recycler_anchor_layout})
+    @OnClick({R.id.show_zhihu_ad, R.id.recycler_view_simple, R.id.recycler_view_listener,R.id.back_padding, R.id.recycler_linear_layout, R.id.recycler_grid_layout, R.id.recycler_staggered_layout, R.id.recycler_random_staggered_layout ,R.id.recycler_anchor_layout,R.id.layout_margin})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.show_zhihu_ad:
@@ -70,6 +71,8 @@ public class ShowMyUIActivity extends AppCompatActivity {
             case R.id.back_padding :
                 jump2targetActivity(BackGroundActivity.class);
                 break;
+            case R.id.layout_margin:
+                jump2targetActivity(RelativeMarginLayoutActivity.class);
             default:break;
         }
     }

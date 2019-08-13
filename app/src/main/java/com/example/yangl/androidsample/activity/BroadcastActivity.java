@@ -1,6 +1,7 @@
 package com.example.yangl.androidsample.activity;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,5 +26,6 @@ public class BroadcastActivity extends AppCompatActivity {
         startActivity(new Intent(this, BroadcastActivity1.class));
         List<String> stringList = new ArrayList<>();
         List<Object> objectList = new ArrayList<>();
+        AnimationDrawable drawable = new AnimationDrawable();
     }
 }

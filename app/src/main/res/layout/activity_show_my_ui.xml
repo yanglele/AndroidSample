@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.yangl.androidsample.activity.ShowUiSizeActivity">
+    tools:context="com.example.yangl.androidsample.activity.ShowSystemInfoActivity">
 
     <Button
         android:id="@+id/show_zhihu_ad"
@@ -74,6 +74,12 @@
     <Button
         android:id="@+id/back_padding"
         android:text="back_padding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/layout_margin"
+        android:text="layout_margin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

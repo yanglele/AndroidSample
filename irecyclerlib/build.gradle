@@ -30,11 +30,14 @@ dependencies {
     implementation rootProject.ext.dependencies["recyclerview-v7"]
     implementation rootProject.ext.dependencies["fastjson"]
     implementation rootProject.ext.dependencies["fresco"]
-    implementation rootProject.ext.dependencies["butterknife"]
     implementation rootProject.ext.dependencies["ormlite-android"]
     implementation rootProject.ext.dependencies["constraint-layout"]
     implementation rootProject.ext.dependencies["design"]
     implementation rootProject.ext.dependencies["cardview-v7"]
     implementation rootProject.ext.dependencies["appcompat-v7"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    implementation (rootProject.ext.dependencies["butterknife"]) {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.android.support', module: 'support-compat'
+    }
 }

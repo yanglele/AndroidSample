@@ -5,12 +5,14 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content">
 
-    <TextView
+    <Button
         android:id="@+id/main_item_text"
         android:textColor="@color/mBlackColor"
         android:textSize="@dimen/mH2Font"
         android:layout_width="match_parent"
         android:gravity="center_vertical"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:textAllCaps="false"
         tools:text="你好"/>
 </LinearLayout>
