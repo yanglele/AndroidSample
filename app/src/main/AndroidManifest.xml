@@ -171,6 +171,21 @@
         <activity android:name=".activity.StartActivityForResultActivity" />
         <activity android:name=".someActivity.StartActivityForResultTestActivity" />
         <activity android:name=".someActivity.TextViewScrollToActivity" />
+        <activity
+            android:name=".activity.GlideDemoActivity"
+            android:label="@string/title_activity_glide_demo"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.AIDLTestActivity" />
+
+        <service
+            android:name=".AidlService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.yangl.androidsample.action"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
         <activity android:name=".activity.ImageLoadActivity" />
     </application>
 
