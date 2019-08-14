@@ -34,6 +34,7 @@ import com.example.yangl.androidsample.someActivity.ViewLifeCycleActivity;
 import com.example.yangl.androidsample.testActivity.ConfigChangeActivity;
 import com.example.yangl.androidsample.tools.DebugUtil;
 import com.example.yangl.androidsample.tools.DevUtil;
+import com.example.yangl.androidsample.view.compacttoast.AnjukeToast;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,6 +42,8 @@ import java.util.List;
 
 
 public class SomeTestActivity extends AppCompatActivity {
+
+    private String TAG = SomeTestActivity.class.getSimpleName();
 
     public static final int CALL_PHONE = 2;
 
@@ -145,9 +148,42 @@ public class SomeTestActivity extends AppCompatActivity {
     }
 
     public void onToastCLick(View view){
-        Context context;
-        AlertDialog alertDialog = new AlertDialog.Builder(SomeTestActivity.this).create();
-        alertDialog.show();
-        startActivity(new Intent(SomeTestActivity.this, ToastDestoryActivity.class));
+        Toast.makeText(SomeTestActivity.this,"hello",Toast.LENGTH_SHORT).show();
+    }
+
+    public void onBadToastCLick(View view){
+        Toast.makeText(SomeTestActivity.this,"hello",Toast.LENGTH_SHORT).show();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void onFixToastCLick(View view){
+        AnjukeToast.makeText(SomeTestActivity.this,"hello",Toast.LENGTH_SHORT).show();
+    }
+
+    public void onFixBadToastCLick(View view){
+        AnjukeToast.makeText(SomeTestActivity.this,"hello",Toast.LENGTH_SHORT).show();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void onDestroyToastCLick(View view){
+        startActivityForResult(new Intent(SomeTestActivity.this, ToastDestoryActivity.class),123);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 123){
+            System.gc();
+            Log.d(TAG, "onActivityResult: gc");
+        }
     }
 }
