@@ -21,6 +21,11 @@ public class FileTools {
     public static int CREATE_FAILED = -1;
     public static int CREATE_SUCCESS = 1;
 
+    //path: /data/data/com.example.yangl.androidsample/files/
+    public static File createFile(Context context,String fileName){
+        return new File(context.getFilesDir().getAbsolutePath()+File.separator+fileName);
+    }
+
     public static int createFile(String filePath,String fileName){
         File file = new File(filePath+File.separator+fileName);
 

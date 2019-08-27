@@ -158,6 +158,13 @@
             android:onClick="onDestroyToastCLick"
             android:text="on_toast_destory"
             app:layout_constraintTop_toBottomOf="@+id/fix_bad_toast_destory" />
+        <Button
+            android:id="@+id/serization"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onSerizationCLick"
+            android:text="serization"
+            app:layout_constraintTop_toBottomOf="@+id/on_toast_destory" />
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>

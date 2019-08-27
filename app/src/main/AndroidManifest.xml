@@ -8,8 +8,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:name=".MyApplication"
@@ -18,7 +19,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ShowWindowActivity"></activity>
+        <activity android:name=".activity.NotificationActivity"></activity>
+        <activity android:name=".activity.ContentProviderActivity" />
+        <activity android:name=".activity.BinderActivity" />
+
+        <service
+            android:name=".binderservice.BinderService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":binder" />
+
+        <activity android:name=".activity.ShowWindowActivity" />
         <activity android:name=".someActivity.FrameCenterLayoutActivity" />
         <activity
             android:name=".someActivity.ToastDestoryActivity"
@@ -182,10 +193,12 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.example.yangl.androidsample.action"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.example.yangl.androidsample.action" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
+
         <activity android:name=".activity.ImageLoadActivity" />
     </application>
 

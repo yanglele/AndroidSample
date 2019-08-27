@@ -20,6 +20,8 @@ public class FragmentLiftActivity extends AppCompatActivity {
 
     private final String TAG = "FragmentLiftActivity";
 
+    private int num = 1;
+
     @BindView(R.id.fragment)
     FrameLayout fragment;
 
@@ -28,14 +30,14 @@ public class FragmentLiftActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_lift);
         ButterKnife.bind(this);
-        addFragment();
+//        addFragment();
         Log.d(TAG, "onCreate: "+this);
     }
 
     private void addFragment(){
         CommitFragment fragment = (CommitFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
         if(fragment == null){
-            fragment = CommitFragment.newInstance("yl");
+            fragment = CommitFragment.newInstance(""+num++);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment,fragment).commit();
         }
     }
@@ -91,5 +93,10 @@ public class FragmentLiftActivity extends AppCompatActivity {
     public void onButtonClick(View view){
         Intent intent = new Intent(this,AlterDialogActivity.class);
         startActivity(intent);
+    }
+
+    public void onAddClick(View view){
+        CommitFragment fragment = CommitFragment.newInstance(""+num++);
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment,fragment).commit();
     }
 }

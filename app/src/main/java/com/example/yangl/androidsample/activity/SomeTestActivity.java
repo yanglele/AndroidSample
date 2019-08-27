@@ -21,6 +21,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.yangl.androidsample.R;
+import com.example.yangl.androidsample.model.Info;
+import com.example.yangl.androidsample.model.InfoSerialization;
 import com.example.yangl.androidsample.someActivity.ActionMatchActivity;
 import com.example.yangl.androidsample.someActivity.InnerClassActivity;
 import com.example.yangl.androidsample.someActivity.LayoutMarginParamActivity;
@@ -34,9 +36,14 @@ import com.example.yangl.androidsample.someActivity.ViewLifeCycleActivity;
 import com.example.yangl.androidsample.testActivity.ConfigChangeActivity;
 import com.example.yangl.androidsample.tools.DebugUtil;
 import com.example.yangl.androidsample.tools.DevUtil;
+import com.example.yangl.androidsample.tools.FileTools;
 import com.example.yangl.androidsample.view.compacttoast.AnjukeToast;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -185,5 +192,22 @@ public class SomeTestActivity extends AppCompatActivity {
             System.gc();
             Log.d(TAG, "onActivityResult: gc");
         }
+    }
+
+    public void onSerizationCLick(View view) {
+        FileOutputStream fos = null;
+        try {
+            File file = FileTools.createFile(SomeTestActivity.this, "serialization.txt");
+            fos = new FileOutputStream(file);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            InfoSerialization infoSerialization = new InfoSerialization("yl");
+            oos.writeObject(infoSerialization);
+            oos.flush();
+            oos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 }

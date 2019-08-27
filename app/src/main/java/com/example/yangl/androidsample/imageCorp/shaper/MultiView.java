@@ -24,7 +24,6 @@ import com.example.yangl.androidsample.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * Desc:
@@ -223,7 +222,7 @@ public class MultiView extends ImageView {
             scale = mWidth * 1.0f / bSize;
 
         } else if (type == TYPE_ROUND) {
-//            Logger.e(
+//            Log.e(
 //                    "b'w = " + bmp.getWidth() + " , " + "b'h = "
 //                            + bmp.getHeight());
             if (!(bmp.getWidth() == getWidth() && bmp.getHeight() == getHeight())) {
@@ -232,7 +231,7 @@ public class MultiView extends ImageView {
             }
 
         } else if (type == TYPE_MULTI) {
-//            Logger.e(
+//            Log.e(
 //                    "b'w = " + bmp.getWidth() + " , " + "b'h = "
 //                            + bmp.getHeight());
             // 拿到bitmap宽或高的小值
