@@ -181,8 +181,9 @@ public class SomeTestActivity extends AppCompatActivity {
         }
     }
 
-    public void onDestroyToastCLick(View view){
-        startActivityForResult(new Intent(SomeTestActivity.this, ToastDestoryActivity.class),123);
+    public void onNullToastCLick(View view){
+        AnjukeToast.makeText(null,"hello",Toast.LENGTH_SHORT).show();
+//        startActivityForResult(new Intent(SomeTestActivity.this, ToastDestoryActivity.class),123);
     }
 
     @Override
@@ -208,6 +209,13 @@ public class SomeTestActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
 
+    public void onstoryPathCLick(View view) {
+        startActivity(new Intent(this,FileOperateActivity.class));
+    }
+
+    public void onBeginServiceCLick(View view) {
+        startActivity(new Intent(this,ServiceActivity.class));
     }
 }

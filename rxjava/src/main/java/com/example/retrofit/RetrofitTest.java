@@ -50,6 +50,8 @@ public class RetrofitTest {
                 System.out.println("error");
             }
         });
+        ProxyUtil.generateClassFile(service.getClass(),"RetrofitProxy");
+
     }
 
 

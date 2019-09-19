@@ -2,6 +2,8 @@ package com.example;
 
 import com.example.model.Course;
 import com.example.model.Student;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
@@ -23,7 +25,22 @@ public class ExampleUnitTest {
     private static int _1M = 1024*1024;
 
     public static void main(String[] args) {
-        linkedHashMapTest();
+//        linkedHashMapTest();
+//        com.example.Student student = new com.example.Student("qq",null);
+//        Gson gson = new Gson();
+//        String studentString = gson.toJson(student);
+//        Student student1 = gson.fromJson(studentString,Student.class);
+//        testMethod(student1);
+        system64kMethod();
+    }
+
+    public static void system64kMethod(){
+        for(int i=0;i<8826;i++){
+            System.out.println("public int method_"+i+"(){return 0;}");
+        }
+    }
+
+    public static void testMethod(Student student){
 
     }
 

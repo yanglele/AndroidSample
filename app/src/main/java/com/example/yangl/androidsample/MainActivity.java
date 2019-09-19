@@ -1,5 +1,6 @@
 package com.example.yangl.androidsample;
 
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;

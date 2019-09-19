@@ -1,14 +1,20 @@
-apply plugin: 'com.android.application'
+if(eventbussourceRunAlone.toBoolean()){
+    apply plugin: 'com.android.application'
+}else {
+    apply plugin: 'com.android.library'
+}
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion "28.0.3"
 
 
     defaultConfig {
-        applicationId "com.example.eventbussource"
-        minSdkVersion 15
-        targetSdkVersion 27
+        if(eventbussourceRunAlone.toBoolean()){
+            applicationId "com.example.eventbussource"
+        }
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -16,6 +22,16 @@ android {
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [eventBusIndex: 'com.example.eventbussource.MyEventBusIndex']
+            }
+        }
+    }
+
+    sourceSets {
+        main{
+            if(eventbussourceRunAlone.toBoolean()){
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }else {
+                manifest.srcFile 'src/main/libmanifest/AndroidManifest.xml'
             }
         }
     }

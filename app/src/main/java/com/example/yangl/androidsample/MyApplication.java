@@ -2,6 +2,7 @@ package com.example.yangl.androidsample;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
@@ -28,6 +29,7 @@ import butterknife.ButterKnife;
 public class MyApplication extends MultiDexApplication {
     private final String TAG = MyApplication.class.getSimpleName();
     public static  RefWatcher refWatcher;
+    public static Context applicationContext;
 
     @Override
     public void onCreate() {
@@ -35,7 +37,7 @@ public class MyApplication extends MultiDexApplication {
         if(LeakCanary.isInAnalyzerProcess(this)){
             return;
         }
-
+        applicationContext = getBaseContext();
         refWatcher = LeakCanary.install(this);
         DebugUtil.initialize(getApplicationContext());
         AjkImageLoaderUtil.getInstance().init(getApplicationContext());

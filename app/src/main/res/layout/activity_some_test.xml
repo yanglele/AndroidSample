@@ -155,7 +155,7 @@
             android:id="@+id/on_toast_destory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="onDestroyToastCLick"
+            android:onClick="onNullToastCLick"
             android:text="on_toast_destory"
             app:layout_constraintTop_toBottomOf="@+id/fix_bad_toast_destory" />
         <Button
@@ -165,6 +165,22 @@
             android:onClick="onSerizationCLick"
             android:text="serization"
             app:layout_constraintTop_toBottomOf="@+id/on_toast_destory" />
+
+        <Button
+            android:id="@+id/storyPath"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onstoryPathCLick"
+            android:text="storyPath"
+            app:layout_constraintTop_toBottomOf="@+id/serization" />
+        <Button
+            android:id="@+id/begin_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onBeginServiceCLick"
+            android:text="storyPath"
+            app:layout_constraintTop_toBottomOf="@+id/storyPath" />
+
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>
