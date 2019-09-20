@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/eventbussource" />
             <option value="$PROJECT_DIR$/irecyclerlib" />
             <option value="$PROJECT_DIR$/rxjava" />
+            <option value="$PROJECT_DIR$/testlib" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
