@@ -96,6 +96,8 @@ public class UrlImageView extends android.support.v7.widget.AppCompatImageView {
                     e.printStackTrace();
                     //网络连接错误
                     handler.sendEmptyMessage(NETWORK_ERROR);
+                    handler.sendEmptyMessageDelayed(NETWORK_ERROR,1000);
+                    handler.sendEmptyMessageAtTime(NETWORK_ERROR,1000);
                 }
             }
         }.start();

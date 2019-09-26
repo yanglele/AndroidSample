@@ -9,6 +9,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.yangl.androidsample.R;
 
+import java.lang.reflect.Method;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

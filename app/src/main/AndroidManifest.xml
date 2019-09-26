@@ -19,7 +19,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.NotificationActivity"></activity>
+        <activity android:name=".activity.IntentServiceActivity"></activity>
+        <activity android:name=".activity.JSBridgeActivity" />
+        <activity android:name=".activity.NotificationActivity" />
         <activity android:name=".activity.ContentProviderActivity" />
         <activity android:name=".activity.BinderActivity" />
 
@@ -28,6 +30,8 @@
             android:enabled="true"
             android:exported="true"
             android:process=":binder" />
+
+        <service android:name=".testActivity.MyIntentService"/>
 
         <activity android:name=".activity.ShowWindowActivity" />
         <activity android:name=".someActivity.FrameCenterLayoutActivity" />
