@@ -1,7 +1,9 @@
 package com.example.algo.new_aha;
 
+import com.example.algo.new_aha.model.Node;
+
 /**
- * Desc:
+ * Desc:链表反转
  * Author:yl
  * Email:yangle06@anjuke.com
  * data:2019/9/20
@@ -46,16 +48,4 @@ public class LinkedListRevert {
     }
 }
 
-class Node{
-    int a;
-    Node next;
 
-    public Node(int a) {
-        this.a = a;
-    }
-
-    public Node(int a, Node next) {
-        this.a = a;
-        this.next = next;
-    }
-}
