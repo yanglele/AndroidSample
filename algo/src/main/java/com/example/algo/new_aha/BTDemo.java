@@ -1,4 +1,4 @@
-package com.example.algo.com.BT;
+package com.example.algo.new_aha;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,16 +12,16 @@ import java.util.Stack;
  * http://www.cnblogs.com/Jax/archive/2009/12/28/1633691.html 算法大全（3） 二叉树
  * 
  * TODO: 一定要能熟练地写出所有问题的递归和非递归做法！
- * 
+ * 0. 数组构造二叉树.k层节点数量： 2^k - 1,p个节点层数：log2(p+1)
  * 1. 求二叉树中的节点个数: getNodeNumRec（递归），getNodeNum（迭代）
  * 2. 求二叉树的深度:getDepthRec（递归），getDepth
  * 3. 前序遍历，中序遍历，后序遍历: preorderTraversalRec,
  * 		preorderTraversal, inorderTraversalRec, postorderTraversalRec
  * 		(https://en.wikipedia.org/wiki/Tree_traversal#Pre-order_2)
- * 4.分层遍历二叉树（按层次从上往下，从左往右）: levelTraversal, levelTraversalRec（递归解法！）
- * 5.将二叉查找树变为有序的双向链表: convertBST2DLLRec, convertBST2DLL
- * 6.求二叉树第K层的节点个数：getNodeNumKthLevelRec, getNodeNumKthLevel
- * 7.求二叉树中叶子节点的个数：getNodeNumLeafRec, getNodeNumLeaf
+ * 4. 分层遍历二叉树（按层次从上往下，从左往右）: levelTraversal, levelTraversalRec（递归解法！）
+ * 5. 将二叉查找树变为有序的双向链表: convertBST2DLLRec, convertBST2DLL
+ * 6. 求二叉树第K层的节点个数：getNodeNumKthLevelRec, getNodeNumKthLevel
+ * 7. 求二叉树中叶子节点的个数：getNodeNumLeafRec, getNodeNumLeaf
  * 8. 判断两棵二叉树是否相同的树：isSameRec,isSame
  * 9. 判断二叉树是不是平衡二叉树：isAVLRec
  * 10. 求二叉树的镜像（破坏和不破坏原来的树两种情况）：mirrorRec,
@@ -79,12 +79,14 @@ public class BTDemo {
 		r22.right = r55;
 		// r33.right = r66;
 
+
+		levelTraversal(arrayToTree());
 		// System.out.println(isSame1(r1, r11));
 		// System.out.println(isSameRec1(r11, r1));
 
 		// getNodePath(r1, r3);
 
-		System.out.println(isInTheTree(r1, r3));
+//		System.out.println(isInTheTree(r1, r3));
 		// levelTraversal(r1);
 		// micriCopyRec1(r1);
 		// levelTraversal(r1);
@@ -149,6 +151,27 @@ public class BTDemo {
 		}
 	}
 
+	public static TreeNode arrayToTree(){
+
+		int[] arr = {1,2,3,4,5,6,7,8,9,10,11,12,13};
+		List<TreeNode> tmpList = new ArrayList<>();
+		TreeNode head = new TreeNode(arr[0]);
+		tmpList.add(head);
+		for(int i=1;i<arr.length;i+=2){
+			TreeNode remove = tmpList.remove(0);
+			TreeNode left = new TreeNode(arr[i]);
+			tmpList.add(left);
+			remove.left = left;
+
+			if(i+1 < arr.length){
+				TreeNode right = new TreeNode(arr[i+1]);
+				tmpList.add(right);
+				remove.right = right;
+			}
+		}
+		return head;
+	}
+
 	/**
 	 * 求二叉树中的节点个数递归解法： O(n) （1）如果二叉树为空，节点个数为0 （2）如果二叉树不为空，二叉树节点个数 = 左子树节点个数 +
 	 * 右子树节点个数 + 1
@@ -195,6 +218,7 @@ public class BTDemo {
 		int right = getDepthRec(root.right) + 1;
 		return left > right ? left : right;
 	}
+
 
 	/**
 	 * 求二叉树的深度（高度） 迭代解法： O(n) 基本思想同LevelOrderTraversal，还是用一个Queue
@@ -711,6 +735,7 @@ public class BTDemo {
 		root.right = left;
 		return root;
 	}
+
 
 	public static void micriCopyRec1(TreeNode root) {
 		if (root == null)

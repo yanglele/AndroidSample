@@ -1,5 +1,6 @@
-package com.example.algo.leetcode;
+package com.example.algo.new_aha;
 
+//二分查找法
 public class BinarySearch {
 
 	public static void main(String[] args) {

@@ -2,6 +2,7 @@ package com.example.yangl.androidsample.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,7 +24,10 @@ public class AlterDialogActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: ");
     }
 
-    public void onButton1Click(View view){
+    public void onButton1Click(View view) throws InterruptedException {
+        Toast.makeText(this,"hello",Toast.LENGTH_LONG).show();
+
+        Thread.sleep(1000);
         final String[] items = new String[]{"hello","hello","hello"};
         AlertDialog dialog = new AlertDialog.Builder(this).setTitle("显示Item对话框").setIcon(R.drawable.icon1)
                 .setItems(items, new DialogInterface.OnClickListener() {
@@ -34,6 +38,7 @@ public class AlterDialogActivity extends AppCompatActivity {
                     }
                 }).create();
         dialog.show();
+
     }
 
     public void onCircle(View view){

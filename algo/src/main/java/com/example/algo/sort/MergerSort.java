@@ -2,6 +2,7 @@ package com.example.algo.sort;
 
 public class MergerSort {
 
+	//递归
 	public static int[] mergeSort(int[] nums, int left, int right) {
 		if (left == right)
 			return new int[] { nums[left] };
@@ -29,6 +30,7 @@ public class MergerSort {
 		}
 	}
 
+
 //	public static void main(String[] args) {
 //		int[] arr = new int[] { 43, 6, 1, 3, -9, 77, 56, 3, 57 };
 //		int[] tmp = new int[arr.length];
@@ -38,6 +40,7 @@ public class MergerSort {
 //			System.out.print(tmp1 + " ");
 //	}
 //
+//	//非递归
 //	public void mergerArray(int[] arr, int[] tmp, int start, int middle, int end) {
 //		int i1 = start;
 //		int i2 = middle;

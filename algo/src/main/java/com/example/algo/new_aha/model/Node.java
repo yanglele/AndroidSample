@@ -9,8 +9,8 @@ package com.example.algo.new_aha.model;
  * update:
  */
 public class Node{
-    int a;
-    Node next;
+    public int a;
+    public Node next;
 
     public Node(int a) {
         this.a = a;

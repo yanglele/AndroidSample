@@ -1,7 +1,7 @@
 package com.example.algo.new_aha;
 
 /**
- * Desc:
+ * Desc:dfs算法
  * Author:yl
  * Email:yangle06@anjuke.com
  * data:2019/9/19
@@ -9,8 +9,6 @@ package com.example.algo.new_aha;
  * update:
  */
 public class DFS {
-
-
 
     public static void main(String[] args){
 //        dfs(0);
