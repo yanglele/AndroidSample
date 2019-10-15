@@ -10,6 +10,7 @@ public class ThreadPoolClass {
     public static void main(String[] args) throws InterruptedException {
         newCachedThreadPoolTest();
         int a=0;
+        int b=2;
     }
 
 
