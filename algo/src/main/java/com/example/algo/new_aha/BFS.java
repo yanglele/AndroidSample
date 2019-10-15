@@ -14,7 +14,7 @@ import java.util.Queue;
 public class BFS {
 
     public static void main(String[] args){
-        bfs();
+        bfs1();
     }
 
     /**
@@ -24,11 +24,8 @@ public class BFS {
     static int mi[][]={{0,0,1,0},{0,0,0,0},{0,0,1,0},{0,1,0,0},{0,0,0,1}};
     static int markMi[][] = {{1,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
     static int path[][] = {{1,0},{0,1},{-1,0},{0,-1}};
-    static int begin[] = {0,0};
     static int target[] = {3,2};
     static Queue<Step> queue = new LinkedList<>();
-    static int curNum;
-    static int nextNum;
     static class Step{
         int x;
         int y;
@@ -40,6 +37,32 @@ public class BFS {
             this.step = step;
         }
     }
+
+    public static void bfs1(){
+        queue.add(new Step(0,0,0));
+        while (!queue.isEmpty()){
+            Step tmp = queue.remove();
+
+            for(int i=0;i<path.length;i++){
+                int tx = tmp.x + path[i][0];
+                int ty = tmp.y + path[i][1];
+
+                Step news = new Step(tx,ty,tmp.step+1);
+
+                if(tx<0 || ty < 0 || tx >= mi.length || ty>=mi[0].length) continue;
+                if(markMi[tx][ty] == 1 || mi[tx][ty] == 1) continue;
+
+                if(tx == target[0] && ty == target[1]){
+                    System.out.println(news.step);
+                    return;
+                }
+
+                markMi[tx][ty] = 1;
+                queue.add(news);
+            }
+        }
+    }
+
     private static void bfs(){
         queue.add(new Step(0,0,0));
         while (!queue.isEmpty()){

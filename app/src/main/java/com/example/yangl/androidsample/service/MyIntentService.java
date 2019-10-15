@@ -39,11 +39,13 @@ public class MyIntentService extends IntentService {
         localBroadcastManager = LocalBroadcastManager.getInstance(this);
         sendServiceStatus("服务启动");
         Log.d("MyIntentService", "onCreate: ");
+        Log.d("MyIntentService11", "onHandleIntent: "+Thread.currentThread().getName());
     }
 
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
         try {
+            Log.d("MyIntentService", "onHandleIntent: "+Thread.currentThread().getName());
             sendServiceStatus("服务运行中...");
             sendThreadStatus("线程启动中...",count);
 

@@ -12,7 +12,7 @@ public class DFS {
 
     public static void main(String[] args){
 //        dfs(0);
-        dfs1(0,begin[0],begin[1]);
+        dfs22(0,begin[0],begin[1]);
     }
 
     /**
@@ -22,6 +22,7 @@ public class DFS {
 
     static int a[]={0,0,0};
     static int mark[]={0,0,0};
+
     private static void dfs(int step){
         if(step == a.length){
             System.out.println(a[0]+" "+a[1]+" "+a[2]);
@@ -47,6 +48,29 @@ public class DFS {
     static int path[][] = {{1,0},{0,1},{-1,0},{0,-1}};
     static int begin[] = {0,0};
     static int target[] = {3,2};
+    static int min = mi.length+mi[0].length;
+
+
+    public static void dfs22(int step,int x,int y){
+        if(x == target[0] && y == target[1]){
+            if(step < min){
+                min = step;
+            }
+        }
+
+        for(int i=0;i<path.length;i++){
+            int tx = x + path[i][0];
+            int ty = y + path[i][1];
+
+            if(tx < 0 || ty < 0 || tx >= mi.length || ty >= mi[0].length) continue;
+            if(markMi[tx][ty] == 1 || mi[tx][ty] == 1) continue;
+            markMi[tx][ty] = 1;
+            dfs22(step+1,tx,ty);
+            markMi[tx][ty] = 0;
+        }
+    }
+
+
     private static void dfs1(int step,int x,int y){
         if(x == target[0] && y == target[1]){
             System.out.println(step);

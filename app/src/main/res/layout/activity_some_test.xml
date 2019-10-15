@@ -181,6 +181,14 @@
             android:text="storyPath"
             app:layout_constraintTop_toBottomOf="@+id/storyPath" />
 
+        <Button
+            android:id="@+id/many_toast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onManyToastCLick"
+            android:text="many_toast"
+            app:layout_constraintTop_toBottomOf="@+id/begin_service" />
+
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>

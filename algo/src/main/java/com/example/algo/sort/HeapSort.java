@@ -8,15 +8,23 @@ public class HeapSort {
 
 	public static void main(String[] args) {
 		buildMaxHeapify(sort);// ??????????
-		sort(sort);// ?????????
 		print(sort);
 	}
 
 
 	public static void buildMaxHeapify(int[] array){
+		//创建大顶推
 		int beginIndex = getParentIndex(array.length-1);
 		for(int i = beginIndex;i>= 0;i--){
 			build(array,array.length,i);
+		}
+
+		//交换顶部数据，排序
+		for(int i=array.length - 1;i>=0;i--){
+			array[0] ^= array[i];
+			array[i] ^= array[0];
+			array[0] ^= array[i];
+			build(array,i,0);
 		}
 	}
 
@@ -35,15 +43,6 @@ public class HeapSort {
 			array[index] ^= array[largest];
 			array[largest] ^= array[index];
 			build(array,length,largest);
-		}
-	}
-
-	public static void sort(int[] array){
-		for(int i=array.length - 1;i>=0;i--){
-			array[0] ^= array[i];
-			array[i] ^= array[0];
-			array[0] ^= array[i];
-			build(array,i,0);
 		}
 	}
 

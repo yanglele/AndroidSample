@@ -60,6 +60,7 @@ public class AidlService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
+        System.out.println("server: "+stub);
         return stub;
     }
 }

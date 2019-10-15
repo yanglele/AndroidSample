@@ -218,4 +218,10 @@ public class SomeTestActivity extends AppCompatActivity {
     public void onBeginServiceCLick(View view) {
         startActivity(new Intent(this,ServiceActivity.class));
     }
+
+    public void onManyToastCLick(View view) {
+        for(int i=0;i<10;i++){
+            Toast.makeText(this,i+"",Toast.LENGTH_SHORT).show();
+        }
+    }
 }

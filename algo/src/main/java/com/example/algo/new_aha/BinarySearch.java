@@ -7,12 +7,13 @@ public class BinarySearch {
 		// TODO Auto-generated method stub
 
 		int[] test={1,2,3,4,5,6,7};
+		System.out.println(binarySearch(test, 0,test.length,8));
 		System.out.println(binarySearch(test, 0,test.length,6));
 	}
 
 	public static int binarySearch(int[] args,int begin,int end,int des){
 		if(begin == end){
-			return begin;
+			return -1;
 		}
 		int middle =(end + begin)>>1;
 		if(des == args[middle]){

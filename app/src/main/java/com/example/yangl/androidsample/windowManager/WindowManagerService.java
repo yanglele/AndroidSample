@@ -30,7 +30,7 @@ public class WindowManagerService extends Service {
     private View mWindowView;
     private TextView mPercentTv;
 
-    private int mStartX;
+    private int mStartX = 1;
     private int mStartY;
     private int mEndX;
     private int mEndY;
@@ -38,7 +38,7 @@ public class WindowManagerService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.i(TAG, "onCreate");
+        Log.i(TAG, "onCreate"+(++mStartX));
         initWindowParams();
         initView();
         addWindowView2Window();
@@ -49,7 +49,7 @@ public class WindowManagerService extends Service {
         mWindowManager = (WindowManager) getApplication().getSystemService(getApplication().WINDOW_SERVICE);
         wmParams = new WindowManager.LayoutParams();
         // 更多type：https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#TYPE_PHONE
-        wmParams.type = WindowManager.LayoutParams.TYPE_PHONE;
+        wmParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
         wmParams.format = PixelFormat.TRANSLUCENT;
         // 更多falgs:https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#FLAG_NOT_FOCUSABLE
         wmParams.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
@@ -69,7 +69,7 @@ public class WindowManagerService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.i(TAG, "onStartCommand");
+        Log.i(TAG, "onStartCommand"+mStartX);
         return super.onStartCommand(intent, flags, startId);
     }
 
