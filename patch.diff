@@ -1,0 +1,48 @@
+From 8b3ff10502e34541277ac5046ddc5eff5beb7821 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=E6=9D=A8=E4=B9=90?= <yangle06@58ganji.com>
+Date: Tue, 15 Oct 2019 19:49:33 +0800
+Subject: [PATCH] t2
+
+---
+ algo/src/main/java/com/example/algo/ThreadPoolClass.java | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/algo/src/main/java/com/example/algo/ThreadPoolClass.java b/algo/src/main/java/com/example/algo/ThreadPoolClass.java
+index 5aea6e6..a2250bf 100644
+--- a/algo/src/main/java/com/example/algo/ThreadPoolClass.java
++++ b/algo/src/main/java/com/example/algo/ThreadPoolClass.java
+@@ -10,6 +10,7 @@ public class ThreadPoolClass {
+     public static void main(String[] args) throws InterruptedException {
+         newCachedThreadPoolTest();
+         int a=0;
++        int b=2;
+     }
+ 
+ 
+-- 
+2.8.1
+
+From 20de15503f1f760e5dca15d80cab37dac37b77cc Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=E6=9D=A8=E4=B9=90?= <yangle06@58ganji.com>
+Date: Tue, 15 Oct 2019 19:49:58 +0800
+Subject: [PATCH] t3
+
+---
+ algo/src/main/java/com/example/algo/ThreadPoolClass.java | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/algo/src/main/java/com/example/algo/ThreadPoolClass.java b/algo/src/main/java/com/example/algo/ThreadPoolClass.java
+index a2250bf..1095013 100644
+--- a/algo/src/main/java/com/example/algo/ThreadPoolClass.java
++++ b/algo/src/main/java/com/example/algo/ThreadPoolClass.java
+@@ -11,6 +11,7 @@ public class ThreadPoolClass {
+         newCachedThreadPoolTest();
+         int a=0;
+         int b=2;
++        int c=3;
+     }
+ 
+ 
+-- 
+2.8.1
+
