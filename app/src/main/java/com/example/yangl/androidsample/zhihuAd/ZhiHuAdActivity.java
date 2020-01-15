@@ -72,7 +72,7 @@ public class ZhiHuAdActivity extends AppCompatActivity {
         for (int i = 0; i < 5; i++) {
             list.add(new TextInfo("hello", "The RecyclerView widget is a more advanced and flexible version of ListView. This widget is a container for displaying large data sets that can be scrolled very efficiently by maintaining a limited number of views"));
         }
-        list.add(new ImageInfo(R.drawable.image));
+        list.add(new ImageInfo(R.drawable.image1));
         for (int i = 0; i < 5; i++) {
             list.add(new TextInfo("hello", "The RecyclerView widget is a more advanced and flexible version of ListView. This widget is a container for displaying large data sets that can be scrolled very efficiently by maintaining a limited number of views"));
         }

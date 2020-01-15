@@ -15,7 +15,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ViewPager2 extends AppCompatActivity {
+public class ViewPager2Activity extends AppCompatActivity {
 
     @BindView(R.id.view_pager)
     ViewPager viewPager;
@@ -30,14 +30,15 @@ public class ViewPager2 extends AppCompatActivity {
 
     private void initViewPager(){
         List<Integer> lists = new ArrayList<>();
+        lists.add(R.drawable.image1);
+        lists.add(R.drawable.image2);
         lists.add(R.drawable.image3);
-        lists.add(R.drawable.image3);
-        lists.add(R.drawable.image3);
-        lists.add(R.drawable.image3);
-        lists.add(R.drawable.image3);
-        lists.add(R.drawable.image3);
+        lists.add(R.drawable.image4);
+        lists.add(R.drawable.image5);
+        lists.add(R.drawable.image6);
         ViewPager2Adapter fragmentAdapter = new ViewPager2Adapter(lists,this);
         viewPager.setAdapter(fragmentAdapter);
+        viewPager.setOffscreenPageLimit(100);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

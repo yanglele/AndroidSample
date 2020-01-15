@@ -264,7 +264,7 @@ public class AnchorRecyclerViewActivity extends AppCompatActivity implements Anc
             if((int)map.get(titles[i]) < pos){
                 if(i < map.size() - 1){
                     for(int j=i+1;j<map.size();j++){
-                        map.put(titles[j],(int)map.get(titles[j])+count-1); // should minus removed image view
+                        map.put(titles[j],(int)map.get(titles[j])+count-1); // should minus removed image1 view
                     }
                     break;
                 }

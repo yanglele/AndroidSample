@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <permission android:name="android.permission.READ_LOGS" />
 
     <application
         android:name=".MyApplication"
@@ -19,7 +20,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.IntentServiceActivity"></activity>
+        <activity android:name=".activity.ANRInfoLogActivity"></activity>
+        <activity android:name=".activity.IntentServiceActivity" />
         <activity android:name=".activity.JSBridgeActivity" />
         <activity android:name=".activity.NotificationActivity" />
         <activity android:name=".activity.ContentProviderActivity" />
@@ -30,8 +32,7 @@
             android:enabled="true"
             android:exported="true"
             android:process=":binder" />
-
-        <service android:name=".testActivity.MyIntentService"/>
+        <service android:name=".testActivity.MyIntentService" />
 
         <activity android:name=".activity.ShowWindowActivity" />
         <activity android:name=".someActivity.FrameCenterLayoutActivity" />
@@ -94,6 +95,7 @@
         <activity android:name=".activity.SystemInfoActivity" />
         <activity android:name=".activity.ExceptionActivity" />
         <activity android:name=".activity.SomeTestActivity" />
+        <activity android:name=".activity.TestActivity" />
         <activity android:name=".testActivity.ConfigChangeActivity" />
         <activity android:name=".animation.propertyAnimation.RotateTestActivity" />
         <activity android:name=".activity.ServiceActivity" />
@@ -138,7 +140,7 @@
         <activity android:name=".activity.BroadcastActivity" />
         <activity android:name=".someActivity.SpannableActivity" />
         <activity android:name=".someActivity.ScrollToActivity" />
-        <activity android:name=".activity.ViewPager2" />
+        <activity android:name=".activity.ViewPager2Activity" />
         <activity android:name=".activity.ClickEventActivity" />
         <activity android:name=".someActivity.ClickEventTestActivity" />
         <activity android:name=".activity.ImageScaleTypeActivity" />

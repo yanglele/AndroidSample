@@ -27,7 +27,7 @@ public class NormalShapeView extends View {
 
     public NormalShapeView(Context context) {
         super(context);
-        b = BitmapFactory.decodeResource(getResources(), R.drawable.image);
+        b = BitmapFactory.decodeResource(getResources(), R.drawable.image1);
         m = new Matrix();
     }
 

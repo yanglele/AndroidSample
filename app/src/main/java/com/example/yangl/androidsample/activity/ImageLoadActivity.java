@@ -66,7 +66,7 @@ public class ImageLoadActivity extends AppCompatActivity {
     @OnClick(R.id.bitmap_load_native_java)
     public void onViewClicked() {
         ImageView imageView = new ImageView(this);
-        imageView.setImageResource(R.drawable.image);
+        imageView.setImageResource(R.drawable.image1);
         startActivity(new Intent(ImageLoadActivity.this, NativeJavaMemoryActivity.class));
     }
 }

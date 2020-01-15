@@ -24,16 +24,23 @@
         android:layout_height="wrap_content">
         <Button
             android:id="@+id/setFreshHeadHeight"
-            android:text="setFreshHeadHeight"
+            android:text="freshHeadHeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onFreshHead"/>
 
         <Button
             android:id="@+id/setFreshContainerHeight"
-            android:text="setFreshContainerHeight"
+            android:text="freshContainerHeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onFreshContainer"/>
+
+        <Button
+            android:id="@+id/notifyRangeChanged"
+            android:text="notifyRangeChanged"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="notifyRangeChanged"/>
     </LinearLayout>
 </LinearLayout>

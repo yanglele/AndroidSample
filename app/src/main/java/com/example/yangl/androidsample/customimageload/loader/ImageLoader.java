@@ -77,7 +77,7 @@ public class ImageLoader {
             if (uri.equals(result.uri)) {
                 imageView.setImageBitmap(result.bitmap);
             } else {
-                Log.w(TAG, "set image bitmap,but url has changed, ignored!");
+                Log.w(TAG, "set image1 bitmap,but url has changed, ignored!");
             }
         };
     };

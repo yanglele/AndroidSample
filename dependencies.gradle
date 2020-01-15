@@ -9,11 +9,11 @@ def frescoVersion = "1.10.0"
 project.ext {
 
     android = [
-            compileSdkVersion    : 27,
-            buildToolsVersion    : "27.0.3",
+            compileSdkVersion    : 28,
+            buildToolsVersion    : "28.0.3",
             applicationId        : "com.example.yangl",
             minSdkVersion        : 16,
-            targetSdkVersion     : 27,
+            targetSdkVersion     : 28,
             chatCompileSdkVersion: 28,
             chatBuildToolsVersion: "28.0.2"
     ]

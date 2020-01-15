@@ -2,9 +2,7 @@ package com.example.yangl.androidsample.activity;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -70,7 +68,7 @@ public class ImageScaleTypeActivity extends AppCompatActivity {
     public void fitLeftTopClick(View view){
         int width = imageView2.getWidth();
         int height = imageView2.getHeight();
-        Drawable drawable = ContextCompat.getDrawable(this, R.drawable.image);
+        Drawable drawable = ContextCompat.getDrawable(this, R.drawable.image1);
         int imageWidth = drawable.getIntrinsicWidth();
         int imageHeightTar = imageWidth/width*height;
 
