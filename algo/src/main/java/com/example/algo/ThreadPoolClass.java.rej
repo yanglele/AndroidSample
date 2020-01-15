@@ -1,0 +1,9 @@
+diff a/algo/src/main/java/com/example/algo/ThreadPoolClass.java b/algo/src/main/java/com/example/algo/ThreadPoolClass.java	(rejected hunks)
+@@ -11,6 +11,7 @@ public class ThreadPoolClass {
+         newCachedThreadPoolTest();
+         int a=0;
+         int b=2;
++        int c=3;
+     }
+ 
+ 
