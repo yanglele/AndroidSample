@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Scroller;
 
+import java.lang.reflect.Field;
+
 public class HorizontalScrollViewEx extends ViewGroup {
     private static final String TAG = "HorizontalScrollViewEx";
 
@@ -178,7 +180,6 @@ public class HorizontalScrollViewEx extends ViewGroup {
             setMeasuredDimension(0, 0);
         } else if (heightSpecMode == MeasureSpec.AT_MOST) {
             final View childView = getChildAt(0);
-            measuredHeight = childView.getMeasuredHeight();
             setMeasuredDimension(widthSpaceSize, childView.getMeasuredHeight());
         } else if (widthSpecMode == MeasureSpec.AT_MOST) {
             final View childView = getChildAt(0);
@@ -210,7 +211,7 @@ public class HorizontalScrollViewEx extends ViewGroup {
         }
     }
 
-    private void smoothScrollBy(int dx, int dy) {
+    private  void smoothScrollBy(int dx, int dy) {
         mScroller.startScroll(getScrollX(), 0, dx, 0, 500);
         invalidate();
     }

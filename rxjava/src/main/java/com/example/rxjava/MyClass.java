@@ -6,6 +6,8 @@ import com.example.model.Student;
 import java.net.HttpURLConnection;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -157,6 +159,7 @@ public class MyClass {
 
     //自定义操作符，int转为string
     private static void simpleLift() {
+        Arrays.sort();
         Integer[] integerList = {1, 2, 3};
         Observable.from(integerList).doOnNext(new Action1<Integer>() {
             @Override

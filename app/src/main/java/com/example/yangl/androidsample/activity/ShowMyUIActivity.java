@@ -1,8 +1,10 @@
 package com.example.yangl.androidsample.activity;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -25,6 +27,7 @@ import butterknife.OnClick;
 
 public class ShowMyUIActivity extends AppCompatActivity {
 
+    private static final String TAG = ShowMyUIActivity.class.getName();
     @BindView(R.id.show_zhihu_ad)
     Button showZhihuAd;
     @BindView(R.id.recycler_view_listener)
@@ -35,11 +38,19 @@ public class ShowMyUIActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_my_ui);
         ButterKnife.bind(this);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                int a = 2/0;
+            }
+        }).start();
     }
 
     private void jump2targetActivity(Class<?> cls){
         Intent intent = new Intent(ShowMyUIActivity.this, cls);
         startActivity(intent);
+
     }
 
     @OnClick({R.id.frameLayoutCenter,R.id.show_zhihu_ad, R.id.recycler_view_simple, R.id.recycler_view_listener,R.id.back_padding, R.id.recycler_linear_layout, R.id.recycler_grid_layout, R.id.recycler_staggered_layout, R.id.recycler_random_staggered_layout ,R.id.recycler_anchor_layout,R.id.layout_margin})
@@ -79,4 +90,12 @@ public class ShowMyUIActivity extends AppCompatActivity {
             default:break;
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy: ");
+    }
+
+
 }

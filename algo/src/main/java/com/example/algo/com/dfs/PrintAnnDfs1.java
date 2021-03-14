@@ -24,7 +24,7 @@ public class PrintAnnDfs1 {
 		}
 
 		for (int i = 0; i < N; i++) {
-			if (book[i] == false) {
+			if (!book[i]) {
 				book[i] = true;
 				list.add(i + 1);
 				dfs(step + 1, book, list);
