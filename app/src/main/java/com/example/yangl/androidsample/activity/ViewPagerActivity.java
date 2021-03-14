@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.IntEvaluator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -50,7 +51,7 @@ public class ViewPagerActivity extends AppCompatActivity {
 
     private void initViewPager(){
         List<Integer> lists = new ArrayList<>();
-        lists.add(R.drawable.image);
+        lists.add(R.drawable.image1);
         lists.add(R.drawable.image2);
         lists.add(R.drawable.image3);
         lists.add(R.drawable.image4);
@@ -58,6 +59,16 @@ public class ViewPagerActivity extends AppCompatActivity {
         lists.add(R.drawable.image6);
         MyViewPagerFragmentAdapter fragmentAdapter = new MyViewPagerFragmentAdapter(getSupportFragmentManager(),lists,this);
         viewPager.setAdapter(fragmentAdapter);
+        viewPager.post(new Runnable() {
+            @Override
+            public void run() {
+                List<Fragment> fragments = getSupportFragmentManager().getFragments();
+                for(Fragment fragment : fragments){
+                    Log.d("111", "initViewPager: "+fragment);
+                }
+            }
+        });
+
 //        viewPager.post(new Runnable() {
 //            @Override
 //            public void run() {

@@ -264,7 +264,7 @@ public class AjkImageLoaderUtil {
 
         // DefaultImage
         if (customDefaultImageResId == UN_CUSTOME_DEFAULT_IMAGE_RES_ID && isShowDefaultImage) {
-            DevUtil.d(AjkImageLoaderUtil.class.getSimpleName(), "displayImage show default image");
+            DevUtil.d(AjkImageLoaderUtil.class.getSimpleName(), "displayImage show default image1");
             customDefaultImageResId = R.drawable.image_bg_default;
         }
         if (customDefaultImageResId != UN_CUSTOME_DEFAULT_IMAGE_RES_ID) {
@@ -307,7 +307,7 @@ public class AjkImageLoaderUtil {
 
         // DefaultImage
         if (customDefaultImageResId == UN_CUSTOME_DEFAULT_IMAGE_RES_ID && isShowDefaultImage) {
-            DevUtil.d(AjkImageLoaderUtil.class.getSimpleName(), "displayImage show default image");
+            DevUtil.d(AjkImageLoaderUtil.class.getSimpleName(), "displayImage show default image1");
             customDefaultImageResId = R.drawable.image_bg_default;
         }
         if (customDefaultImageResId != UN_CUSTOME_DEFAULT_IMAGE_RES_ID) {

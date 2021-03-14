@@ -36,7 +36,7 @@ public class TouchInnerActivity extends AppCompatActivity {
                 float moveY = MyUtils.getPointerY(ev,pointId);
                 float dy = Math.abs(moveY - downY);
                 if(dy > 20){
-                    innerView.setParentNeedEvent(true);
+                    innerView.setChildNeedEvent(true);
                 }
                 Log.d(TAG, "dispatchTouchEvent: move dy = "+dy);
                 break;

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TabHost;
 
 import com.example.yangl.androidsample.R;
 import com.example.yangl.androidsample.pojo.Empty;
@@ -15,7 +14,6 @@ import com.example.yangl.androidsample.zhihuAd.baseUtil.BaseAdapter;
 import com.example.yangl.androidsample.zhihuAd.baseUtil.BaseViewHolder;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Desc:
@@ -29,7 +27,7 @@ import java.util.Map;
 public class AnchorRecyclerAdapter extends BaseAdapter<Object,BaseViewHolder> {
 
     public static final int TEXT_VIEW = R.layout.view_text_view;
-    public static final int IMAGE_VIEW = R.layout.simple_image_view;
+    public static final int IMAGE_VIEW = R.layout.simple_image_view_layout;
     public static final int EMPTY_VIEW = R.layout.item_empty_view;
     public static final int MORE_PIC = R.layout.image_view_text;
 

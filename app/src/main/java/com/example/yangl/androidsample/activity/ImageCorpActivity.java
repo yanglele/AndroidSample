@@ -56,7 +56,7 @@ public class ImageCorpActivity extends AppCompatActivity implements View.OnClick
 
         Intent intent = new Intent(Intent.ACTION_PICK, null);
         //打开文件
-        intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
+        intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image1/*");
         startActivityForResult(intent, requestCode);
     }
 

@@ -284,7 +284,7 @@ public class HighlightView {
 //    }
 
 
-    // Grows the cropping rectange by (dx, dy) in image space.
+    // Grows the cropping rectange by (dx, dy) in image1 space.
     void growBy(float dx, float dy) {
 
         if(!rectange) {
@@ -299,7 +299,7 @@ public class HighlightView {
         }
 
         // Don't let the cropping rectangle grow too fast.
-        // Grow at most half of the difference between the image rectangle and
+        // Grow at most half of the difference between the image1 rectangle and
         // the cropping rectangle.
         RectF r = new RectF(mCropRect);
 
@@ -336,7 +336,7 @@ public class HighlightView {
             // r.inset(0F, -(heightCap - r.height()) / 2F);
         }
 
-        // Put the cropping rectangle inside the image rectangle.
+        // Put the cropping rectangle inside the image1 rectangle.
         if (r.left < mImageRect.left) {
             r.offset(mImageRect.left - r.left, 0F);
         } else if (r.right > mImageRect.right) {

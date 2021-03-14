@@ -60,7 +60,7 @@ public class InterceptView extends android.support.v7.widget.AppCompatTextView {
                 getParent().requestDisallowInterceptTouchEvent(true);
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (dy>10) {
+                if (needEvent) {
                     getParent().requestDisallowInterceptTouchEvent(false);
                 }
                 break;
@@ -75,7 +75,7 @@ public class InterceptView extends android.support.v7.widget.AppCompatTextView {
         return super.dispatchTouchEvent(event);
     }
 
-    public void setParentNeedEvent(boolean needEvent) {
+    public void setChildNeedEvent(boolean needEvent) {
         this.needEvent = needEvent;
     }
 

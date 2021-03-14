@@ -1,12 +1,15 @@
 package com.example.yangl.androidsample.adapter;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.yangl.androidsample.R;
 
@@ -45,9 +48,18 @@ public class ViewPager2Adapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         Log.d("11111", "instantiateItem: "+position);
-        View view = LayoutInflater.from(context).inflate(R.layout.simple_image_view,container,false);
-        ((ImageView)view.findViewById(R.id.image_view)).setImageResource(list.get(position));
+        View view = LayoutInflater.from(context).inflate(R.layout.simple_image_view_layout,container,false);
+        ImageView imageView = view.findViewById(R.id.image_view);
+        TextView textView = view.findViewById(R.id.textView);
+        imageView.setImageResource(list.get(position));
+        textView.setText(String.valueOf(list.get(position)));
         container.addView(view);
+        imageView.setOnClickListener(v -> {
+//            list.remove(position);
+            list.add(position,R.drawable.image7);
+            notifyDataSetChanged();
+            Toast.makeText(context,"position " + position + " has been delete!" ,Toast.LENGTH_SHORT).show();
+        });
         return view;
     }
 
@@ -55,5 +67,10 @@ public class ViewPager2Adapter extends PagerAdapter {
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((View) object);
         Log.d("11111", "destroyItem: "+position);
+    }
+
+    @Override
+    public int getItemPosition(@NonNull Object object) {
+        return POSITION_NONE;
     }
 }

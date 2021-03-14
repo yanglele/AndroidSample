@@ -159,7 +159,6 @@ public class MyClass {
 
     //自定义操作符，int转为string
     private static void simpleLift() {
-        Arrays.sort();
         Integer[] integerList = {1, 2, 3};
         Observable.from(integerList).doOnNext(new Action1<Integer>() {
             @Override

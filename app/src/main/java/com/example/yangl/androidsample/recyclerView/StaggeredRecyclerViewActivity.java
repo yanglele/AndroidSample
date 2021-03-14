@@ -3,6 +3,7 @@ package com.example.yangl.androidsample.recyclerView;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
@@ -32,8 +33,9 @@ public class StaggeredRecyclerViewActivity extends AppCompatActivity {
         for(int i=0;i<20;i++){
             list.add(i+" ");
         }
-        straggeredRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(15, StaggeredGridLayoutManager.HORIZONTAL));
+//        straggeredRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(15, StaggeredGridLayoutManager.HORIZONTAL));
 //        straggeredRecyclerView.addItemDecoration(new DividerGridLayout(this));
+        straggeredRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new StaggeredRecyclerViewAdapter(this,list);
         straggeredRecyclerView.setAdapter(adapter);
 

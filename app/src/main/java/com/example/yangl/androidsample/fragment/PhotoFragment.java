@@ -69,7 +69,6 @@ public class PhotoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_photo, container, false);
         unbinder = ButterKnife.bind(this, view);
-        initFragment();
         context = getContext();
         Log.d("PhotoFragment", "onCreateView: "+imageId);
         return view;
@@ -80,6 +79,8 @@ public class PhotoFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         if(getArguments() != null){
             imageId = getArguments().getInt("image");
+            initFragment();
+
         }
     }
 

@@ -59,6 +59,10 @@ public class IrecyclerViewSimpleActivity extends AppCompatActivity implements On
         parent.setLayoutParams(layoutParams);
     }
 
+    public void notifyRangeChanged(View view){
+        adapter.notifyItemRangeChanged(0,1,false);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

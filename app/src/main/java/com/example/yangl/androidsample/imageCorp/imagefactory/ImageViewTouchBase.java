@@ -18,10 +18,10 @@ import android.widget.ImageView;
 public class ImageViewTouchBase extends ImageView {
 
 
-    //This matrix is recomputed when we go from the thumbnail image to the full size image
+    //This matrix is recomputed when we go from the thumbnail image1 to the full size image1
     protected Matrix mBaseMatrix = new Matrix();
 
-    //This matrixx remains the same when we go from the thumbnail image to the full size image
+    //This matrixx remains the same when we go from the thumbnail image1 to the full size image1
     protected Matrix mSuppMatrix = new Matrix();
 
     //This is the final matrix which is computed as the concatentation of the base matrix and the supplementary matrix.
