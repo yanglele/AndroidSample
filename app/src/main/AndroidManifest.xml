@@ -20,7 +20,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
+        <activity android:name=".activity.TestViewActivity"></activity>
+=======
         <activity android:name=".activity.ANRInfoLogActivity"></activity>
+>>>>>>> 88a545cb3a8b1615433577e16af3f8ab769fd6af
         <activity android:name=".activity.IntentServiceActivity" />
         <activity android:name=".activity.JSBridgeActivity" />
         <activity android:name=".activity.NotificationActivity" />
@@ -67,7 +71,8 @@
 
         <activity android:name=".activity.ShowSystemInfoActivity" />
         <activity android:name=".activity.ShowBottomSheetActivity" />
-        <activity android:name=".activity.ShowMyUIActivity" />
+        <activity android:name=".activity.ShowMyUIActivity"
+            android:process="com.androidsimplesubprocess"/>
         <activity android:name=".zhihuAd.ZhiHuAdActivity" />
         <activity android:name=".IRecyclerViewSample.irecyclerCoordinatory.IRecyclerViewWithListenerActivity" />
         <activity android:name=".IRecyclerViewSample.irecyclerSimple.IrecyclerViewSimpleActivity" />
@@ -91,7 +96,6 @@
         <activity android:name=".recyclerView.AnchorRecyclerViewActivity" />
         <activity android:name=".activity.UTF8LengthActivity" />
         <activity android:name=".activity.TestDumplicationResActivity" />
-        <activity android:name=".activity.AlterDialogActivity" />
         <activity android:name=".activity.SystemInfoActivity" />
         <activity android:name=".activity.ExceptionActivity" />
         <activity android:name=".activity.SomeTestActivity" />

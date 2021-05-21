@@ -51,36 +51,40 @@ public class BTDemo {
         // r2.right = r5;
         // r3.right = r6;
 
-        TreeNode r1 = new TreeNode(6);
-        TreeNode r2 = new TreeNode(4);
-        TreeNode r3 = new TreeNode(7);
-        TreeNode r4 = new TreeNode(1);
-        TreeNode r5 = new TreeNode(5);
-        TreeNode r6 = new TreeNode(8);
+        TreeNode r1 = new TreeNode(3);
+        TreeNode r2 = new TreeNode(1);
+        TreeNode r3 = new TreeNode(2);
+        TreeNode r4 = new TreeNode(4);
 
         r1.left = r2;
-        r1.right = r3;
-        r2.left = r4;
-        r2.right = r5;
-        r3.right = r6;
+        r1.right = r4;
+        r2.right = r3;
+
+        getSmallK(r1,0,2);
 
         // System.out.println(getLastCommonParentRec1(r1, r2, r4).val);
         TreeNode r11 = new TreeNode(6);
         TreeNode r22 = new TreeNode(4);
-        TreeNode r33 = new TreeNode(7);
+        TreeNode r33 = new TreeNode(5);
         TreeNode r44 = new TreeNode(1);
-        TreeNode r55 = new TreeNode(8);
+        TreeNode r55 = new TreeNode(7);
+        TreeNode r66 = new TreeNode(2);
+        TreeNode r77 = new TreeNode(4);
         // TreeNode r66 = new TreeNode(9);
 
         r11.left = r22;
-        r11.right = r33;
-        r22.left = r44;
+        r22.left=r33;
+        r22.right = r44;
+
+        r11.right = r55;
+        r55.left=r66;
+        r55.right=r77;
 //		r22.right = r55;
         // r33.right = r66;
 
 
 //		printTreeDfs(r11);
-        printTreePathDfs(r11, "");
+//        printNumAndPath(r11, 0,"");
 
 //		levelTraversal(arrayToTree());
         // System.out.println(isSame1(r1, r11));
@@ -168,6 +172,39 @@ public class BTDemo {
         printTreePathDfs(node.left, s);
         printTreePathDfs(node.right, s);
     }
+
+
+
+    //打印路径和为15的所有路径
+    public static void printNumAndPath(TreeNode head,int num,String s){
+        if(head == null) return;
+
+        s+=head.val;
+        num+=head.val;
+        if(head.left == null && head.right == null && num == 15){
+            System.out.println(s);
+        }
+        printNumAndPath(head.left,num,s);
+        printNumAndPath(head.right,num,s);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     private static class TreeNode {
@@ -310,6 +347,21 @@ public class BTDemo {
         inorderTraversalRec(root.left);
         System.out.print(root.val + " ");
         inorderTraversalRec(root.right);
+    }
+
+
+    //搜索树求第k小值
+    public static void getSmallK(TreeNode root,int num,int k) {
+        if (root == null) {
+            return ;
+        }
+        num++;
+        getSmallK(root.left,num,k);
+        if(num == k){
+            System.out.println(num);
+            return;
+        }
+        getSmallK(root.right,num,k);
     }
 
     /**

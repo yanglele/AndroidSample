@@ -43,7 +43,7 @@ public class MyApplication extends MultiDexApplication {
         AjkImageLoaderUtil.getInstance().init(getApplicationContext());
         ButterKnife.setDebug(true);
         EventBus.builder().addIndex(new MyEventBusIndex()).installDefaultEventBus();
-        Log.d(TAG, "onCreate: ");
+        Log.d(TAG, "onCreate: "+this);
 
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             @Override

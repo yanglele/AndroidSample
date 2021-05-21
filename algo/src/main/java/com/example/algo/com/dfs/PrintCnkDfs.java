@@ -19,11 +19,10 @@ public class PrintCnkDfs {
 			System.out.println();
 			return;
 		}
-
-		for (int i = cur; i < (n - k + 1 + step); i++) {
+		for (int i = cur; i < n; i++) {
 			a[step] = i + 1;
-			dfs(n, k, a, cur + 1, step + 1);
-			cur += 1;
+			dfs(n, k, a, i + 1, step + 1);
+			a[step] = -1;
 		}
 	}
 

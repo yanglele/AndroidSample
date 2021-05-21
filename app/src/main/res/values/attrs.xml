@@ -7,4 +7,11 @@
         <attr name="loadMoreEnabled" format="boolean" />
         <attr name="refreshFinalMoveOffset" format="dimension" />
     </declare-styleable>
+
+
+    <declare-styleable name="MyOwnerView">
+        <attr name="android:layout_width"/>
+        <attr name="android:layout_height"/>
+    </declare-styleable>
+
 </resources>

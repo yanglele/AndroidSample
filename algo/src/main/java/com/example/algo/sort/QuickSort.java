@@ -4,13 +4,92 @@ public class QuickSort {
 
 	public static void main(String[] args) {
 		int[] arr = new int[] { 43, 6, 1, 3, -9, 77, 56, 3, 57 ,43};
-		QuickSort quickSort = new QuickSort();
-		quickSort.quickSort(arr, 0, arr.length - 1);
+//		QuickSort quickSort = new QuickSort();
+//		quickSort.quickSort(arr, 0, arr.length - 1);
+//		quickSortK(arr,0,arr.length-1,3);
+		sort1(arr,0,arr.length-1);
 		for (int tmp : arr)
 			System.out.print(tmp + " ");
 	}
 
-	public void quickSort(int[] arr, int start, int end) {
+	public static void sort1(int[] nums,int l,int r){
+		if(l >= r){
+			return;
+		}
+		int tl=l,tr=r;
+		int door = nums[l];
+		while (tl < tr){
+			while (nums[tr] > door &&  tl < tr){
+				tr--;
+			}
+			if(tl < tr){
+				nums[tl++] = nums[tr];
+			}
+			while (nums[tl] < door && tl < tr){
+				tl++;
+			}
+			if(tl < tr){
+				nums[tr--]=nums[tl];
+			}
+		}
+		nums[tl] = door;
+		sort1(nums,l,tl-1);
+		sort1(nums,tl+1,r);
+	}
+
+
+
+
+
+
+
+
+
+
+
+	public static void quickSortK(int[] arr ,int begin,int end,int k){
+
+		int tmp = arr[begin];
+		int i=begin,j=end;
+		while (i<j){
+			while (i<j && arr[j] >= tmp){
+				j--;
+			}
+			arr[i] = arr[j];
+
+			while (i<j && arr[i] <= tmp){
+				i++;
+			}
+			arr[j] = arr[i];
+		}
+		arr[i] = tmp;
+		if(end - i + 1 == k){
+			System.out.println(arr[i]);
+			return;
+		}
+		if(i+1 < end){
+			quickSortK(arr,i+1,end,k);
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public static void quickSort(int[] arr, int start, int end) {
 		int tmp = arr[start];
 		int i = start;
 		int j = end;
