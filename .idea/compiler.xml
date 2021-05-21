@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="AndroidSample.algo" target="1.7" />
+      <module name="AndroidSample.app" target="1.8" />
+      <module name="AndroidSample.eventbussource" target="1.8" />
+      <module name="AndroidSample.irecyclerlib" target="1.8" />
+      <module name="AndroidSample.rxjava" target="1.8" />
+      <module name="AndroidSample.testlib" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
