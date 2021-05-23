@@ -38,57 +38,6 @@ public class QuickSort {
 	}
 
 
-
-
-
-
-
-
-
-
-
-	public static void quickSortK(int[] arr ,int begin,int end,int k){
-
-		int tmp = arr[begin];
-		int i=begin,j=end;
-		while (i<j){
-			while (i<j && arr[j] >= tmp){
-				j--;
-			}
-			arr[i] = arr[j];
-
-			while (i<j && arr[i] <= tmp){
-				i++;
-			}
-			arr[j] = arr[i];
-		}
-		arr[i] = tmp;
-		if(end - i + 1 == k){
-			System.out.println(arr[i]);
-			return;
-		}
-		if(i+1 < end){
-			quickSortK(arr,i+1,end,k);
-		}
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	public static void quickSort(int[] arr, int start, int end) {
 		int tmp = arr[start];
 		int i = start;

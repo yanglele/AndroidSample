@@ -20,11 +20,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
         <activity android:name=".activity.TestViewActivity"></activity>
-=======
         <activity android:name=".activity.ANRInfoLogActivity"></activity>
->>>>>>> 88a545cb3a8b1615433577e16af3f8ab769fd6af
         <activity android:name=".activity.IntentServiceActivity" />
         <activity android:name=".activity.JSBridgeActivity" />
         <activity android:name=".activity.NotificationActivity" />
