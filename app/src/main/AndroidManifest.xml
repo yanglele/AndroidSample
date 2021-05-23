@@ -189,11 +189,6 @@
         <activity android:name=".activity.StartActivityForResultActivity" />
         <activity android:name=".someActivity.StartActivityForResultTestActivity" />
         <activity android:name=".someActivity.TextViewScrollToActivity" />
-        <activity
-            android:name=".activity.GlideDemoActivity"
-            android:label="@string/title_activity_glide_demo"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.AIDLTestActivity" />
 
         <service
             android:name=".AidlService"
@@ -207,6 +202,7 @@
         </service>
 
         <activity android:name=".activity.ImageLoadActivity" />
+        <activity android:name=".activity.TestInvalidateActivity"/>
     </application>
 
 </manifest>
