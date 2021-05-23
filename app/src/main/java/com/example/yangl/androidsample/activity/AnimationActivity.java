@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.yangl.androidsample.R;
+import com.example.yangl.androidsample.animation.TweenAnimation.TranslateAnimationActivity;
 import com.example.yangl.androidsample.animation.propertyAnimation.ObjectAnimatorActivity;
 import com.example.yangl.androidsample.animation.propertyAnimation.RotateTestActivity;
 import com.example.yangl.androidsample.animation.propertyAnimation.ValueAnimListenerActivity;
@@ -29,6 +30,11 @@ public class AnimationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animation);
         ButterKnife.bind(this);
+    }
+
+    public void onTranslationViewClicked(View view){
+        Intent intent = new Intent(AnimationActivity.this, TranslateAnimationActivity.class);
+        startActivity(intent);
     }
 
     public void onObjectAnimationViewClicked(View view) {

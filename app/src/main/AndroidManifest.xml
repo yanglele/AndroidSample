@@ -203,6 +203,7 @@
 
         <activity android:name=".activity.ImageLoadActivity" />
         <activity android:name=".activity.TestInvalidateActivity"/>
+        <activity android:name=".animation.TweenAnimation.TranslateAnimationActivity"/>
     </application>
 
 </manifest>
