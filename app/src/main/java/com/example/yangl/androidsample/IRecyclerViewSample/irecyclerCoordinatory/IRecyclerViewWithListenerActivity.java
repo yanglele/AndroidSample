@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.irecyclerlib.IRecyclerView;
-import com.example.irecyclerlib.OnLoadMoreListener;
+import com.aspsine.irecyclerview.IRecyclerView;
+import com.aspsine.irecyclerview.OnLoadMoreListener;
 import com.example.yangl.androidsample.R;
 
 import java.util.ArrayList;

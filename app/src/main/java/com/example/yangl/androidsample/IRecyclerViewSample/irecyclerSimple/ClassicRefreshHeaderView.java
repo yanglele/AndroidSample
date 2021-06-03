@@ -9,7 +9,7 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.irecyclerlib.RefreshTrigger;
+import com.aspsine.irecyclerview.RefreshTrigger;
 import com.example.yangl.androidsample.R;
 
 

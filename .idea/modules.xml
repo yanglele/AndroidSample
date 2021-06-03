@@ -2,27 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidSample.iml" filepath="$PROJECT_DIR$/AndroidSample.iml" />
-      <module fileurl="file://$PROJECT_DIR$/algo/AndroidSample-algo.iml" filepath="$PROJECT_DIR$/algo/AndroidSample-algo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/AndroidSample-app.iml" filepath="$PROJECT_DIR$/app/AndroidSample-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eventbussource/AndroidSample-eventbussource.iml" filepath="$PROJECT_DIR$/eventbussource/AndroidSample-eventbussource.iml" />
-      <module fileurl="file://$PROJECT_DIR$/irecyclerlib/AndroidSample-irecyclerlib.iml" filepath="$PROJECT_DIR$/irecyclerlib/AndroidSample-irecyclerlib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/rxjava/AndroidSample-rxjava.iml" filepath="$PROJECT_DIR$/rxjava/AndroidSample-rxjava.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testlib/AndroidSample-testlib.iml" filepath="$PROJECT_DIR$/testlib/AndroidSample-testlib.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/algo/AndroidSample.algo.iml" filepath="$PROJECT_DIR$/.idea/modules/algo/AndroidSample.algo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidSample.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidSample.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/eventbussource/AndroidSample.eventbussource.iml" filepath="$PROJECT_DIR$/.idea/modules/eventbussource/AndroidSample.eventbussource.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/irecyclerlib/AndroidSample.irecyclerlib.iml" filepath="$PROJECT_DIR$/.idea/modules/irecyclerlib/AndroidSample.irecyclerlib.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/rxjava/AndroidSample.rxjava.iml" filepath="$PROJECT_DIR$/.idea/modules/rxjava/AndroidSample.rxjava.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/testlib/AndroidSample.testlib.iml" filepath="$PROJECT_DIR$/.idea/modules/testlib/AndroidSample.testlib.iml" />
       <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-AndroidSample.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-AndroidSample.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidStudioProjects.AndroidSample.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidStudioProjects.AndroidSample.iml" />
-      <module fileurl="file://$PROJECT_DIR$/algo/algo.iml" filepath="$PROJECT_DIR$/algo/algo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eventbussource/eventbussource.iml" filepath="$PROJECT_DIR$/eventbussource/eventbussource.iml" />
-      <module fileurl="file://$PROJECT_DIR$/irecyclerlib/irecyclerlib.iml" filepath="$PROJECT_DIR$/irecyclerlib/irecyclerlib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/rxjava/rxjava.iml" filepath="$PROJECT_DIR$/rxjava/rxjava.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testlib/testlib.iml" filepath="$PROJECT_DIR$/testlib/testlib.iml" />
     </modules>
   </component>
 </project>

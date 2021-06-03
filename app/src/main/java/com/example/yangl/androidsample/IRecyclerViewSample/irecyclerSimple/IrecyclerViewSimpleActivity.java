@@ -15,9 +15,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.example.irecyclerlib.IRecyclerView;
-import com.example.irecyclerlib.OnLoadMoreListener;
-import com.example.irecyclerlib.OnRefreshListener;
+import com.aspsine.irecyclerview.IRecyclerView;
+import com.aspsine.irecyclerview.OnLoadMoreListener;
+import com.aspsine.irecyclerview.OnRefreshListener;
 import com.example.yangl.androidsample.IRecyclerViewSample.irecyclerCoordinatory.LoadMoreFooterView;
 import com.example.yangl.androidsample.R;
 import com.example.yangl.androidsample.recyclerView.DisableLinearLayoutManager;
