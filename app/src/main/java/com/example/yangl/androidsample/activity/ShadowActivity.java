@@ -9,16 +9,24 @@ import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.yangl.androidsample.R;
 
+import java.util.HashMap;
+
 public class ShadowActivity extends AppCompatActivity {
+
+    private static HashMap<Context,String> map = new HashMap<Context, String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(new DrawCanvas(this));
         setContentView(R.layout.activity_shadow);
+        map.put(this,"1");
+        String s =  map.get(this);
+        Toast.makeText(this,"s",Toast.LENGTH_SHORT).show();
     }
 
     class DrawCanvas extends View

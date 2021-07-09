@@ -5,6 +5,7 @@ import com.example.model.Student;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -31,7 +32,9 @@ public class ExampleUnitTest {
 //        String studentString = gson.toJson(student);
 //        Student student1 = gson.fromJson(studentString,Student.class);
 //        testMethod(student1);
-        system64kMethod();
+//        system64kMethod();
+        weakReferenceTest();
+//        weakReferenceQueueTest();
     }
 
     public static void system64kMethod(){
@@ -91,11 +94,14 @@ public class ExampleUnitTest {
         ReferenceQueue<String> referenceQueue = new ReferenceQueue<>();
         WeakReference<String> weakReference = new WeakReference<>(s,referenceQueue);
         System.out.println("before gc :"+weakReference.toString());
-        s=null;
+//        s=null;
         System.gc();
         System.out.println("after gc weakReference = :"+weakReference.toString());
         System.out.println("after gc weakReference target = :"+weakReference.get());
-        System.out.println("queue = "+referenceQueue.poll().toString());
+        Reference<? extends String> poll = referenceQueue.poll();
+        if(poll != null){
+            System.out.println("queue = "+poll.toString());
+        }
     }
 
     private static void weakReferenceQueueTest(){

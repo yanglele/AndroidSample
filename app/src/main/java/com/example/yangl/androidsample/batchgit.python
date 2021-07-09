@@ -1,0 +1,282 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# created by: yangle12
+# created on: 2020/4/26
+import os
+import sys
+from git import Repo
+
+prx_dir = './'
+curDir = ''
+#脚本是否放在子module下
+isInSubmodule = False
+modules_config_file = 'git-modules.yaml'
+repository_file = 'git-rep.yaml'
+searchIOSModuleList = ['iphone-nova','searchviews','searchbase','searchutils','search-business','suggest']
+searchAndroidModuleList = ['android-nova', 'android-nova-search', 'android-nova-basesearch', 'android-nova-picasso',
+'android-nova-searchwidgets','android-nova-searchbusiness']
+
+def getFileModuleName(config_file):
+    return config_file.readline().strip('\n')
+
+def getConfigFilePath(file_name):
+    file_dir = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(file_dir, file_name)
+
+def get_remote(repo_path, remote_name):
+    repo = Repo(repo_path)
+    remote = repo.remotes.origin
+    if remote_name.strip():
+        remote = repo.remote(remote_name)
+    return remote
+
+def cdToRightDir():
+    if (isInSubmodule):
+        os.chdir("../")
+
+def clone():
+    repo_path_file = open(getConfigFilePath(repository_file), 'r')
+    repo_prefix = repo_path_file.readline().strip('\n')
+    repo_path_file.close
+
+    git_modules_file = open(getConfigFilePath(modules_config_file), 'r')
+    while True:
+        submodule = getFileModuleName(git_modules_file)
+        if len(submodule) > 0:
+            cdToRightDir()
+            if not os.path.exists(submodule):
+                print('start clone ' + submodule + " please waiting...")
+                Repo.clone_from(repo_prefix + submodule + '.git', submodule)
+                print('end clone')
+                os.chdir(curDir)
+            else:
+                print('project ' + submodule + ' has exist, clone failed!')
+                os.chdir(curDir)
+                continue
+        else:
+            break
+    git_modules_file.close()
+
+
+def pull(repo_path, remote_name, branch=''):
+    remote = get_remote(repo_path, remote_name)
+    if branch.strip():
+        remote.pull(branch)
+    else:
+        remote.pull()
+
+
+def push(repo_path, remote_name, branch=''):
+    remote = get_remote(repo_path, remote_name)
+    remote.push()
+
+
+# 切换本地分支
+def checkout_branch(repo_path, branch):
+    repo = Repo(repo_path)
+    git = repo.git
+    git.checkout(branch)
+    git.for_each_ref()
+
+
+# 基于指定的远程分支创建本地新分支
+def checkout_remote_branch(repo_path, branch):
+    repo = Repo(repo_path)
+    git = repo.git
+    git.checkout('origin/' + branch, b=branch)
+    git.for_each_ref()
+
+
+# 基于当前分支创建新分支
+def new_branch(repo_path, branch):
+    repo = Repo(repo_path)
+    git = repo.git
+    git.checkout('head', b=branch)
+    git.for_each_ref()
+
+# 删除本地分支
+def delete_branch(repo_path, branch):
+    repo = Repo(repo_path)
+    git = repo.git
+    git.branch('-D', branch)
+    git.for_each_ref()
+
+# 删除远程分支
+def delete_remote_branch(repo_path, remote_name, branch):
+    if branch.strip():
+        remote = get_remote(repo_path, remote_name)
+        remote.push(refspec=(':' + branch))
+
+
+# 执行具体的 git 操作
+def do_action(action, branch=''):
+    remote_name = ''
+    config_file = open(getConfigFilePath(modules_config_file), 'r')
+
+    while True:
+        moduleName = getFileModuleName(config_file)
+        repo_path = prx_dir + moduleName
+        cdToRightDir()
+        if os.path.exists(moduleName):
+            print('start ' + action + ' : ' + moduleName + " please waiting...")
+            if action == 'pull':
+                pull(repo_path, remote_name, branch)
+            elif action == 'push':
+                push(repo_path, remote_name)
+            elif action == 'checkoutbranch':
+                checkout_branch(repo_path, branch)
+            elif action == 'checkoutremotebranch':
+                checkout_remote_branch(repo_path, branch)
+            elif action == 'newbranch':
+                new_branch(repo_path, branch)
+            elif action == 'deletebranch':
+                delete_branch(repo_path, branch)
+            elif action == 'deleteremotebranch':
+                delete_remote_branch(repo_path, remote_name, branch)
+            print('end ' + action)
+        else:
+            if(len(moduleName.strip('')) != 0):
+                print("can not find dir " + moduleName)
+            break
+        os.chdir(curDir)
+    config_file.close()
+
+
+#打印所有模块名
+def printAllModule(config_file):
+    print('-------------- module list show --------------')
+    config_file.seek(0,0)
+    while True:
+        fileModuleName = getFileModuleName(config_file)
+        if (len(fileModuleName.strip('')) != 0):
+            print(fileModuleName)
+        else:
+            break
+    print('-------------- module list show --------------')
+
+#添加配置文件模块
+def addModuleToConfigFile():
+    config_file = open(getConfigFilePath(modules_config_file), 'r+')
+    count = 0
+    for moduleName in sys.argv:
+        count+=1
+        if (count > 2):
+            while True:
+                fileModuleName = getFileModuleName(config_file)
+                if (moduleName == fileModuleName):
+                    print(fileModuleName + ' has exists!')
+                    config_file.seek(0,0)
+                    break
+                if (len(fileModuleName.strip('')) == 0):
+                    config_file.writelines([moduleName + '\n'])
+                    config_file.seek(0,0)
+                    break
+    printAllModule(config_file)
+    config_file.close()
+
+#删除配置文件模块
+def deleteModuleName():
+    config_file = open(getConfigFilePath(modules_config_file), 'r+')
+    tmpList = []
+    if (len(sys.argv) <= 2):
+        return
+    while True:
+        fileModuleName = getFileModuleName(config_file)
+        if (len(fileModuleName.strip('')) != 0):
+            tmpList.append(fileModuleName)
+        else:
+            break
+    config_file.close()
+    config_file = open(getConfigFilePath(modules_config_file), 'w+')
+    for module in tmpList:
+        if (sys.argv[2] != module):
+            config_file.write(module + "\n")
+    printAllModule(config_file)
+    config_file.close()
+
+#将list写入配置文件
+def writeListToFile(config_file,list):
+    for moduleName in list:
+        config_file.write(moduleName + '\n')
+
+#搜索团队批量添加模块
+def addSearchModuleList():
+    config_file = open(getConfigFilePath(modules_config_file), 'r+')
+    if (len(sys.argv) == 3):
+        if (sys.argv[2] == 'android'):
+            writeListToFile(config_file,searchAndroidModuleList)
+        elif (sys.argv[2] == 'ios'):
+            writeListToFile(config_file,searchIOSModuleList)
+    printAllModule(config_file)
+    config_file.close()
+
+#显示所有modules
+def showAllModules():
+    config_file = open(getConfigFilePath(modules_config_file), 'r+')
+    printAllModule(config_file)
+    config_file.close()
+
+#设置代码仓库前缀
+def setGitRepositoryPreAddr(repo_prefix):
+    config_file = open(getConfigFilePath(repository_file), 'w+')
+    config_file.write(repo_prefix)
+    config_file.seek(0)
+    print('current repository pre : ' + config_file.readline().strip('\n'))
+    config_file.close()
+
+#打印提示
+def printHint():
+    print('usage:操作路径为项目模块的同级目录')
+    print('batchgit setGitRepPreAddr xxx【设置代码仓库的前缀】')
+    print('batchgit addSearchModule android/ios【搜索团队增加模块】')
+    print('batchgit addModule moduleName1 moduleName2 ...【增加需要获取的模块】')
+    print('batchgit delModule moduleName【删除模块】')
+    print('batchgit showModules 【显示所有配置的模块】')
+    print('batchgit clone')
+    print('batchgit pull【使用该命令需要相应分支有追踪分支refspec】')
+    print('batchgit pull xxx')
+    print('batchgit push【使用该命令需要相应分支有追踪分支refspec】')
+    print('batchgit checkoutremotebranch xxx【基于远程分支创建本地分支】')
+    print('batchgit checkoutbranch xxx')
+    print('batchgit newbranch xxx【基于当前分支创建新分支】')
+    print('batchgit deletebranch xxx')
+    print('batchgit deleteremotebranch xxx 删除远程分支，慎用')
+    print('由于安全考虑，暂不支持批量add、commit操作')
+
+
+#主函数
+def mainPoint():
+    if (len(sys.argv) <= 1):
+        printHint()
+        sys.exit(0)
+
+    action_name = sys.argv[1]
+    params = ''
+    if len(sys.argv) > 2:
+        params = sys.argv[2]
+
+    git_actions = ['push','pull', 'checkoutbranch', 'checkoutremotebranch', 'newbranch', 'deletebranch', 'deleteremotebranch']
+
+    global curDir
+    curDir = os.getcwd()
+    # print('current dir : ' + curDir)
+    if (action_name == 'addSearchModule'):
+        addSearchModuleList()
+    elif (action_name == 'addModule'):
+        addModuleToConfigFile()
+    elif (action_name == 'delModule'):
+        deleteModuleName()
+    elif (action_name == 'showModules'):
+        showAllModules()
+    elif(action_name == 'setGitRepPreAddr'):
+        setGitRepositoryPreAddr(params)
+    elif action_name == 'clone':
+        clone()
+    elif action_name in git_actions:
+        do_action(action_name, params)
+    else:
+        printHint()
+
+if __name__ == '__main__':
+    mainPoint()
+

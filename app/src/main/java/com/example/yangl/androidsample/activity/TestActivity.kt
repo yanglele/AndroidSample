@@ -1,5 +1,6 @@
 package com.example.yangl.androidsample.activity
 
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -24,7 +25,17 @@ class TestActivity : AppCompatActivity(){
         }
         println("Hello,") // 协程已在等待时主线程还在继续
         Thread.sleep(2000L) // 阻塞主线程 2 秒钟来保证 JVM 存活
+        Thread.currentThread().id
+//        GlobalScope.launch(Dispatchers.Main){
+//            val image = spendingGetImage("imageId")
+//            imageView.setImageBitmap(image as Bitmap)
+//        }
     }
+
+//    suspend fun spendingGetImage(imageId:String){
+//        withContext(Dispatchers.IO){
+//        }
+//    }
 
 
 }

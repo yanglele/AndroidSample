@@ -17,7 +17,7 @@ import butterknife.Unbinder;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final String TAG = MainActivity.class.getSimpleName();
+    private  final String TAG = MainActivity.class.getSimpleName();
 
     private Unbinder unbinder;
     @BindView(R.id.recycler_view)
